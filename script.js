@@ -1,37 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
+     BURION STUDIO — SCRIPT
+  ========================================================= */
+
+
+  /* =========================================================
      TRANSLATIONS
   ========================================================= */
 
   const translations = {
 
     en: {
+
       home: "Home",
       projects: "Projects",
       about: "About",
       contact: "Contact",
 
+      language: "LANGUAGE",
+
       eyebrow: "BURION STUDIO",
 
-      heroTitle: `Ideas,<br>built into <em>reality.</em>`,
+      heroTitle:
+        `Ideas,<br>built into <em>reality.</em>`,
 
       heroLead:
         "Independent developer creating games, applications and digital experiences from idea to release.",
 
-      explore: "Explore the studio",
-      getInTouch: "Get in touch",
+      explore:
+        "Explore the studio",
 
-      whatIBuild: "WHAT I BUILD",
+      getInTouch:
+        "Get in touch",
+
+      whatIBuild:
+        "WHAT I BUILD",
 
       buildTitle:
         `Turning ideas into <em>digital products.</em>`,
 
-      games: "Games",
-      apps: "Apps",
-      digital: "Digital Experiences",
+      games:
+        "Games",
 
-      featured: "FEATURED PROJECTS",
+      gamesText:
+        "Gameplay systems, mechanics and immersive experiences.",
+
+      apps:
+        "Apps",
+
+      appsText:
+        "Useful and beautiful applications for real world problems.",
+
+      digital:
+        "Digital Experiences",
+
+      digitalText:
+        "Websites and digital tools when ideas need a place to live.",
+
+      featured:
+        "FEATURED PROJECTS",
 
       comingNext:
         "What's coming next.",
@@ -39,7 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
       projectsText:
         "New projects are in development. Stay tuned for updates.",
 
-      aboutEyebrow: "ABOUT",
+      comingSoon:
+        "COMING SOON",
+
+      aboutEyebrow:
+        "ABOUT",
 
       aboutTitle:
         `The person behind<br>Burion Studio.`,
@@ -62,20 +94,46 @@ document.addEventListener("DOMContentLoaded", () => {
       contactTitle:
         `Have an idea?<br>Let's build something<br>worth making.`,
 
-      send: "Send Message",
+      send:
+        "Send Message",
 
       footer:
-        "Independent developer creating games, apps and digital experiences."
+        "Independent developer creating games, apps and digital experiences.",
+
+      footerHome:
+        "Home",
+
+      footerProjects:
+        "Projects",
+
+      footerAbout:
+        "About",
+
+      footerContact:
+        "Contact"
+
     },
 
 
     tr: {
-      home: "Ana Sayfa",
-      projects: "Projeler",
-      about: "Hakkında",
-      contact: "İletişim",
 
-      eyebrow: "BURION STUDIO",
+      home:
+        "Ana Sayfa",
+
+      projects:
+        "Projeler",
+
+      about:
+        "Hakkında",
+
+      contact:
+        "İletişim",
+
+      language:
+        "DİL",
+
+      eyebrow:
+        "BURION STUDIO",
 
       heroTitle:
         `Fikirleri,<br><em>gerçeğe</em> dönüştürüyoruz.`,
@@ -83,8 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
       heroLead:
         "Fikirden yayınlanmaya kadar oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",
 
-      explore: "Stüdyoyu keşfet",
-      getInTouch: "İletişime geç",
+      explore:
+        "Stüdyoyu keşfet",
+
+      getInTouch:
+        "İletişime geç",
 
       whatIBuild:
         "NELER GELİŞTİRİYORUM",
@@ -92,9 +153,23 @@ document.addEventListener("DOMContentLoaded", () => {
       buildTitle:
         `Fikirleri <em>dijital ürünlere</em> dönüştürüyorum.`,
 
-      games: "Oyunlar",
-      apps: "Uygulamalar",
-      digital: "Dijital Deneyimler",
+      games:
+        "Oyunlar",
+
+      gamesText:
+        "Oyun sistemleri, mekanikler ve sürükleyici deneyimler.",
+
+      apps:
+        "Uygulamalar",
+
+      appsText:
+        "Gerçek dünya problemleri için kullanışlı ve estetik uygulamalar.",
+
+      digital:
+        "Dijital Deneyimler",
+
+      digitalText:
+        "Fikirlerin yaşayabileceği web siteleri ve dijital araçlar.",
 
       featured:
         "ÖNE ÇIKAN PROJELER",
@@ -104,6 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       projectsText:
         "Yeni projeler geliştirme aşamasında. Güncellemeler için takipte kalın.",
+
+      comingSoon:
+        "ÇOK YAKINDA",
 
       aboutEyebrow:
         "HAKKINDA",
@@ -129,20 +207,46 @@ document.addEventListener("DOMContentLoaded", () => {
       contactTitle:
         `Bir fikrin mi var?<br>Yapmaya değer<br>bir şey geliştirelim.`,
 
-      send: "Mesaj Gönder",
+      send:
+        "Mesaj Gönder",
 
       footer:
-        "Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici."
+        "Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",
+
+      footerHome:
+        "Ana Sayfa",
+
+      footerProjects:
+        "Projeler",
+
+      footerAbout:
+        "Hakkında",
+
+      footerContact:
+        "İletişim"
+
     },
 
 
     ru: {
-      home: "Главная",
-      projects: "Проекты",
-      about: "Обо мне",
-      contact: "Контакты",
 
-      eyebrow: "BURION STUDIO",
+      home:
+        "Главная",
+
+      projects:
+        "Проекты",
+
+      about:
+        "Обо мне",
+
+      contact:
+        "Контакты",
+
+      language:
+        "ЯЗЫК",
+
+      eyebrow:
+        "BURION STUDIO",
 
       heroTitle:
         `Идеи,<br>превращённые в <em>реальность.</em>`,
@@ -162,9 +266,23 @@ document.addEventListener("DOMContentLoaded", () => {
       buildTitle:
         `Превращаю идеи в <em>цифровые продукты.</em>`,
 
-      games: "Игры",
-      apps: "Приложения",
-      digital: "Цифровые продукты",
+      games:
+        "Игры",
+
+      gamesText:
+        "Игровые системы, механики и захватывающие впечатления.",
+
+      apps:
+        "Приложения",
+
+      appsText:
+        "Полезные и красивые приложения для решения реальных задач.",
+
+      digital:
+        "Цифровые продукты",
+
+      digitalText:
+        "Сайты и цифровые инструменты, где идеи получают своё пространство.",
 
       featured:
         "ИЗБРАННЫЕ ПРОЕКТЫ",
@@ -174,6 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       projectsText:
         "Новые проекты находятся в разработке. Следите за обновлениями.",
+
+      comingSoon:
+        "СКОРО",
 
       aboutEyebrow:
         "ОБО МНЕ",
@@ -203,7 +324,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "Отправить сообщение",
 
       footer:
-        "Независимый разработчик игр, приложений и цифровых продуктов."
+        "Независимый разработчик игр, приложений и цифровых продуктов.",
+
+      footerHome:
+        "Главная",
+
+      footerProjects:
+        "Проекты",
+
+      footerAbout:
+        "Обо мне",
+
+      footerContact:
+        "Контакты"
+
     }
 
   };
@@ -233,24 +367,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuButton) {
 
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     mobileMenu =
       document.createElement("div");
 
     mobileMenu.className =
       "mobile-menu";
 
+    mobileMenu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
     mobileMenu.innerHTML = `
-      <nav class="mobile-nav" aria-label="Mobile navigation">
 
-        <a href="#home">Home</a>
+      <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation"
+      >
 
-        <a href="#projects">Projects</a>
+        <a href="#home">
+          Home
+        </a>
 
-        <a href="#about">About</a>
+        <a href="#projects">
+          Projects
+        </a>
 
-        <a href="#contact">Contact</a>
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
 
       </nav>
+
 
       <div class="mobile-language">
 
@@ -284,57 +441,69 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
       </div>
+
     `;
 
+    mobileMenu.style.display =
+      "none";
 
-    /* IMPORTANT:
-       We use inline display instead of hidden/class
-       so the menu works with the current CSS.
-    */
-
-    mobileMenu.style.display = "none";
-
-    document.body.appendChild(mobileMenu);
+    document.body.appendChild(
+      mobileMenu
+    );
 
 
-    /* OPEN / CLOSE */
+    /* -----------------------------------------
+       MENU BUTTON
+    ----------------------------------------- */
 
-    menuButton.addEventListener("click", event => {
+    menuButton.addEventListener(
+      "click",
+      event => {
 
-      event.stopPropagation();
+        event.stopPropagation();
 
-      const isOpen =
-        mobileMenu.style.display === "block";
+        const isOpen =
+          mobileMenu.style.display ===
+          "block";
 
-      if (isOpen) {
+        if (isOpen) {
 
-        closeMobileMenu();
+          closeMobileMenu();
 
-      } else {
+        } else {
 
-        openMobileMenu();
+          closeLanguageMenu();
+          openMobileMenu();
+
+        }
 
       }
+    );
 
-    });
 
-
-    /* MOBILE NAV LINKS */
+    /* -----------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------- */
 
     mobileMenu
       .querySelectorAll(".mobile-nav a")
       .forEach(link => {
 
-        link.addEventListener("click", () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-          closeMobileMenu();
+            closeMobileMenu();
 
-        });
+          }
+        );
 
       });
 
 
-    /* MOBILE LANGUAGE */
+    /* -----------------------------------------
+       MOBILE LANGUAGE
+    ----------------------------------------- */
 
     mobileMenu
       .querySelectorAll(
@@ -342,15 +511,18 @@ document.addEventListener("DOMContentLoaded", () => {
       )
       .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+          "click",
+          () => {
 
-          setLanguage(
-            button.dataset.lang
-          );
+            setLanguage(
+              button.dataset.lang
+            );
 
-          closeMobileMenu();
+            closeMobileMenu();
 
-        });
+          }
+        );
 
       });
 
@@ -359,12 +531,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openMobileMenu() {
 
-    if (!mobileMenu || !menuButton)
+    if (
+      !mobileMenu ||
+      !menuButton
+    ) {
       return;
+    }
 
-    mobileMenu.style.display = "block";
+    mobileMenu.style.display =
+      "block";
 
-    menuButton.textContent = "✕";
+    mobileMenu.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    menuButton.textContent =
+      "✕";
 
     menuButton.setAttribute(
       "aria-expanded",
@@ -381,12 +564,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeMobileMenu() {
 
-    if (!mobileMenu || !menuButton)
+    if (
+      !mobileMenu ||
+      !menuButton
+    ) {
       return;
+    }
 
-    mobileMenu.style.display = "none";
+    mobileMenu.style.display =
+      "none";
 
-    menuButton.textContent = "☰";
+    mobileMenu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    menuButton.textContent =
+      "☰";
 
     menuButton.setAttribute(
       "aria-expanded",
@@ -405,7 +599,10 @@ document.addEventListener("DOMContentLoaded", () => {
      LANGUAGE MENU
   ========================================================= */
 
-  if (languageButton && navRight) {
+  if (
+    languageButton &&
+    navRight
+  ) {
 
     languageMenu =
       document.createElement("div");
@@ -413,7 +610,13 @@ document.addEventListener("DOMContentLoaded", () => {
     languageMenu.className =
       "language-menu";
 
+    languageMenu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
     languageMenu.innerHTML = `
+
       <button
         type="button"
         data-lang="en"
@@ -434,8 +637,8 @@ document.addEventListener("DOMContentLoaded", () => {
       >
         Русский
       </button>
-    `;
 
+    `;
 
     languageMenu.style.display =
       "none";
@@ -445,22 +648,43 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+    /* -----------------------------------------
+       LANGUAGE BUTTON
+    ----------------------------------------- */
+
+    languageButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     languageButton.addEventListener(
       "click",
       event => {
 
         event.stopPropagation();
 
-        const isOpen =
+        if (
+          !languageMenu ||
           languageMenu.style.display ===
-          "block";
+          "none"
+        ) {
 
-        languageMenu.style.display =
-          isOpen ? "none" : "block";
+          closeMobileMenu();
+          openLanguageMenu();
+
+        } else {
+
+          closeLanguageMenu();
+
+        }
 
       }
     );
 
+
+    /* -----------------------------------------
+       LANGUAGE OPTIONS
+    ----------------------------------------- */
 
     languageMenu
       .querySelectorAll("button")
@@ -476,13 +700,62 @@ document.addEventListener("DOMContentLoaded", () => {
               button.dataset.lang
             );
 
-            languageMenu.style.display =
-              "none";
+            closeLanguageMenu();
 
           }
         );
 
       });
+
+  }
+
+
+  function openLanguageMenu() {
+
+    if (
+      !languageMenu ||
+      !languageButton
+    ) {
+      return;
+    }
+
+    languageMenu.style.display =
+      "block";
+
+    languageMenu.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    languageButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+  }
+
+
+  function closeLanguageMenu() {
+
+    if (
+      !languageMenu ||
+      !languageButton
+    ) {
+      return;
+    }
+
+    languageMenu.style.display =
+      "none";
+
+    languageMenu.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    languageButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
   }
 
@@ -497,8 +770,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (
         mobileMenu &&
-        mobileMenu.style.display === "block" &&
-        !mobileMenu.contains(event.target) &&
+        mobileMenu.style.display ===
+        "block" &&
+        !mobileMenu.contains(
+          event.target
+        ) &&
         event.target !== menuButton
       ) {
 
@@ -509,13 +785,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (
         languageMenu &&
-        languageMenu.style.display === "block" &&
-        !languageMenu.contains(event.target) &&
+        languageMenu.style.display ===
+        "block" &&
+        !languageMenu.contains(
+          event.target
+        ) &&
         event.target !== languageButton
       ) {
 
-        languageMenu.style.display =
-          "none";
+        closeLanguageMenu();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     ESC KEY
+  ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key ===
+        "Escape"
+      ) {
+
+        closeMobileMenu();
+        closeLanguageMenu();
 
       }
 
@@ -532,14 +832,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const t =
       translations[language];
 
-    if (!t) return;
+    if (!t) {
+      return;
+    }
 
+
+    /* -----------------------------------------
+       HTML LANGUAGE
+    ----------------------------------------- */
 
     document.documentElement.lang =
       language;
 
 
-    /* LANGUAGE BUTTON */
+    /* -----------------------------------------
+       LANGUAGE BUTTON
+    ----------------------------------------- */
 
     if (languageButton) {
 
@@ -549,14 +857,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* DESKTOP NAV */
+    /* -----------------------------------------
+       DESKTOP NAVIGATION
+    ----------------------------------------- */
 
     const desktopLinks =
       document.querySelectorAll(
         ".desktop-nav a"
       );
 
-    if (desktopLinks.length >= 4) {
+    if (
+      desktopLinks.length >= 4
+    ) {
 
       desktopLinks[0].textContent =
         t.home;
@@ -573,7 +885,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* MOBILE NAV */
+    /* -----------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------- */
 
     if (mobileMenu) {
 
@@ -582,7 +896,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ".mobile-nav a"
         );
 
-      if (mobileLinks.length >= 4) {
+      if (
+        mobileLinks.length >= 4
+      ) {
 
         mobileLinks[0].textContent =
           t.home;
@@ -598,57 +914,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
+
+      const languageTitle =
+        mobileMenu.querySelector(
+          ".mobile-language-title"
+        );
+
+      if (languageTitle) {
+
+        languageTitle.textContent =
+          t.language;
+
+      }
+
     }
 
 
-    /* HERO */
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
 
     const hero =
-      document.querySelector(".hero");
+      document.querySelector(
+        ".hero"
+      );
 
     if (hero) {
 
       const eyebrow =
-        hero.querySelector(".eyebrow");
+        hero.querySelector(
+          ".eyebrow"
+        );
 
       const title =
-        hero.querySelector("h1");
+        hero.querySelector(
+          "h1"
+        );
 
       const lead =
-        hero.querySelector(".lead");
+        hero.querySelector(
+          ".lead"
+        );
 
       const buttons =
-        hero.querySelectorAll(".btn");
+        hero.querySelectorAll(
+          ".btn"
+        );
 
 
-      if (eyebrow)
+      if (eyebrow) {
+
         eyebrow.textContent =
           t.eyebrow;
 
+      }
 
-      if (title)
+
+      if (title) {
+
         title.innerHTML =
           t.heroTitle;
 
+      }
 
-      if (lead)
+
+      if (lead) {
+
         lead.textContent =
           t.heroLead;
 
+      }
 
-      if (buttons[0])
+
+      if (buttons[0]) {
+
         buttons[0].innerHTML =
           `${t.explore} <span>→</span>`;
 
+      }
 
-      if (buttons[1])
+
+      if (buttons[1]) {
+
         buttons[1].innerHTML =
           `${t.getInTouch} <span>→</span>`;
+
+      }
 
     }
 
 
-    /* WHAT I BUILD */
+    /* -----------------------------------------
+       WHAT I BUILD
+    ----------------------------------------- */
 
     const buildSection =
       document.querySelector(
@@ -669,38 +1027,100 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const cards =
         buildSection.querySelectorAll(
-          ".card h3"
+          ".card"
         );
 
 
-      if (eyebrow)
+      if (eyebrow) {
+
         eyebrow.textContent =
           t.whatIBuild;
 
+      }
 
-      if (title)
+
+      if (title) {
+
         title.innerHTML =
           t.buildTitle;
 
-
-      if (cards[0])
-        cards[0].textContent =
-          t.games;
+      }
 
 
-      if (cards[1])
-        cards[1].textContent =
-          t.apps;
+      if (cards[0]) {
+
+        const cardTitle =
+          cards[0].querySelector(
+            "h3"
+          );
+
+        const cardText =
+          cards[0].querySelector(
+            "p"
+          );
+
+        if (cardTitle)
+          cardTitle.textContent =
+            t.games;
+
+        if (cardText)
+          cardText.textContent =
+            t.gamesText;
+
+      }
 
 
-      if (cards[2])
-        cards[2].textContent =
-          t.digital;
+      if (cards[1]) {
+
+        const cardTitle =
+          cards[1].querySelector(
+            "h3"
+          );
+
+        const cardText =
+          cards[1].querySelector(
+            "p"
+          );
+
+        if (cardTitle)
+          cardTitle.textContent =
+            t.apps;
+
+        if (cardText)
+          cardText.textContent =
+            t.appsText;
+
+      }
+
+
+      if (cards[2]) {
+
+        const cardTitle =
+          cards[2].querySelector(
+            "h3"
+          );
+
+        const cardText =
+          cards[2].querySelector(
+            "p"
+          );
+
+        if (cardTitle)
+          cardTitle.textContent =
+            t.digital;
+
+        if (cardText)
+          cardText.textContent =
+            t.digitalText;
+
+      }
 
     }
 
 
-    /* PROJECTS */
+    /* -----------------------------------------
+       PROJECTS
+    ----------------------------------------- */
 
     const projectsPanel =
       document.querySelector(
@@ -724,25 +1144,51 @@ document.addEventListener("DOMContentLoaded", () => {
           "p:not(.eyebrow)"
         );
 
+      const statusLabels =
+        projectsPanel.querySelectorAll(
+          ".project span"
+        );
 
-      if (eyebrow)
+
+      if (eyebrow) {
+
         eyebrow.textContent =
           t.featured;
 
+      }
 
-      if (title)
+
+      if (title) {
+
         title.textContent =
           t.comingNext;
 
+      }
 
-      if (paragraph)
+
+      if (paragraph) {
+
         paragraph.textContent =
           t.projectsText;
+
+      }
+
+
+      statusLabels.forEach(
+        label => {
+
+          label.textContent =
+            t.comingSoon;
+
+        }
+      );
 
     }
 
 
-    /* ABOUT */
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
 
     const aboutPanel =
       document.querySelector(
@@ -767,39 +1213,59 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-      if (eyebrow)
+      if (eyebrow) {
+
         eyebrow.textContent =
           t.aboutEyebrow;
 
+      }
 
-      if (title)
+
+      if (title) {
+
         title.innerHTML =
           t.aboutTitle;
 
+      }
 
-      if (paragraphs[0])
+
+      if (paragraphs[0]) {
+
         paragraphs[0].innerHTML =
           t.about1;
 
+      }
 
-      if (paragraphs[1])
+
+      if (paragraphs[1]) {
+
         paragraphs[1].textContent =
           t.about2;
 
+      }
 
-      if (paragraphs[2])
+
+      if (paragraphs[2]) {
+
         paragraphs[2].textContent =
           t.about3;
 
+      }
 
-      if (paragraphs[3])
+
+      if (paragraphs[3]) {
+
         paragraphs[3].textContent =
           t.about4;
+
+      }
 
     }
 
 
-    /* CONTACT */
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
 
     const contactPanel =
       document.querySelector(
@@ -824,36 +1290,76 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-      if (eyebrow)
+      if (eyebrow) {
+
         eyebrow.textContent =
           t.contactEyebrow;
 
+      }
 
-      if (title)
+
+      if (title) {
+
         title.innerHTML =
           t.contactTitle;
 
+      }
 
-      if (button)
+
+      if (button) {
+
         button.innerHTML =
           `${t.send} <span>→</span>`;
+
+      }
 
     }
 
 
-    /* FOOTER */
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
 
     const footerText =
       document.querySelector(
         ".footer > p"
       );
 
-    if (footerText)
+    if (footerText) {
+
       footerText.textContent =
         t.footer;
 
+    }
 
-    /* SAVE LANGUAGE */
+
+    const footerLinks =
+      document.querySelectorAll(
+        ".footer-links a"
+      );
+
+    if (
+      footerLinks.length >= 4
+    ) {
+
+      footerLinks[0].textContent =
+        t.footerHome;
+
+      footerLinks[1].textContent =
+        t.footerProjects;
+
+      footerLinks[2].textContent =
+        t.footerAbout;
+
+      footerLinks[3].textContent =
+        t.footerContact;
+
+    }
+
+
+    /* -----------------------------------------
+       SAVE LANGUAGE
+    ----------------------------------------- */
 
     localStorage.setItem(
       "burionLanguage",
@@ -888,17 +1394,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         const name =
-          formData.get("name") || "";
+          String(
+            formData.get("name") || ""
+          ).trim();
 
         const email =
-          formData.get("email") || "";
+          String(
+            formData.get("email") || ""
+          ).trim();
 
         const subject =
-          formData.get("subject") ||
-          "Burion Studio Contact";
+          String(
+            formData.get("subject") ||
+            "Burion Studio Contact"
+          ).trim();
 
         const message =
-          formData.get("message") || "";
+          String(
+            formData.get("message") || ""
+          ).trim();
+
+
+        if (
+          !name ||
+          !email ||
+          !message
+        ) {
+
+          return;
+
+        }
 
 
         const body =
@@ -909,8 +1434,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const mailto =
           `mailto:support@burionstudio.com` +
-          `?subject=${encodeURIComponent(subject)}` +
-          `&body=${encodeURIComponent(body)}`;
+          `?subject=${encodeURIComponent(
+            subject
+          )}` +
+          `&body=${encodeURIComponent(
+            body
+          )}`;
 
 
         window.location.href =
@@ -947,46 +1476,59 @@ document.addEventListener("DOMContentLoaded", () => {
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(entry => {
-
-            if (!entry.isIntersecting)
-              return;
-
-
-            navLinks.forEach(link => {
-
-              link.classList.remove(
-                "active"
-              );
-
+          entries.forEach(
+            entry => {
 
               if (
-                link.getAttribute("href") ===
-                `#${entry.target.id}`
+                !entry.isIntersecting
               ) {
-
-                link.classList.add(
-                  "active"
-                );
-
+                return;
               }
 
-            });
 
-          });
+              navLinks.forEach(
+                link => {
+
+                  link.classList.remove(
+                    "active"
+                  );
+
+
+                  if (
+                    link.getAttribute(
+                      "href"
+                    ) ===
+                    `#${entry.target.id}`
+                  ) {
+
+                    link.classList.add(
+                      "active"
+                    );
+
+                  }
+
+                }
+              );
+
+            }
+          );
 
         },
         {
-          threshold: 0.35
+          threshold:0.35
         }
       );
 
 
-    sections.forEach(section => {
+    sections.forEach(
+      section => {
 
-      observer.observe(section);
+        observer.observe(
+          section
+        );
 
-    });
+      }
+    );
 
   }
 
@@ -998,11 +1540,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLanguage =
     localStorage.getItem(
       "burionLanguage"
-    ) || "en";
+    );
+
+
+  const browserLanguage =
+    navigator.language
+      ? navigator.language
+          .toLowerCase()
+          .split("-")[0]
+      : "en";
+
+
+  const initialLanguage =
+    savedLanguage &&
+    translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLanguage]
+        ? browserLanguage
+        : "en";
 
 
   setLanguage(
-    savedLanguage
+    initialLanguage
   );
 
 
@@ -1010,21 +1569,8 @@ document.addEventListener("DOMContentLoaded", () => {
      INITIAL MENU STATE
   ========================================================= */
 
-  if (menuButton) {
+  closeMobileMenu();
+  closeLanguageMenu();
 
-    menuButton.textContent =
-      "☰";
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-    menuButton.setAttribute(
-      "aria-label",
-      "Open menu"
-    );
-
-  }
 
 });
