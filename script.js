@@ -206,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function openMobileMenu() {
     if (!mobileMenu) return;
     mobileMenu.hidden = false;
+    document.body.style.overflow = "hidden";
     menuButton?.classList.add("is-open");
     menuButton?.setAttribute("aria-expanded", "true");
     menuButton?.setAttribute("aria-label", "Close menu");
@@ -214,12 +215,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeMobileMenu() {
     if (!mobileMenu) return;
     mobileMenu.hidden = true;
+    document.body.style.overflow = "";
     menuButton?.classList.remove("is-open");
     menuButton?.setAttribute("aria-expanded", "false");
     menuButton?.setAttribute("aria-label", "Open menu");
   }
 
   if (menuButton && mobileMenu) {
+    menuButton.setAttribute("aria-controls", "mobileMenu");
     menuButton.addEventListener("click", event => {
       event.stopPropagation();
       mobileMenu.hidden ? openMobileMenu() : closeMobileMenu();
