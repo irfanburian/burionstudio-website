@@ -35,6 +35,7 @@ html{
 
 body{
   margin:0;
+
   background:var(--bg);
   color:var(--text);
 
@@ -47,6 +48,7 @@ body{
     sans-serif;
 
   line-height:1.6;
+
   overflow-x:hidden;
 }
 
@@ -90,13 +92,15 @@ textarea{
 
 
 /* =========================================================
-   CONTAINER
+   MAIN CONTAINER
 ========================================================= */
 
 .site-shell{
   width:100%;
   max-width:var(--max);
+
   margin:0 auto;
+
   padding:0 28px;
 }
 
@@ -112,10 +116,10 @@ textarea{
   align-items:center;
   justify-content:space-between;
 
-  border-bottom:1px solid var(--line-soft);
-
   position:relative;
-  z-index:200;
+  z-index:50;
+
+  border-bottom:1px solid var(--line-soft);
 }
 
 
@@ -126,11 +130,12 @@ textarea{
 .brand{
   display:inline-flex;
   align-items:center;
+
   gap:12px;
 
-  text-decoration:none;
-
   flex-shrink:0;
+
+  text-decoration:none;
 }
 
 .brand-mark{
@@ -163,32 +168,48 @@ textarea{
   overflow:hidden;
 }
 
-.brand-logo-svg{
-  width:30px;
-  height:30px;
 
+/* =========================================================
+   HEADER SVG LOGO
+========================================================= */
+
+.brand-logo-svg{
   display:block;
+
+  width:32px;
+  height:32px;
+
+  overflow:visible;
 }
 
 .brand-logo-svg .logo-mane{
   fill:none;
+
   stroke:var(--gold-light);
-  stroke-width:4;
+
+  stroke-width:5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
 .brand-logo-svg .logo-face{
-  fill:rgba(215,169,87,.08);
+  fill:#0b0d0f;
+
   stroke:var(--gold-light);
+
   stroke-width:3;
+
   stroke-linejoin:round;
 }
 
 .brand-logo-svg .logo-ear{
   fill:none;
+
   stroke:var(--gold-light);
+
   stroke-width:3;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
@@ -199,11 +220,19 @@ textarea{
 
 .brand-logo-svg .logo-detail{
   fill:none;
+
   stroke:var(--gold-light);
+
   stroke-width:2.5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
 
 .brand-type{
   display:flex;
@@ -247,8 +276,12 @@ textarea{
 
   gap:38px;
 
-  font-size:13px;
+  margin-left:auto;
+  margin-right:35px;
+
   color:#a9abad;
+
+  font-size:13px;
 }
 
 .desktop-nav a{
@@ -256,7 +289,8 @@ textarea{
 
   padding:29px 0;
 
-  transition:color .2s ease;
+  transition:
+    color .2s ease;
 }
 
 .desktop-nav a:hover,
@@ -290,12 +324,15 @@ textarea{
   gap:18px;
 
   position:relative;
+
+  flex-shrink:0;
 }
 
 .lang,
 .menu-btn{
-  background:none;
   border:0;
+
+  background:none;
 
   color:#bfc2c4;
 
@@ -306,83 +343,24 @@ textarea{
   padding:8px 0;
 
   font-size:11px;
+
   letter-spacing:.12em;
 }
 
 .lang span{
-  color:var(--gold);
-
   margin-left:5px;
+
+  color:var(--gold);
 }
 
 .menu-btn{
   display:none;
 
-  padding:5px;
+  padding:0;
 
   font-size:24px;
+
   line-height:1;
-
-  color:var(--text);
-}
-
-
-/* =========================================================
-   LANGUAGE MENU
-========================================================= */
-
-.language-menu{
-  position:absolute;
-
-  top:52px;
-  right:0;
-
-  z-index:1000;
-
-  min-width:135px;
-
-  padding:6px;
-
-  background:
-    rgba(13,15,17,.98);
-
-  border:1px solid var(--line);
-
-  border-radius:8px;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.45);
-
-  backdrop-filter:blur(14px);
-}
-
-.language-menu button{
-  display:block;
-
-  width:100%;
-
-  padding:10px 11px;
-
-  background:none;
-  border:0;
-  border-radius:5px;
-
-  color:var(--text);
-
-  text-align:left;
-
-  cursor:pointer;
-
-  font-size:12px;
-
-  transition:
-    background .2s ease,
-    color .2s ease;
-}
-
-.language-menu button:hover{
-  background:rgba(215,169,87,.08);
-  color:var(--gold-light);
 }
 
 
@@ -419,9 +397,9 @@ textarea{
   color:var(--gold);
 
   font-size:10px;
-  line-height:1;
-
   font-weight:700;
+
+  line-height:1;
 
   letter-spacing:.25em;
 }
@@ -431,23 +409,25 @@ textarea{
 
   margin:0 0 28px;
 
+  color:var(--text);
+
   font-size:clamp(58px,6.2vw,86px);
+
+  font-weight:700;
 
   line-height:.94;
 
   letter-spacing:-.065em;
-
-  font-weight:700;
 }
 
 .hero h1 em,
 h2 em{
+  color:var(--gold-light);
+
   font-family:
     "Playfair Display",
     Georgia,
     serif;
-
-  color:var(--gold-light);
 
   font-style:normal;
 
@@ -468,7 +448,7 @@ h2 em{
 
 
 /* =========================================================
-   BUTTONS
+   HERO ACTIONS
 ========================================================= */
 
 .actions{
@@ -492,6 +472,7 @@ h2 em{
   padding:13px 18px;
 
   border:1px solid var(--gold);
+
   border-radius:7px;
 
   font-size:12px;
@@ -508,6 +489,7 @@ h2 em{
 
 .btn span{
   font-size:18px;
+
   line-height:1;
 }
 
@@ -539,25 +521,26 @@ h2 em{
 .btn-ghost{
   color:var(--text);
 
-  border-color:#66502c;
-
   background:rgba(255,255,255,.01);
+
+  border-color:#66502c;
 }
 
 .btn-ghost:hover{
-  border-color:var(--gold);
-
   background:rgba(215,169,87,.04);
+
+  border-color:var(--gold);
 }
 
 
 /* =========================================================
-   HERO LOGO
+   HERO LOGO AREA
 ========================================================= */
 
 .lion-art{
-  height:100%;
   min-height:650px;
+
+  height:100%;
 
   display:flex;
   align-items:center;
@@ -589,8 +572,8 @@ h2 em{
 }
 
 .hero-logo{
-  width:250px;
-  height:250px;
+  width:220px;
+  height:220px;
 
   display:flex;
   align-items:center;
@@ -606,53 +589,57 @@ h2 em{
 }
 
 .hero-logo-svg{
-  width:190px;
-  height:190px;
-
   display:block;
+
+  width:180px;
+  height:180px;
+
+  overflow:visible;
 }
 
 .hero-logo-svg .logo-mane{
-  fill:rgba(215,169,87,.04);
+  fill:none;
+
   stroke:var(--gold-light);
-  stroke-width:3;
+
+  stroke-width:5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
-
-  filter:
-    drop-shadow(
-      0 0 5px rgba(215,169,87,.18)
-    );
 }
 
 .hero-logo-svg .logo-face{
-  fill:rgba(215,169,87,.08);
+  fill:#0b0d0f;
+
   stroke:var(--gold-light);
-  stroke-width:2.5;
+
+  stroke-width:3;
+
   stroke-linejoin:round;
 }
 
 .hero-logo-svg .logo-ear{
   fill:none;
+
   stroke:var(--gold-light);
-  stroke-width:2.5;
+
+  stroke-width:3;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
 .hero-logo-svg .logo-eye{
   fill:var(--gold-light);
-
-  filter:
-    drop-shadow(
-      0 0 4px rgba(241,200,117,.4)
-    );
 }
 
 .hero-logo-svg .logo-detail{
   fill:none;
+
   stroke:var(--gold-light);
-  stroke-width:2;
+
+  stroke-width:2.5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
@@ -665,7 +652,8 @@ h2 em{
 .principles{
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:
+    repeat(4,1fr);
 
   gap:25px;
 
@@ -687,7 +675,8 @@ h2 em{
 
   color:var(--gold);
 
-  font-size:14px;
+  font-size:20px;
+
   line-height:1.2;
 }
 
@@ -742,7 +731,8 @@ h2 em{
 .cards{
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:
+    repeat(3,1fr);
 
   gap:14px;
 }
@@ -770,15 +760,15 @@ h2 em{
 .card:hover{
   transform:translateY(-4px);
 
-  border-color:#4a402d;
-
   background:var(--panel-hover);
+
+  border-color:#4a402d;
 }
 
 .card-icon{
   color:var(--gold);
 
-  font-size:20px;
+  font-size:24px;
 
   line-height:1;
 }
@@ -809,7 +799,8 @@ h2 em{
 .content-grid{
   display:grid;
 
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:
+    repeat(3,1fr);
 
   gap:14px;
 
@@ -834,19 +825,16 @@ h2 em{
 }
 
 .panel > p{
+  margin:0 0 13px;
+
   color:var(--muted);
 
   font-size:12px;
 
   line-height:1.7;
-
-  margin:0 0 13px;
 }
 
-.projects-panel{
-  grid-column:span 1;
-}
-
+.projects-panel,
 .contact-panel{
   grid-column:span 1;
 }
@@ -859,7 +847,8 @@ h2 em{
 .project-list{
   display:grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
   gap:10px;
 
@@ -869,13 +858,14 @@ h2 em{
 .project{
   padding:10px;
 
+  background:rgba(0,0,0,.15);
+
   border:1px solid var(--line);
 
   border-radius:7px;
 
-  background:rgba(0,0,0,.15);
-
-  transition:border-color .2s ease;
+  transition:
+    border-color .2s ease;
 }
 
 .project:hover{
@@ -891,9 +881,9 @@ h2 em{
 
   border-radius:5px;
 
-  font-size:0;
-
   color:var(--gold);
+
+  font-size:0;
 }
 
 .game-visual{
@@ -935,6 +925,14 @@ h2 em{
    ABOUT
 ========================================================= */
 
+#about p{
+  margin-bottom:13px;
+}
+
+#about p strong{
+  color:var(--text);
+}
+
 .signature{
   margin-top:30px;
 
@@ -966,7 +964,8 @@ h2 em{
 .form-row{
   display:grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
 
   gap:9px;
 }
@@ -989,13 +988,19 @@ h2 em{
 
   font-size:11px;
 
-  transition:border-color .2s ease;
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.contact-panel input{
+  min-height:42px;
 }
 
 .contact-panel textarea{
-  resize:vertical;
-
   min-height:120px;
+
+  resize:vertical;
 }
 
 .contact-panel input::placeholder,
@@ -1005,6 +1010,8 @@ h2 em{
 
 .contact-panel input:focus,
 .contact-panel textarea:focus{
+  background:#0b0d0f;
+
   border-color:#8b6b38;
 }
 
@@ -1023,7 +1030,8 @@ h2 em{
 
   font-size:11px;
 
-  transition:color .2s ease;
+  transition:
+    color .2s ease;
 }
 
 .email:hover{
@@ -1047,7 +1055,6 @@ h2 em{
 
 .footer-brand{
   display:flex;
-
   align-items:center;
 
   gap:12px;
@@ -1067,8 +1074,6 @@ h2 em{
 
   border-radius:9px;
 
-  border:1px solid rgba(215,169,87,.55);
-
   background:
     linear-gradient(
       145deg,
@@ -1076,26 +1081,39 @@ h2 em{
       #080909
     );
 
+  border:1px solid rgba(215,169,87,.55);
+
   box-shadow:
     inset 0 1px 1px rgba(255,255,255,.08);
+
+  overflow:hidden;
 }
 
 .footer-logo-mark svg{
-  width:25px;
-  height:25px;
+  width:26px;
+  height:26px;
+
+  display:block;
+
+  overflow:visible;
 }
 
 .footer-logo-mark .logo-mane{
   fill:none;
+
   stroke:var(--gold-light);
-  stroke-width:4;
+
+  stroke-width:5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
 .footer-logo-mark .logo-face{
-  fill:rgba(215,169,87,.08);
+  fill:#0b0d0f;
+
   stroke:var(--gold-light);
+
   stroke-width:3;
 }
 
@@ -1105,8 +1123,11 @@ h2 em{
 
 .footer-logo-mark .logo-detail{
   fill:none;
+
   stroke:var(--gold-light);
+
   stroke-width:2.5;
+
   stroke-linecap:round;
   stroke-linejoin:round;
 }
@@ -1161,7 +1182,8 @@ h2 em{
 }
 
 .footer-links a{
-  transition:color .2s ease;
+  transition:
+    color .2s ease;
 }
 
 .footer-links a:hover{
@@ -1195,22 +1217,25 @@ h2 em{
   position:fixed;
 
   top:82px;
+
   left:18px;
   right:18px;
 
-  z-index:150;
+  z-index:1000;
+
+  display:none;
 
   padding:12px;
 
   background:
-    rgba(10,12,14,.98);
+    rgba(10,12,14,.97);
 
   border:1px solid var(--line);
 
   border-radius:10px;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,.5);
+    0 20px 60px rgba(0,0,0,.45);
 
   backdrop-filter:blur(18px);
 }
@@ -1238,7 +1263,70 @@ h2 em{
 .mobile-menu a:hover{
   color:var(--text);
 
-  background:rgba(215,169,87,.04);
+  background:
+    rgba(215,169,87,.04);
+}
+
+
+/* =========================================================
+   LANGUAGE MENU
+========================================================= */
+
+.language-menu{
+  position:absolute;
+
+  top:60px;
+  right:0;
+
+  z-index:1001;
+
+  min-width:130px;
+
+  padding:6px;
+
+  background:#0d0f11;
+
+  border:1px solid var(--line);
+
+  border-radius:7px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.35);
+
+  backdrop-filter:blur(14px);
+}
+
+.language-menu button{
+  display:block;
+
+  width:100%;
+
+  padding:9px 10px;
+
+  background:none;
+
+  border:0;
+
+  border-radius:4px;
+
+  color:var(--text);
+
+  text-align:left;
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  transition:
+    background .2s ease,
+    color .2s ease;
+}
+
+.language-menu button:hover{
+  background:
+    rgba(215,169,87,.06);
+
+  color:var(--gold-light);
 }
 
 
@@ -1267,17 +1355,14 @@ h2 em{
   }
 
   .content-grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
-  .projects-panel{
-    grid-column:span 2;
-  }
-
+  .projects-panel,
   .contact-panel{
     grid-column:span 2;
   }
-
 }
 
 
@@ -1295,13 +1380,26 @@ h2 em{
     height:74px;
   }
 
-  .desktop-nav,
-  .lang{
+  .desktop-nav{
     display:none;
+  }
+
+  /*
+     Language button remains visible on mobile.
+     This allows language switching without needing
+     another menu system.
+  */
+
+  .lang{
+    display:block;
   }
 
   .menu-btn{
     display:block;
+  }
+
+  .nav-right{
+    gap:16px;
   }
 
   .hero{
@@ -1313,7 +1411,8 @@ h2 em{
   }
 
   .hero h1{
-    font-size:clamp(50px,14vw,68px);
+    font-size:
+      clamp(50px,14vw,68px);
 
     line-height:.94;
   }
@@ -1344,8 +1443,8 @@ h2 em{
   }
 
   .hero-logo{
-    width:190px;
-    height:190px;
+    width:180px;
+    height:180px;
   }
 
   .hero-logo-svg{
@@ -1354,7 +1453,8 @@ h2 em{
   }
 
   .principles{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
 
     gap:22px 15px;
 
@@ -1414,11 +1514,6 @@ h2 em{
   .mobile-menu{
     top:74px;
   }
-
-  .language-menu{
-    top:48px;
-  }
-
 }
 
 
@@ -1440,14 +1535,14 @@ h2 em{
     width:38px;
     height:38px;
 
-    flex:0 0 38px;
+    flex-basis:38px;
 
     border-radius:10px;
   }
 
   .brand-logo-svg{
-    width:27px;
-    height:27px;
+    width:29px;
+    height:29px;
   }
 
   .brand-type b{
@@ -1458,6 +1553,18 @@ h2 em{
     margin-top:4px;
 
     font-size:7px;
+  }
+
+  .nav-right{
+    gap:13px;
+  }
+
+  .lang{
+    font-size:10px;
+  }
+
+  .menu-btn{
+    font-size:23px;
   }
 
   .hero-copy{
@@ -1486,13 +1593,13 @@ h2 em{
   }
 
   .hero-logo{
-    width:165px;
-    height:165px;
+    width:155px;
+    height:155px;
   }
 
   .hero-logo-svg{
-    width:125px;
-    height:125px;
+    width:130px;
+    height:130px;
   }
 
   .principles{
@@ -1500,7 +1607,8 @@ h2 em{
   }
 
   .principles div{
-    grid-template-columns:25px 1fr;
+    grid-template-columns:
+      25px 1fr;
   }
 
   .principles b{
@@ -1533,8 +1641,8 @@ h2 em{
   }
 
   .footer-logo-mark svg{
-    width:22px;
-    height:22px;
+    width:23px;
+    height:23px;
   }
 
   .footer-brand b{
@@ -1544,5 +1652,4 @@ h2 em{
   .footer-brand small{
     font-size:6px;
   }
-
 }
