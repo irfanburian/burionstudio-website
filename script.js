@@ -1,18 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
-     ELEMENTS
-  ========================================================= */
-
-  const menuButton = document.querySelector(".menu-btn");
-  const languageButton = document.querySelector(".lang");
-  const navRight = document.querySelector(".nav-right");
-
-  let mobileMenu = null;
-  let languageMenu = null;
-
-
-  /* =========================================================
      TRANSLATIONS
   ========================================================= */
 
@@ -176,12 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `Превращаю идеи в <em>цифровые продукты.</em>`,
 
       games: "Игры",
-
-      apps:
-        "Приложения",
-
-      digital:
-        "Цифровые продукты",
+      apps: "Приложения",
+      digital: "Цифровые продукты",
 
       featured:
         "ИЗБРАННЫЕ ПРОЕКТЫ",
@@ -227,99 +211,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     MOBILE MENU
+     ELEMENTS
   ========================================================= */
 
-  if (menuButton) {
+  const menuButton =
+    document.querySelector(".menu-btn");
 
-    mobileMenu = document.createElement("div");
+  const nav =
+    document.querySelector(".nav");
 
-    mobileMenu.className = "mobile-menu";
+  const languageButton =
+    document.querySelector(".lang");
 
-    mobileMenu.innerHTML = `
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#projects" data-nav="projects">Projects</a>
-      <a href="#about" data-nav="about">About</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-
-      <div class="mobile-language">
-
-        <button type="button" data-lang="en">
-          English
-        </button>
-
-        <button type="button" data-lang="tr">
-          Türkçe
-        </button>
-
-        <button type="button" data-lang="ru">
-          Русский
-        </button>
-
-      </div>
-    `;
-
-    document.body.appendChild(mobileMenu);
+  const navRight =
+    document.querySelector(".nav-right");
 
 
-    menuButton.addEventListener("click", event => {
-
-      event.stopPropagation();
-
-      const isOpen =
-        mobileMenu.classList.contains("is-open");
-
-      mobileMenu.classList.toggle("is-open", !isOpen);
-
-      menuButton.textContent =
-        isOpen ? "☰" : "✕";
-
-    });
-
-
-    mobileMenu
-      .querySelectorAll("a")
-      .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-          mobileMenu.classList.remove("is-open");
-
-          menuButton.textContent = "☰";
-
-        });
-
-      });
-
-
-    mobileMenu
-      .querySelectorAll("[data-lang]")
-      .forEach(button => {
-
-        button.addEventListener("click", () => {
-
-          setLanguage(button.dataset.lang);
-
-          mobileMenu.classList.remove("is-open");
-
-          menuButton.textContent = "☰";
-
-        });
-
-      });
-
-  }
+  let mobileMenu = null;
+  let languageMenu = null;
 
 
   /* =========================================================
-     LANGUAGE MENU — DESKTOP
+     DESKTOP LANGUAGE MENU
   ========================================================= */
 
   if (languageButton && navRight) {
 
-    languageMenu = document.createElement("div");
+    languageMenu =
+      document.createElement("div");
 
-    languageMenu.className = "language-menu";
+    languageMenu.className =
+      "language-menu";
 
     languageMenu.innerHTML = `
       <button type="button" data-lang="en">
@@ -335,47 +257,247 @@ document.addEventListener("DOMContentLoaded", () => {
       </button>
     `;
 
+    languageMenu.hidden = true;
+
     navRight.appendChild(languageMenu);
 
 
-    languageButton.addEventListener("click", event => {
+    languageButton.addEventListener(
+      "click",
+      event => {
 
-      event.stopPropagation();
+        event.stopPropagation();
 
-      languageMenu.classList.toggle("is-open");
+        languageMenu.hidden =
+          !languageMenu.hidden;
 
-    });
+      }
+    );
 
 
     languageMenu
-      .querySelectorAll("[data-lang]")
+      .querySelectorAll("button")
       .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+          "click",
+          event => {
 
-          setLanguage(button.dataset.lang);
+            event.stopPropagation();
 
-          languageMenu.classList.remove("is-open");
+            const language =
+              button.dataset.lang;
 
-        });
+            setLanguage(language);
+
+            languageMenu.hidden = true;
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
+
+  if (menuButton && nav) {
+
+    mobileMenu =
+      document.createElement("div");
+
+    mobileMenu.className =
+      "mobile-menu";
+
+    mobileMenu.innerHTML = `
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+
+        <a href="#home" data-nav="home">
+          Home
+        </a>
+
+        <a href="#projects" data-nav="projects">
+          Projects
+        </a>
+
+        <a href="#about" data-nav="about">
+          About
+        </a>
+
+        <a href="#contact" data-nav="contact">
+          Contact
+        </a>
+
+      </nav>
+
+      <div class="mobile-language">
+
+        <span>LANGUAGE</span>
+
+        <div class="mobile-language-buttons">
+
+          <button
+            type="button"
+            data-lang="en"
+          >
+            English
+          </button>
+
+          <button
+            type="button"
+            data-lang="tr"
+          >
+            Türkçe
+          </button>
+
+          <button
+            type="button"
+            data-lang="ru"
+          >
+            Русский
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+    mobileMenu.hidden = true;
+
+    document.body.appendChild(mobileMenu);
+
+
+    /* MENU OPEN / CLOSE */
+
+    menuButton.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        const isOpen =
+          !mobileMenu.hidden;
+
+        mobileMenu.hidden = isOpen;
+
+        menuButton.textContent =
+          isOpen ? "☰" : "✕";
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(!isOpen)
+        );
+
+      }
+    );
+
+
+    /* MOBILE NAV LINKS */
+
+    mobileMenu
+      .querySelectorAll(".mobile-nav a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            mobileMenu.hidden = true;
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
 
       });
 
 
-    document.addEventListener("click", event => {
+    /* MOBILE LANGUAGE BUTTONS */
+
+    mobileMenu
+      .querySelectorAll(
+        ".mobile-language-buttons button"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const language =
+              button.dataset.lang;
+
+            setLanguage(language);
+
+            mobileMenu.hidden = true;
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =========================================================
+     CLOSE MENUS WHEN CLICKING OUTSIDE
+  ========================================================= */
+
+  document.addEventListener(
+    "click",
+    event => {
 
       if (
+        languageMenu &&
+        !languageMenu.hidden &&
         !languageMenu.contains(event.target) &&
         event.target !== languageButton
       ) {
 
-        languageMenu.classList.remove("is-open");
+        languageMenu.hidden = true;
 
       }
 
-    });
 
-  }
+      if (
+        mobileMenu &&
+        !mobileMenu.hidden &&
+        !mobileMenu.contains(event.target) &&
+        event.target !== menuButton
+      ) {
+
+        mobileMenu.hidden = true;
+
+        if (menuButton) {
+          menuButton.textContent = "☰";
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        }
+
+      }
+
+    }
+  );
 
 
   /* =========================================================
@@ -384,18 +506,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setLanguage(language) {
 
-    const t = translations[language];
+    const t =
+      translations[language];
 
     if (!t) return;
 
 
-    document.documentElement.lang = language;
+    document.documentElement.lang =
+      language;
 
 
-    /* NAVIGATION */
+    /* -----------------------------------------
+       LANGUAGE BUTTON
+    ----------------------------------------- */
+
+    if (languageButton) {
+
+      languageButton.innerHTML =
+        `${language.toUpperCase()} <span>⌄</span>`;
+
+    }
+
+
+    /* -----------------------------------------
+       DESKTOP NAV
+    ----------------------------------------- */
 
     const desktopLinks =
-      document.querySelectorAll(".desktop-nav a");
+      document.querySelectorAll(
+        ".desktop-nav a"
+      );
 
     if (desktopLinks.length >= 4) {
 
@@ -407,30 +547,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    /* -----------------------------------------
+       MOBILE NAV
+    ----------------------------------------- */
+
     if (mobileMenu) {
 
       const mobileLinks =
-        mobileMenu.querySelectorAll("a");
+        mobileMenu.querySelectorAll(
+          ".mobile-nav a"
+        );
 
-      mobileLinks[0].textContent = t.home;
-      mobileLinks[1].textContent = t.projects;
-      mobileLinks[2].textContent = t.about;
-      mobileLinks[3].textContent = t.contact;
+      if (mobileLinks.length >= 4) {
 
-    }
+        mobileLinks[0].textContent = t.home;
+        mobileLinks[1].textContent = t.projects;
+        mobileLinks[2].textContent = t.about;
+        mobileLinks[3].textContent = t.contact;
 
-
-    /* LANGUAGE BUTTON */
-
-    if (languageButton) {
-
-      languageButton.innerHTML =
-        `${language.toUpperCase()} <span>⌄</span>`;
+      }
 
     }
 
 
-    /* HERO */
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
 
     const hero =
       document.querySelector(".hero");
@@ -449,90 +591,135 @@ document.addEventListener("DOMContentLoaded", () => {
       const buttons =
         hero.querySelectorAll(".btn");
 
-      if (eyebrow)
-        eyebrow.textContent = t.eyebrow;
+      if (eyebrow) {
+        eyebrow.textContent =
+          t.eyebrow;
+      }
 
-      if (title)
-        title.innerHTML = t.heroTitle;
+      if (title) {
+        title.innerHTML =
+          t.heroTitle;
+      }
 
-      if (lead)
-        lead.textContent = t.heroLead;
+      if (lead) {
+        lead.textContent =
+          t.heroLead;
+      }
 
-      if (buttons[0])
+      if (buttons[0]) {
+
         buttons[0].innerHTML =
           `${t.explore} <span>→</span>`;
 
-      if (buttons[1])
+      }
+
+      if (buttons[1]) {
+
         buttons[1].innerHTML =
           `${t.getInTouch} <span>→</span>`;
+
+      }
 
     }
 
 
-    /* WHAT I BUILD */
+    /* -----------------------------------------
+       WHAT I BUILD
+    ----------------------------------------- */
 
     const buildSection =
-      document.querySelector(".build-section");
+      document.querySelector(
+        ".build-section"
+      );
 
     if (buildSection) {
 
       const eyebrow =
-        buildSection.querySelector(".eyebrow");
+        buildSection.querySelector(
+          ".eyebrow"
+        );
 
       const title =
         buildSection.querySelector("h2");
 
       const cards =
-        buildSection.querySelectorAll(".card h3");
+        buildSection.querySelectorAll(
+          ".card h3"
+        );
 
-      if (eyebrow)
-        eyebrow.textContent = t.whatIBuild;
+      if (eyebrow) {
+        eyebrow.textContent =
+          t.whatIBuild;
+      }
 
-      if (title)
-        title.innerHTML = t.buildTitle;
+      if (title) {
+        title.innerHTML =
+          t.buildTitle;
+      }
 
-      if (cards[0])
-        cards[0].textContent = t.games;
+      if (cards[0]) {
+        cards[0].textContent =
+          t.games;
+      }
 
-      if (cards[1])
-        cards[1].textContent = t.apps;
+      if (cards[1]) {
+        cards[1].textContent =
+          t.apps;
+      }
 
-      if (cards[2])
-        cards[2].textContent = t.digital;
+      if (cards[2]) {
+        cards[2].textContent =
+          t.digital;
+      }
 
     }
 
 
-    /* PROJECTS */
+    /* -----------------------------------------
+       PROJECTS
+    ----------------------------------------- */
 
     const projectsPanel =
-      document.querySelector(".projects-panel");
+      document.querySelector(
+        ".projects-panel"
+      );
 
     if (projectsPanel) {
 
       const eyebrow =
-        projectsPanel.querySelector(".eyebrow");
+        projectsPanel.querySelector(
+          ".eyebrow"
+        );
 
       const title =
         projectsPanel.querySelector("h2");
 
-      const paragraphs =
-        projectsPanel.querySelectorAll("p");
+      const paragraph =
+        projectsPanel.querySelector(
+          "p:not(.eyebrow)"
+        );
 
-      if (eyebrow)
-        eyebrow.textContent = t.featured;
+      if (eyebrow) {
+        eyebrow.textContent =
+          t.featured;
+      }
 
-      if (title)
-        title.textContent = t.comingNext;
+      if (title) {
+        title.textContent =
+          t.comingNext;
+      }
 
-      if (paragraphs[1])
-        paragraphs[1].textContent =
+      if (paragraph) {
+        paragraph.textContent =
           t.projectsText;
+      }
 
     }
 
 
-    /* ABOUT */
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
 
     const aboutPanel =
       document.querySelector("#about");
@@ -540,7 +727,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (aboutPanel) {
 
       const eyebrow =
-        aboutPanel.querySelector(".eyebrow");
+        aboutPanel.querySelector(
+          ".eyebrow"
+        );
 
       const title =
         aboutPanel.querySelector("h2");
@@ -548,42 +737,54 @@ document.addEventListener("DOMContentLoaded", () => {
       const paragraphs =
         aboutPanel.querySelectorAll("p");
 
-      if (eyebrow)
+      if (eyebrow) {
         eyebrow.textContent =
           t.aboutEyebrow;
+      }
 
-      if (title)
+      if (title) {
         title.innerHTML =
           t.aboutTitle;
+      }
 
-      if (paragraphs[0])
+      if (paragraphs[0]) {
         paragraphs[0].innerHTML =
           t.about1;
+      }
 
-      if (paragraphs[1])
+      if (paragraphs[1]) {
         paragraphs[1].textContent =
           t.about2;
+      }
 
-      if (paragraphs[2])
+      if (paragraphs[2]) {
         paragraphs[2].textContent =
           t.about3;
+      }
 
-      if (paragraphs[3])
+      if (paragraphs[3]) {
         paragraphs[3].textContent =
           t.about4;
+      }
 
     }
 
 
-    /* CONTACT */
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
 
     const contactPanel =
-      document.querySelector(".contact-panel");
+      document.querySelector(
+        ".contact-panel"
+      );
 
     if (contactPanel) {
 
       const eyebrow =
-        contactPanel.querySelector(".eyebrow");
+        contactPanel.querySelector(
+          ".eyebrow"
+        );
 
       const title =
         contactPanel.querySelector("h2");
@@ -593,32 +794,46 @@ document.addEventListener("DOMContentLoaded", () => {
           "form .btn"
         );
 
-      if (eyebrow)
+      if (eyebrow) {
         eyebrow.textContent =
           t.contactEyebrow;
+      }
 
-      if (title)
+      if (title) {
         title.innerHTML =
           t.contactTitle;
+      }
 
-      if (button)
+      if (button) {
+
         button.innerHTML =
           `${t.send} <span>→</span>`;
+
+      }
 
     }
 
 
-    /* FOOTER */
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
 
     const footerText =
-      document.querySelector(".footer > p");
+      document.querySelector(
+        ".footer > p"
+      );
 
-    if (footerText)
+    if (footerText) {
+
       footerText.textContent =
         t.footer;
 
+    }
 
-    /* SAVE LANGUAGE */
+
+    /* -----------------------------------------
+       SAVE LANGUAGE
+    ----------------------------------------- */
 
     localStorage.setItem(
       "burionLanguage",
@@ -633,7 +848,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================================= */
 
   const contactForm =
-    document.querySelector("#contactForm");
+    document.querySelector(
+      "#contactForm"
+    );
 
   if (contactForm) {
 
@@ -647,17 +864,17 @@ document.addEventListener("DOMContentLoaded", () => {
           new FormData(contactForm);
 
         const name =
-          formData.get("name");
+          formData.get("name") || "";
 
         const email =
-          formData.get("email");
+          formData.get("email") || "";
 
         const subject =
           formData.get("subject") ||
           "Burion Studio Contact";
 
         const message =
-          formData.get("message");
+          formData.get("message") || "";
 
 
         const body =
@@ -672,7 +889,8 @@ document.addEventListener("DOMContentLoaded", () => {
           `&body=${encodeURIComponent(body)}`;
 
 
-        window.location.href = mailto;
+        window.location.href =
+          mailto;
 
       }
     );
@@ -707,21 +925,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
           entries.forEach(entry => {
 
-            if (!entry.isIntersecting)
+            if (!entry.isIntersecting) {
               return;
-
+            }
 
             navLinks.forEach(link => {
 
-              link.classList.remove("active");
-
+              link.classList.remove(
+                "active"
+              );
 
               if (
                 link.getAttribute("href") ===
                 `#${entry.target.id}`
               ) {
 
-                link.classList.add("active");
+                link.classList.add(
+                  "active"
+                );
 
               }
 
@@ -736,9 +957,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
-    sections.forEach(section =>
-      observer.observe(section)
-    );
+    sections.forEach(section => {
+
+      observer.observe(section);
+
+    });
 
   }
 
@@ -748,8 +971,25 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================================= */
 
   const savedLanguage =
-    localStorage.getItem("burionLanguage") || "en";
+    localStorage.getItem(
+      "burionLanguage"
+    ) || "en";
+
 
   setLanguage(savedLanguage);
+
+
+  /* =========================================================
+     INITIAL MENU STATE
+  ========================================================= */
+
+  if (menuButton) {
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
 
 });
