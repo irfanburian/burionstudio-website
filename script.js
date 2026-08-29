@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded",()=>{
-  const fixStyles=document.createElement("link");
-  fixStyles.rel="stylesheet";
-  fixStyles.href="responsive-fixes.css?v=20260829-2";
-  document.head.appendChild(fixStyles);
-
   const q=s=>document.querySelector(s);
   const qa=s=>document.querySelectorAll(s);
   const menu=q("#mobileMenu");
@@ -58,28 +53,20 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(current) current.textContent=lang.toUpperCase();
     if(langBtn)langBtn.setAttribute("aria-label",t.languageAria);
     if(menuBtn)menuBtn.setAttribute("aria-label",menuBtn.getAttribute("aria-expanded")==="true"?t.menuClose:t.menuOpen);
-
     const nav=[t.nav.home,t.nav.projects,t.nav.about,t.nav.contact];
     qa(".desktop-nav .nav-link,.mobile-nav a,.footer-nav a").forEach((e,i)=>{e.textContent=nav[i%4];});
     const ml=q(".mobile-language>span");if(ml)ml.textContent=t.language;
-
     const hero=q("#home");
     if(hero){hero.querySelector(".eyebrow").textContent=t.eyebrow;hero.querySelector("h1").innerHTML=t.heroTitle;hero.querySelector(".hero-description").textContent=t.heroDescription;const b=qa(".hero-actions .button span:first-child");if(b[0])b[0].textContent=t.explore;if(b[1])b[1].textContent=t.getInTouch;}
-
     const build=q(".build-section");
     if(build){build.querySelector(".eyebrow").textContent=t.what;build.querySelector("h2").innerHTML=t.buildTitle;qa(".build-card").forEach((c,i)=>{if(!t.build[i])return;c.querySelector("h3").textContent=t.build[i][0];c.querySelector("p").textContent=t.build[i][1];});}
-
     qa(".statement-item").forEach((e,i)=>{if(!t.statement[i])return;e.querySelector("strong").textContent=t.statement[i][0];e.querySelector("span:last-child").textContent=t.statement[i][1];});
-
     const projects=q("#projects");
     if(projects){projects.querySelector(".projects-heading .eyebrow").textContent=t.selected;projects.querySelector(".projects-heading h2").innerHTML=t.projectsTitle;projects.querySelector(".section-description").textContent=t.projectsDescription;qa(".project-card").forEach((c,i)=>{const v=t.project[i];if(!v)return;const im=c.querySelectorAll(".project-image-content span,.project-image-content strong,.project-image-content small");im[0].textContent=v[0];im[1].textContent=v[1];im[2].textContent=v[2];c.querySelector(".project-category").textContent=v[3];c.querySelector(".project-info h3").textContent=v[4];c.querySelector(".project-info p").textContent=v[5];c.querySelector(".project-status").textContent=v[6];});}
-
     const about=q("#about");
     if(about){about.querySelector(".eyebrow").textContent=t.aboutEyebrow;about.querySelector("h2").innerHTML=t.aboutTitle;const p=about.querySelectorAll(".about-content>p:not(.eyebrow)");t.aboutText.forEach((v,i)=>{if(p[i])p[i].innerHTML=v;});}
-
     const contact=q("#contact");
     if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;contact.querySelector(".contact-heading>p").textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});const s=q(".submit-button span");if(s)s.textContent=t.send;}
-
     const fp=q(".footer-brand p");if(fp)fp.textContent=t.footer;
     const privacy=q('.footer-legal a[href="privacy.html"]');if(privacy)privacy.textContent=t.privacy;
     const terms=q('.footer-legal a[href="terms.html"]');if(terms)terms.textContent=t.terms;
@@ -89,32 +76,22 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   function closeMenu(){if(menu){menu.hidden=true;document.body.style.overflow="";}menuBtn?.classList.remove("is-open");menuBtn?.setAttribute("aria-expanded","false");if(menuBtn)menuBtn.setAttribute("aria-label",(T[document.documentElement.lang]||T.en).menuOpen);}
   function closeLang(){if(langMenu)langMenu.hidden=true;langBtn?.setAttribute("aria-expanded","false");}
-
   langBtn?.addEventListener("click",e=>{e.stopPropagation();if(langMenu)langMenu.hidden?(langMenu.hidden=false,langBtn.setAttribute("aria-expanded","true")):closeLang();});
   langMenu?.querySelectorAll("[data-language]").forEach(b=>b.addEventListener("click",()=>{setLanguage(b.dataset.language);closeLang();}));
   qa(".footer-languages button").forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.language)));
-
   menuBtn?.setAttribute("aria-controls","mobileMenu");
   menuBtn?.addEventListener("click",e=>{e.stopPropagation();if(!menu)return;if(menu.hidden){menu.hidden=false;document.body.style.overflow="hidden";menuBtn.classList.add("is-open");menuBtn.setAttribute("aria-expanded","true");menuBtn.setAttribute("aria-label",(T[document.documentElement.lang]||T.en).menuClose);}else closeMenu();});
   menu?.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",closeMenu));
   menu?.querySelectorAll("[data-language]").forEach(b=>b.addEventListener("click",()=>{setLanguage(b.dataset.language);closeMenu();}));
-
   document.addEventListener("click",e=>{if(langMenu&&!langMenu.hidden&&!langMenu.contains(e.target)&&e.target!==langBtn)closeLang();if(menu&&!menu.hidden&&!menu.contains(e.target)&&e.target!==menuBtn)closeMenu();});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLang();closeMenu();}});
-
   const sections=qa("main section[id]"),links=qa(".desktop-nav .nav-link");
   if(sections.length&&links.length&&"IntersectionObserver"in window){const o=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+x.target.id));}),{rootMargin:"-20% 0px -60% 0px"});sections.forEach(s=>o.observe(s));}
-
   const form=q("#contactForm");
   form?.addEventListener("submit",e=>{e.preventDefault();const f=new FormData(form),name=String(f.get("name")||"").trim(),email=String(f.get("email")||"").trim(),subject=String(f.get("subject")||"Burion Studio Contact").trim(),message=String(f.get("message")||"").trim(),body=[`Name: ${name}`,`Email: ${email}`,"","Message:",message].join("\n");location.href="mailto:support@burionstudio.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);});
-
-  // SEO structured data: keeps the studio identity machine-readable without adding visible UI.
   const schema={"@context":"https://schema.org","@type":"Organization","name":"Burion Studio","url":"https://burionstudio.com/","logo":"https://burionstudio.com/assets/brand/burion-logo-primary.png","description":"Independent games, applications and digital experiences.","founder":{"@type":"Person","name":"İrfan Aslan BÜRİAN"}};
   const schemaScript=document.createElement("script");schemaScript.type="application/ld+json";schemaScript.textContent=JSON.stringify(schema);document.head.appendChild(schemaScript);
-
-  // Keep non-critical imagery from competing with the initial hero render.
   qa(".about-visual img,.footer-brand img").forEach(img=>{img.loading="lazy";img.decoding="async";});
-
   closeMenu();closeLang();
   const saved=localStorage.getItem("burionLanguage")||"en";
   setLanguage(T[saved]?saved:"en");
