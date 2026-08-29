@@ -1,63 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
-     MOBILE MENU
+     ELEMENTS
   ========================================================= */
 
   const menuButton = document.querySelector(".menu-btn");
-  const nav = document.querySelector(".nav");
+  const languageButton = document.querySelector(".lang");
+  const navRight = document.querySelector(".nav-right");
 
   let mobileMenu = null;
-
-  if (menuButton && nav) {
-
-    mobileMenu = document.createElement("div");
-
-    mobileMenu.className = "mobile-menu";
-
-    mobileMenu.innerHTML = `
-      <a href="#home" data-nav="home">Home</a>
-      <a href="#projects" data-nav="projects">Projects</a>
-      <a href="#about" data-nav="about">About</a>
-      <a href="#contact" data-nav="contact">Contact</a>
-    `;
-
-    mobileMenu.style.display = "none";
-
-    document.body.appendChild(mobileMenu);
-
-    menuButton.addEventListener("click", () => {
-
-      const isOpen = mobileMenu.style.display === "block";
-
-      mobileMenu.style.display = isOpen ? "none" : "block";
-
-      menuButton.textContent = isOpen ? "☰" : "✕";
-
-    });
-
-    mobileMenu.querySelectorAll("a").forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        mobileMenu.style.display = "none";
-
-        menuButton.textContent = "☰";
-
-      });
-
-    });
-  }
+  let languageMenu = null;
 
 
   /* =========================================================
-     LANGUAGE SYSTEM
+     TRANSLATIONS
   ========================================================= */
 
   const translations = {
 
     en: {
-
       home: "Home",
       projects: "Projects",
       about: "About",
@@ -65,35 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       eyebrow: "BURION STUDIO",
 
-      heroTitle:
-        `Ideas,<br>built into <em>reality.</em>`,
+      heroTitle: `Ideas,<br>built into <em>reality.</em>`,
 
       heroLead:
         "Independent developer creating games, applications and digital experiences from idea to release.",
 
-      explore:
-        "Explore the studio",
+      explore: "Explore the studio",
+      getInTouch: "Get in touch",
 
-      getInTouch:
-        "Get in touch",
-
-      whatIBuild:
-        "WHAT I BUILD",
+      whatIBuild: "WHAT I BUILD",
 
       buildTitle:
         `Turning ideas into <em>digital products.</em>`,
 
-      games:
-        "Games",
+      games: "Games",
+      apps: "Apps",
+      digital: "Digital Experiences",
 
-      apps:
-        "Apps",
-
-      digital:
-        "Digital Experiences",
-
-      featured:
-        "FEATURED PROJECTS",
+      featured: "FEATURED PROJECTS",
 
       comingNext:
         "What's coming next.",
@@ -101,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projectsText:
         "New projects are in development. Stay tuned for updates.",
 
-      aboutEyebrow:
-        "ABOUT",
+      aboutEyebrow: "ABOUT",
 
       aboutTitle:
         `The person behind<br>Burion Studio.`,
@@ -125,17 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
       contactTitle:
         `Have an idea?<br>Let's build something<br>worth making.`,
 
-      send:
-        "Send Message",
+      send: "Send Message",
 
       footer:
         "Independent developer creating games, apps and digital experiences."
-
     },
 
 
     tr: {
-
       home: "Ana Sayfa",
       projects: "Projeler",
       about: "Hakkında",
@@ -149,11 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
       heroLead:
         "Fikirden yayınlanmaya kadar oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",
 
-      explore:
-        "Stüdyoyu keşfet",
-
-      getInTouch:
-        "İletişime geç",
+      explore: "Stüdyoyu keşfet",
+      getInTouch: "İletişime geç",
 
       whatIBuild:
         "NELER GELİŞTİRİYORUM",
@@ -161,14 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
       buildTitle:
         `Fikirleri <em>dijital ürünlere</em> dönüştürüyorum.`,
 
-      games:
-        "Oyunlar",
-
-      apps:
-        "Uygulamalar",
-
-      digital:
-        "Dijital Deneyimler",
+      games: "Oyunlar",
+      apps: "Uygulamalar",
+      digital: "Dijital Deneyimler",
 
       featured:
         "ÖNE ÇIKAN PROJELER",
@@ -208,12 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       footer:
         "Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici."
-
     },
 
 
     ru: {
-
       home: "Главная",
       projects: "Проекты",
       about: "Обо мне",
@@ -239,8 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       buildTitle:
         `Превращаю идеи в <em>цифровые продукты.</em>`,
 
-      games:
-        "Игры",
+      games: "Игры",
 
       apps:
         "Приложения",
@@ -286,79 +221,155 @@ document.addEventListener("DOMContentLoaded", () => {
 
       footer:
         "Независимый разработчик игр, приложений и цифровых продуктов."
-
     }
 
   };
 
 
   /* =========================================================
-     LANGUAGE SELECTOR
+     MOBILE MENU
   ========================================================= */
 
-  const languageButton = document.querySelector(".lang");
+  if (menuButton) {
 
-  let languageMenu = null;
+    mobileMenu = document.createElement("div");
 
-  if (languageButton) {
+    mobileMenu.className = "mobile-menu";
+
+    mobileMenu.innerHTML = `
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+
+      <div class="mobile-language">
+
+        <button type="button" data-lang="en">
+          English
+        </button>
+
+        <button type="button" data-lang="tr">
+          Türkçe
+        </button>
+
+        <button type="button" data-lang="ru">
+          Русский
+        </button>
+
+      </div>
+    `;
+
+    document.body.appendChild(mobileMenu);
+
+
+    menuButton.addEventListener("click", event => {
+
+      event.stopPropagation();
+
+      const isOpen =
+        mobileMenu.classList.contains("is-open");
+
+      mobileMenu.classList.toggle("is-open", !isOpen);
+
+      menuButton.textContent =
+        isOpen ? "☰" : "✕";
+
+    });
+
+
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          mobileMenu.classList.remove("is-open");
+
+          menuButton.textContent = "☰";
+
+        });
+
+      });
+
+
+    mobileMenu
+      .querySelectorAll("[data-lang]")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          setLanguage(button.dataset.lang);
+
+          mobileMenu.classList.remove("is-open");
+
+          menuButton.textContent = "☰";
+
+        });
+
+      });
+
+  }
+
+
+  /* =========================================================
+     LANGUAGE MENU — DESKTOP
+  ========================================================= */
+
+  if (languageButton && navRight) {
 
     languageMenu = document.createElement("div");
 
     languageMenu.className = "language-menu";
 
     languageMenu.innerHTML = `
-      <button type="button" data-lang="en">English</button>
-      <button type="button" data-lang="tr">Türkçe</button>
-      <button type="button" data-lang="ru">Русский</button>
+      <button type="button" data-lang="en">
+        English
+      </button>
+
+      <button type="button" data-lang="tr">
+        Türkçe
+      </button>
+
+      <button type="button" data-lang="ru">
+        Русский
+      </button>
     `;
 
-    languageMenu.style.display = "none";
+    navRight.appendChild(languageMenu);
 
-    const navRight = document.querySelector(".nav-right");
-
-    if (navRight) {
-
-      navRight.style.position = "relative";
-
-      navRight.appendChild(languageMenu);
-
-    }
-
-    languageMenu.querySelectorAll("button").forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const language = button.dataset.lang;
-
-        setLanguage(language);
-
-        languageMenu.style.display = "none";
-
-      });
-
-    });
 
     languageButton.addEventListener("click", event => {
 
       event.stopPropagation();
 
-      const isOpen =
-        languageMenu.style.display === "block";
-
-      languageMenu.style.display =
-        isOpen ? "none" : "block";
+      languageMenu.classList.toggle("is-open");
 
     });
+
+
+    languageMenu
+      .querySelectorAll("[data-lang]")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          setLanguage(button.dataset.lang);
+
+          languageMenu.classList.remove("is-open");
+
+        });
+
+      });
+
 
     document.addEventListener("click", event => {
 
       if (
-        languageMenu &&
         !languageMenu.contains(event.target) &&
         event.target !== languageButton
       ) {
 
-        languageMenu.style.display = "none";
+        languageMenu.classList.remove("is-open");
 
       }
 
@@ -376,6 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const t = translations[language];
 
     if (!t) return;
+
 
     document.documentElement.lang = language;
 
@@ -400,14 +412,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const mobileLinks =
         mobileMenu.querySelectorAll("a");
 
-      if (mobileLinks.length >= 4) {
-
-        mobileLinks[0].textContent = t.home;
-        mobileLinks[1].textContent = t.projects;
-        mobileLinks[2].textContent = t.about;
-        mobileLinks[3].textContent = t.contact;
-
-      }
+      mobileLinks[0].textContent = t.home;
+      mobileLinks[1].textContent = t.projects;
+      mobileLinks[2].textContent = t.about;
+      mobileLinks[3].textContent = t.contact;
 
     }
 
@@ -454,4 +462,294 @@ document.addEventListener("DOMContentLoaded", () => {
         buttons[0].innerHTML =
           `${t.explore} <span>→</span>`;
 
-      if (buttons[
+      if (buttons[1])
+        buttons[1].innerHTML =
+          `${t.getInTouch} <span>→</span>`;
+
+    }
+
+
+    /* WHAT I BUILD */
+
+    const buildSection =
+      document.querySelector(".build-section");
+
+    if (buildSection) {
+
+      const eyebrow =
+        buildSection.querySelector(".eyebrow");
+
+      const title =
+        buildSection.querySelector("h2");
+
+      const cards =
+        buildSection.querySelectorAll(".card h3");
+
+      if (eyebrow)
+        eyebrow.textContent = t.whatIBuild;
+
+      if (title)
+        title.innerHTML = t.buildTitle;
+
+      if (cards[0])
+        cards[0].textContent = t.games;
+
+      if (cards[1])
+        cards[1].textContent = t.apps;
+
+      if (cards[2])
+        cards[2].textContent = t.digital;
+
+    }
+
+
+    /* PROJECTS */
+
+    const projectsPanel =
+      document.querySelector(".projects-panel");
+
+    if (projectsPanel) {
+
+      const eyebrow =
+        projectsPanel.querySelector(".eyebrow");
+
+      const title =
+        projectsPanel.querySelector("h2");
+
+      const paragraphs =
+        projectsPanel.querySelectorAll("p");
+
+      if (eyebrow)
+        eyebrow.textContent = t.featured;
+
+      if (title)
+        title.textContent = t.comingNext;
+
+      if (paragraphs[1])
+        paragraphs[1].textContent =
+          t.projectsText;
+
+    }
+
+
+    /* ABOUT */
+
+    const aboutPanel =
+      document.querySelector("#about");
+
+    if (aboutPanel) {
+
+      const eyebrow =
+        aboutPanel.querySelector(".eyebrow");
+
+      const title =
+        aboutPanel.querySelector("h2");
+
+      const paragraphs =
+        aboutPanel.querySelectorAll("p");
+
+      if (eyebrow)
+        eyebrow.textContent =
+          t.aboutEyebrow;
+
+      if (title)
+        title.innerHTML =
+          t.aboutTitle;
+
+      if (paragraphs[0])
+        paragraphs[0].innerHTML =
+          t.about1;
+
+      if (paragraphs[1])
+        paragraphs[1].textContent =
+          t.about2;
+
+      if (paragraphs[2])
+        paragraphs[2].textContent =
+          t.about3;
+
+      if (paragraphs[3])
+        paragraphs[3].textContent =
+          t.about4;
+
+    }
+
+
+    /* CONTACT */
+
+    const contactPanel =
+      document.querySelector(".contact-panel");
+
+    if (contactPanel) {
+
+      const eyebrow =
+        contactPanel.querySelector(".eyebrow");
+
+      const title =
+        contactPanel.querySelector("h2");
+
+      const button =
+        contactPanel.querySelector(
+          "form .btn"
+        );
+
+      if (eyebrow)
+        eyebrow.textContent =
+          t.contactEyebrow;
+
+      if (title)
+        title.innerHTML =
+          t.contactTitle;
+
+      if (button)
+        button.innerHTML =
+          `${t.send} <span>→</span>`;
+
+    }
+
+
+    /* FOOTER */
+
+    const footerText =
+      document.querySelector(".footer > p");
+
+    if (footerText)
+      footerText.textContent =
+        t.footer;
+
+
+    /* SAVE LANGUAGE */
+
+    localStorage.setItem(
+      "burionLanguage",
+      language
+    );
+
+  }
+
+
+  /* =========================================================
+     CONTACT FORM
+  ========================================================= */
+
+  const contactForm =
+    document.querySelector("#contactForm");
+
+  if (contactForm) {
+
+    contactForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+        const formData =
+          new FormData(contactForm);
+
+        const name =
+          formData.get("name");
+
+        const email =
+          formData.get("email");
+
+        const subject =
+          formData.get("subject") ||
+          "Burion Studio Contact";
+
+        const message =
+          formData.get("message");
+
+
+        const body =
+          `Name: ${name}\n\n` +
+          `Email: ${email}\n\n` +
+          `Message:\n${message}`;
+
+
+        const mailto =
+          `mailto:support@burionstudio.com` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(body)}`;
+
+
+        window.location.href = mailto;
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     ACTIVE NAVIGATION
+  ========================================================= */
+
+  const sections =
+    document.querySelectorAll(
+      "main section[id]"
+    );
+
+  const navLinks =
+    document.querySelectorAll(
+      '.desktop-nav a[href^="#"]'
+    );
+
+
+  if (
+    sections.length &&
+    navLinks.length &&
+    "IntersectionObserver" in window
+  ) {
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting)
+              return;
+
+
+            navLinks.forEach(link => {
+
+              link.classList.remove("active");
+
+
+              if (
+                link.getAttribute("href") ===
+                `#${entry.target.id}`
+              ) {
+
+                link.classList.add("active");
+
+              }
+
+            });
+
+          });
+
+        },
+        {
+          threshold:0.35
+        }
+      );
+
+
+    sections.forEach(section =>
+      observer.observe(section)
+    );
+
+  }
+
+
+  /* =========================================================
+     RESTORE LANGUAGE
+  ========================================================= */
+
+  const savedLanguage =
+    localStorage.getItem("burionLanguage") || "en";
+
+  setLanguage(savedLanguage);
+
+});
