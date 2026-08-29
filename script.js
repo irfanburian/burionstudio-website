@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded",()=>{
+  const fixStyles=document.createElement("link");
+  fixStyles.rel="stylesheet";
+  fixStyles.href="responsive-fixes.css?v=20260829-1";
+  document.head.appendChild(fixStyles);
+
   const q=s=>document.querySelector(s);
   const qa=s=>document.querySelectorAll(s);
   const menu=q("#mobileMenu");
@@ -10,10 +15,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const T={
     en:{
       nav:{home:"Home",projects:"Projects",about:"About",contact:"Contact"},
-      eyebrow:"BURION STUDIO",
-      heroTitle:"Ideas,<br>built into <em>reality.</em>",
-      heroDescription:"Independent developer creating games, applications and digital experiences from idea to release.",
-      explore:"Explore the studio",getInTouch:"Get in touch",what:"WHAT WE BUILD",
+      eyebrow:"BURION STUDIO",heroTitle:"Ideas,<br>built into <em>reality.</em>",heroDescription:"Independent developer creating games, applications and digital experiences from idea to release.",explore:"Explore the studio",getInTouch:"Get in touch",what:"WHAT WE BUILD",
       buildTitle:"Turning ideas into <em>digital products.</em>",
       build:[["Games","Interactive worlds, gameplay systems and experiences built from the ground up."],["Applications","Useful digital products designed around real problems and real people."],["Digital Products","Websites, platforms and digital experiences when ideas need a place to live."]],
       selected:"SELECTED WORK",projectsTitle:"Products, concepts and <em>experiments.</em>",projectsDescription:"A selection of products and ideas currently being shaped at Burion Studio.",
@@ -21,8 +23,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       project:[["GAME","TRIVIA","KNOWLEDGE · COMPETITION · PLAY","GAME · IN DEVELOPMENT","Trivia","A competitive quiz experience designed around knowledge, speed and progression.","IN DEVELOPMENT"],["APPLICATION","AGRICULTURE","DATA · FIELD · INTELLIGENCE","APPLICATION · CONCEPT","Agricultural Platform","A digital platform focused on smarter agricultural decisions.","CONCEPT"],["DIGITAL PRODUCT","BURION","STUDIO · BRAND · DIGITAL","DIGITAL PRODUCT · LIVE","Burion Studio","The digital home of an independent developer and creative studio.","LIVE"]],
       aboutEyebrow:"ABOUT BURION STUDIO",aboutTitle:"One developer.<br><em>Many ideas.</em>",
       aboutText:["Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong>","I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.","I handle the entire process — code, design, systems and everything in between.","Burion Studio is my space to create, experiment and turn ideas into something real."],
-      contactEyebrow:"LET'S WORK TOGETHER",contactTitle:"Have an idea?<br>Let's build something <em>worth making.</em>",contactDescription:"Have a project, idea or collaboration in mind? I'd love to hear about it.",
-      labels:["Name","Email","Subject","Message"],send:"Send Message",language:"LANGUAGE",privacy:"Privacy Policy",terms:"Terms of Use",footer:"Independent developer creating games, apps and digital experiences."
+      contactEyebrow:"LET'S WORK TOGETHER",contactTitle:"Have an idea?<br>Let's build something <em>worth making.</em>",contactDescription:"Have a project, idea or collaboration in mind? I'd love to hear about it.",labels:["Name","Email","Subject","Message"],send:"Send Message",language:"LANGUAGE",privacy:"Privacy Policy",terms:"Terms of Use",footer:"Independent developer creating games, apps and digital experiences."
     },
     tr:{
       nav:{home:"Ana Sayfa",projects:"Projeler",about:"Hakkında",contact:"İletişim"},
@@ -54,8 +55,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(current) current.textContent=lang.toUpperCase();
 
     const nav=[t.nav.home,t.nav.projects,t.nav.about,t.nav.contact];
-    qa(".desktop-nav .nav-link,.mobile-nav a,.footer-nav a").forEach((e,i)=>{if(nav[i%4]!==undefined)e.textContent=nav[i%4];});
-    const ml=q(".mobile-language>span"); if(ml) ml.textContent=t.language;
+    qa(".desktop-nav .nav-link,.mobile-nav a,.footer-nav a").forEach((e,i)=>{e.textContent=nav[i%4];});
+    const ml=q(".mobile-language>span");if(ml)ml.textContent=t.language;
 
     const hero=q("#home");
     if(hero){hero.querySelector(".eyebrow").textContent=t.eyebrow;hero.querySelector("h1").innerHTML=t.heroTitle;hero.querySelector(".hero-description").textContent=t.heroDescription;const b=qa(".hero-actions .button span:first-child");if(b[0])b[0].textContent=t.explore;if(b[1])b[1].textContent=t.getInTouch;}
