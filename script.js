@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
-     BURION STUDIO — SCRIPT V2
+     BURION STUDIO — SCRIPT V3
+     HTML + CSS COMPATIBLE
   ========================================================= */
 
 
@@ -12,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const translations = {
 
     en: {
-
       home: "Home",
       projects: "Projects",
       about: "About",
@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       getInTouch:
         "Get in touch",
 
-      whatIBuild:
-        "WHAT I BUILD",
+      whatWeBuild:
+        "WHAT WE BUILD",
 
       buildTitle:
         `Turning ideas into <em>digital products.</em>`,
@@ -41,107 +41,78 @@ document.addEventListener("DOMContentLoaded", () => {
       games:
         "Games",
 
-      gamesText:
-        "Interactive worlds, mechanics and experiences built from the ground up.",
+      applications:
+        "Applications",
 
-      apps:
-        "Apps",
+      digitalProducts:
+        "Digital Products",
 
-      appsText:
-        "Useful digital products designed to solve real problems.",
+      selectedWork:
+        "SELECTED WORK",
 
-      digital:
-        "Digital Experiences",
+      projectsTitle:
+        `Projects currently <em>in development.</em>`,
 
-      digitalText:
-        "Websites, systems and digital experiences with purpose.",
-
-      featured:
-        "FEATURED PROJECTS",
-
-      comingNext:
-        "What's coming next.",
-
-      projectsText:
-        "New projects are currently in development. More will be revealed as they take shape.",
+      projectsDescription:
+        "A selection of products and ideas currently being shaped at Burion Studio.",
 
       aboutEyebrow:
-        "ABOUT",
+        "ABOUT BURION STUDIO",
 
       aboutTitle:
-        `The person behind<br>Burion Studio.`,
+        `One developer.<br><em>Many ideas.</em>`,
 
       about1:
         `Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong>`,
 
       about2:
-        "I'm an independent developer based in Türkiye. I build games, applications and digital products from scratch.",
+        "I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.",
 
       about3:
-        "I handle everything from code and design to systems, testing and the problems in between.",
+        "I handle the entire process — code, design, systems and everything in between.",
 
       about4:
-        "Burion Studio is my space to create, experiment and build things that are worth making.",
-
-      signature:
-        "İrfan Aslan BÜRİAN",
+        "Burion Studio is my space to create, experiment and turn ideas into something real.",
 
       contactEyebrow:
         "LET'S WORK TOGETHER",
 
       contactTitle:
-        `Have an idea?<br>Let's build something<br>worth making.`,
+        `Have an idea?<br>Let's build something <em>worth making.</em>`,
 
       contactDescription:
-        "Have a project, idea or collaboration in mind? Tell me about it.",
+        "Have a project, idea or collaboration in mind? I'd love to hear about it.",
 
-      nameLabel:
-        "NAME",
+      name:
+        "Name",
 
-      emailLabel:
-        "EMAIL",
+      email:
+        "Email",
 
-      subjectLabel:
-        "SUBJECT",
+      subject:
+        "Subject",
 
-      messageLabel:
-        "MESSAGE",
-
-      namePlaceholder:
-        "Your name",
-
-      emailPlaceholder:
-        "you@example.com",
-
-      subjectPlaceholder:
-        "What is it about?",
-
-      messagePlaceholder:
-        "Tell me about your idea...",
+      message:
+        "Message",
 
       send:
         "Send Message",
 
+      language:
+        "LANGUAGE",
+
+      privacy:
+        "Privacy Policy",
+
+      terms:
+        "Terms of Use",
+
       footer:
-        "Independent developer creating games, apps and digital experiences.",
-
-      footerHome:
-        "Home",
-
-      footerProjects:
-        "Projects",
-
-      footerAbout:
-        "About",
-
-      footerContact:
-        "Contact"
-
+        "Independent developer creating games, apps and digital experiences."
     },
 
 
     tr: {
-
       home:
         "Ana Sayfa",
 
@@ -169,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       getInTouch:
         "İletişime geç",
 
-      whatIBuild:
+      whatWeBuild:
         "NELER GELİŞTİRİYORUM",
 
       buildTitle:
@@ -178,35 +149,26 @@ document.addEventListener("DOMContentLoaded", () => {
       games:
         "Oyunlar",
 
-      gamesText:
-        "Sıfırdan oluşturulan interaktif dünyalar, mekanikler ve oyun deneyimleri.",
-
-      apps:
+      applications:
         "Uygulamalar",
 
-      appsText:
-        "Gerçek problemlere çözüm üretmek için tasarlanan kullanışlı dijital ürünler.",
+      digitalProducts:
+        "Dijital Ürünler",
 
-      digital:
-        "Dijital Deneyimler",
+      selectedWork:
+        "SEÇİLİ PROJELER",
 
-      digitalText:
-        "Amacı olan web siteleri, sistemler ve dijital deneyimler.",
+      projectsTitle:
+        `Şu anda <em>geliştirdiğim projeler.</em>`,
 
-      featured:
-        "ÖNE ÇIKAN PROJELER",
-
-      comingNext:
-        "Sırada ne var?",
-
-      projectsText:
-        "Yeni projeler geliştirme aşamasında. Şekillendikçe daha fazlasını paylaşacağım.",
+      projectsDescription:
+        "Burion Studio bünyesinde şu anda şekillendirdiğim ürün ve fikirlerden bir seçki.",
 
       aboutEyebrow:
-        "HAKKINDA",
+        "BURION STUDIO HAKKINDA",
 
       aboutTitle:
-        `Burion Studio'nun<br>arkasındaki kişi.`,
+        `Tek geliştirici.<br><em>Birçok fikir.</em>`,
 
       about1:
         `Merhaba, ben <strong>İrfan Aslan BÜRİAN.</strong>`,
@@ -215,70 +177,50 @@ document.addEventListener("DOMContentLoaded", () => {
         "Türkiye'de yaşayan bağımsız bir geliştiriciyim. Oyunları, uygulamaları ve dijital ürünleri sıfırdan geliştiriyorum.",
 
       about3:
-        "Koddan tasarıma, sistemlerden testlere kadar tüm süreçlerle ve aradaki problemlerle kendim ilgileniyorum.",
+        "Tüm süreci kendim yürütüyorum — kod, tasarım, sistemler ve aradaki her şey.",
 
       about4:
-        "Burion Studio; üretmek, denemek ve yapmaya değer işler ortaya koymak için oluşturduğum kişisel stüdyom.",
-
-      signature:
-        "İrfan Aslan BÜRİAN",
+        "Burion Studio; üretmek, denemek ve fikirleri gerçek bir ürüne dönüştürmek için oluşturduğum kişisel stüdyom.",
 
       contactEyebrow:
         "BİRLİKTE ÇALIŞALIM",
 
       contactTitle:
-        `Bir fikrin mi var?<br>Yapmaya değer<br>bir şey geliştirelim.`,
+        `Bir fikrin mi var?<br>Yapmaya <em>değer</em> bir şey geliştirelim.`,
 
       contactDescription:
-        "Bir projen, fikrin veya iş birliği önerin mi var? Bana anlat.",
+        "Bir projen, fikrin veya iş birliği önerin varsa senden haber almak isterim.",
 
-      nameLabel:
-        "İSİM",
+      name:
+        "İsim",
 
-      emailLabel:
-        "E-POSTA",
+      email:
+        "E-posta",
 
-      subjectLabel:
-        "KONU",
+      subject:
+        "Konu",
 
-      messageLabel:
-        "MESAJ",
-
-      namePlaceholder:
-        "Adınız",
-
-      emailPlaceholder:
-        "siz@ornek.com",
-
-      subjectPlaceholder:
-        "Konu nedir?",
-
-      messagePlaceholder:
-        "Fikrinizden bahsedin...",
+      message:
+        "Mesaj",
 
       send:
         "Mesaj Gönder",
 
+      language:
+        "DİL",
+
+      privacy:
+        "Gizlilik Politikası",
+
+      terms:
+        "Kullanım Koşulları",
+
       footer:
-        "Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",
-
-      footerHome:
-        "Ana Sayfa",
-
-      footerProjects:
-        "Projeler",
-
-      footerAbout:
-        "Hakkında",
-
-      footerContact:
-        "İletişim"
-
+        "Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici."
     },
 
 
     ru: {
-
       home:
         "Главная",
 
@@ -295,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "BURION STUDIO",
 
       heroTitle:
-        `Идеи,<br>превращаю в <em>реальность.</em>`,
+        `Идеи,<br>превращённые в <em>реальность.</em>`,
 
       heroDescription:
         "Независимый разработчик, создающий игры, приложения и цифровые продукты от идеи до релиза.",
@@ -306,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
       getInTouch:
         "Связаться",
 
-      whatIBuild:
+      whatWeBuild:
         "ЧТО Я СОЗДАЮ",
 
       buildTitle:
@@ -315,35 +257,26 @@ document.addEventListener("DOMContentLoaded", () => {
       games:
         "Игры",
 
-      gamesText:
-        "Интерактивные миры, механики и игровые впечатления, созданные с нуля.",
-
-      apps:
+      applications:
         "Приложения",
 
-      appsText:
-        "Полезные цифровые продукты, созданные для решения реальных задач.",
-
-      digital:
+      digitalProducts:
         "Цифровые продукты",
 
-      digitalText:
-        "Сайты, системы и цифровые решения с конкретной целью.",
-
-      featured:
+      selectedWork:
         "ИЗБРАННЫЕ ПРОЕКТЫ",
 
-      comingNext:
-        "Что будет дальше?",
+      projectsTitle:
+        `Проекты сейчас <em>в разработке.</em>`,
 
-      projectsText:
-        "Новые проекты находятся в разработке. Больше информации появится по мере их развития.",
+      projectsDescription:
+        "Подборка продуктов и идей, которые сейчас развиваются в Burion Studio.",
 
       aboutEyebrow:
-        "ОБО МНЕ",
+        "О BURION STUDIO",
 
       aboutTitle:
-        `Человек, стоящий<br>за Burion Studio.`,
+        `Один разработчик.<br><em>Много идей.</em>`,
 
       about1:
         `Привет, я <strong>İrfan Aslan BÜRİAN.</strong>`,
@@ -352,578 +285,163 @@ document.addEventListener("DOMContentLoaded", () => {
         "Я независимый разработчик из Турции. Создаю игры, приложения и цифровые продукты с нуля.",
 
       about3:
-        "Я самостоятельно занимаюсь кодом, дизайном, системами, тестированием и всеми возникающими задачами.",
+        "Я самостоятельно занимаюсь всем процессом — кодом, дизайном, системами и всеми задачами между ними.",
 
       about4:
-        "Burion Studio — моё пространство для создания, экспериментов и разработки действительно стоящих вещей.",
-
-      signature:
-        "İrfan Aslan BÜRİAN",
+        "Burion Studio — моё пространство для создания, экспериментов и превращения идей в реальные продукты.",
 
       contactEyebrow:
         "ДАВАЙТЕ СОЗДАДИМ ВМЕСТЕ",
 
       contactTitle:
-        `Есть идея?<br>Давайте создадим<br>что-то стоящее.`,
+        `Есть идея?<br>Давайте создадим что-то <em>стоящее.</em>`,
 
       contactDescription:
-        "Есть проект, идея или предложение о сотрудничестве? Расскажите мне о нём.",
+        "Есть проект, идея или предложение о сотрудничестве? Буду рад услышать о нём.",
 
-      nameLabel:
-        "ИМЯ",
+      name:
+        "Имя",
 
-      emailLabel:
-        "ЭЛЕКТРОННАЯ ПОЧТА",
+      email:
+        "Эл. почта",
 
-      subjectLabel:
-        "ТЕМА",
+      subject:
+        "Тема",
 
-      messageLabel:
-        "СООБЩЕНИЕ",
-
-      namePlaceholder:
-        "Ваше имя",
-
-      emailPlaceholder:
-        "you@example.com",
-
-      subjectPlaceholder:
-        "О чём сообщение?",
-
-      messagePlaceholder:
-        "Расскажите о своей идее...",
+      message:
+        "Сообщение",
 
       send:
         "Отправить сообщение",
 
+      language:
+        "ЯЗЫК",
+
+      privacy:
+        "Политика конфиденциальности",
+
+      terms:
+        "Условия использования",
+
       footer:
-        "Независимый разработчик игр, приложений и цифровых продуктов.",
-
-      footerHome:
-        "Главная",
-
-      footerProjects:
-        "Проекты",
-
-      footerAbout:
-        "Обо мне",
-
-      footerContact:
-        "Контакты"
-
+        "Независимый разработчик игр, приложений и цифровых продуктов."
     }
 
   };
 
 
   /* =========================================================
-     ELEMENT HELPERS
-  ========================================================= */
-
-  const $ = (selector, parent = document) =>
-    parent.querySelector(selector);
-
-
-  const $$ = (selector, parent = document) =>
-    Array.from(parent.querySelectorAll(selector));
-
-
-  /* =========================================================
-     HEADER ELEMENTS
+     ELEMENTS
   ========================================================= */
 
   const menuButton =
-    $(".menu-button") ||
-    $(".menu-btn");
+    document.querySelector(".menu-button");
+
+  const mobileMenu =
+    document.querySelector("#mobileMenu");
 
   const languageButton =
-    $(".language-button") ||
-    $(".lang");
+    document.querySelector(".language-button");
 
-  const headerActions =
-    $(".header-actions") ||
-    $(".nav-right");
+  const languageMenu =
+    document.querySelector("#languageMenu");
 
-
-  let mobileMenu = null;
-  let languageMenu = null;
-
-
-  /* =========================================================
-     MOBILE MENU
-  ========================================================= */
-
-  if (menuButton) {
-
-    mobileMenu =
-      document.createElement("div");
-
-    mobileMenu.className =
-      "mobile-menu";
-
-    mobileMenu.hidden = true;
-
-    mobileMenu.innerHTML = `
-
-      <nav class="mobile-nav"
-           aria-label="Mobile navigation">
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#projects">
-          Projects
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-        <a href="#contact">
-          Contact
-        </a>
-
-      </nav>
-
-
-      <div class="mobile-language">
-
-        <span>
-          LANGUAGE
-        </span>
-
-        <div>
-
-          <button
-            type="button"
-            data-lang="en">
-            English
-          </button>
-
-          <button
-            type="button"
-            data-lang="tr">
-            Türkçe
-          </button>
-
-          <button
-            type="button"
-            data-lang="ru">
-            Русский
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-
-    document.body.appendChild(
-      mobileMenu
-    );
-
-
-    menuButton.addEventListener(
-      "click",
-      event => {
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-        if (mobileMenu.hidden) {
-
-          openMobileMenu();
-
-        } else {
-
-          closeMobileMenu();
-
-        }
-
-      }
-    );
-
-
-    $$(".mobile-nav a", mobileMenu)
-      .forEach(link => {
-
-        link.addEventListener(
-          "click",
-          () => {
-
-            closeMobileMenu();
-
-          }
-        );
-
-      });
-
-
-    $$(".mobile-language button", mobileMenu)
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          event => {
-
-            event.stopPropagation();
-
-            setLanguage(
-              button.dataset.lang
-            );
-
-            closeMobileMenu();
-
-          }
-        );
-
-      });
-
-  }
-
-
-  function openMobileMenu(){
-
-    if (!mobileMenu)
-      return;
-
-    mobileMenu.hidden = false;
-
-    menuButton.classList.add(
-      "is-open"
-    );
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      "true"
-    );
-
-    menuButton.setAttribute(
-      "aria-label",
-      "Close menu"
-    );
-
-  }
-
-
-  function closeMobileMenu(){
-
-    if (!mobileMenu)
-      return;
-
-    mobileMenu.hidden = true;
-
-    if (menuButton){
-
-      menuButton.classList.remove(
-        "is-open"
-      );
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-
-    }
-
-  }
-
-
-  /* =========================================================
-     LANGUAGE MENU
-  ========================================================= */
-
-  if (
-    languageButton &&
-    headerActions
-  ){
-
-    languageMenu =
-      document.createElement("div");
-
-    languageMenu.className =
-      "language-menu";
-
-    languageMenu.hidden = true;
-
-    languageMenu.innerHTML = `
-
-      <button
-        type="button"
-        data-lang="en">
-        English
-      </button>
-
-      <button
-        type="button"
-        data-lang="tr">
-        Türkçe
-      </button>
-
-      <button
-        type="button"
-        data-lang="ru">
-        Русский
-      </button>
-
-    `;
-
-
-    headerActions.appendChild(
-      languageMenu
-    );
-
-
-    languageButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-
-    languageButton.addEventListener(
-      "click",
-      event => {
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-        if (languageMenu.hidden){
-
-          openLanguageMenu();
-
-        } else {
-
-          closeLanguageMenu();
-
-        }
-
-      }
-    );
-
-
-    $$("button", languageMenu)
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          event => {
-
-            event.stopPropagation();
-
-            setLanguage(
-              button.dataset.lang
-            );
-
-            closeLanguageMenu();
-
-          }
-        );
-
-      });
-
-  }
-
-
-  function openLanguageMenu(){
-
-    if (!languageMenu)
-      return;
-
-    languageMenu.hidden = false;
-
-    languageButton.setAttribute(
-      "aria-expanded",
-      "true"
-    );
-
-  }
-
-
-  function closeLanguageMenu(){
-
-    if (!languageMenu)
-      return;
-
-    languageMenu.hidden = true;
-
-    if (languageButton){
-
-      languageButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    }
-
-  }
-
-
-  /* =========================================================
-     CLOSE MENUS
-  ========================================================= */
-
-  document.addEventListener(
-    "click",
-    event => {
-
-      if (
-        mobileMenu &&
-        !mobileMenu.hidden &&
-        !mobileMenu.contains(event.target) &&
-        event.target !== menuButton
-      ){
-
-        closeMobileMenu();
-
-      }
-
-
-      if (
-        languageMenu &&
-        !languageMenu.hidden &&
-        !languageMenu.contains(event.target) &&
-        event.target !== languageButton
-      ){
-
-        closeLanguageMenu();
-
-      }
-
-    }
-  );
+  const currentLanguage =
+    document.querySelector(".current-language");
 
 
   /* =========================================================
      LANGUAGE
   ========================================================= */
 
-  function setLanguage(language){
+  function setLanguage(language) {
 
-    const t =
-      translations[language];
+    const t = translations[language];
 
-    if (!t)
-      return;
+    if (!t) return;
 
 
     document.documentElement.lang =
       language;
 
 
-    /* -------------------------------------------------------
-       LANGUAGE BUTTON
-    ------------------------------------------------------- */
-
-    if (languageButton){
-
-      const arrow =
-        languageButton.querySelector(
-          ".language-arrow"
-        );
-
-      if (arrow){
-
-        languageButton.innerHTML =
-          `${language.toUpperCase()}
-           <span class="language-arrow">⌄</span>`;
-
-      } else {
-
-        languageButton.innerHTML =
-          `${language.toUpperCase()}
-           <span>⌄</span>`;
-
-      }
-
-    }
-
-
-    /* -------------------------------------------------------
-       DESKTOP NAV
-    ------------------------------------------------------- */
+    /* HEADER NAV */
 
     const navLinks =
-      $$(".desktop-nav a");
+      document.querySelectorAll(
+        ".desktop-nav .nav-link"
+      );
 
-    if (navLinks.length >= 4){
+    if (navLinks.length >= 4) {
 
-      navLinks[0].textContent =
-        t.home;
-
-      navLinks[1].textContent =
-        t.projects;
-
-      navLinks[2].textContent =
-        t.about;
-
-      navLinks[3].textContent =
-        t.contact;
+      navLinks[0].textContent = t.home;
+      navLinks[1].textContent = t.projects;
+      navLinks[2].textContent = t.about;
+      navLinks[3].textContent = t.contact;
 
     }
 
 
-    /* -------------------------------------------------------
-       MOBILE NAV
-    ------------------------------------------------------- */
+    /* MOBILE NAV */
 
-    if (mobileMenu){
+    const mobileLinks =
+      document.querySelectorAll(
+        ".mobile-nav a"
+      );
 
-      const links =
-        $$(".mobile-nav a", mobileMenu);
+    if (mobileLinks.length >= 4) {
 
-      if (links.length >= 4){
-
-        links[0].textContent =
-          t.home;
-
-        links[1].textContent =
-          t.projects;
-
-        links[2].textContent =
-          t.about;
-
-        links[3].textContent =
-          t.contact;
-
-      }
+      mobileLinks[0].textContent = t.home;
+      mobileLinks[1].textContent = t.projects;
+      mobileLinks[2].textContent = t.about;
+      mobileLinks[3].textContent = t.contact;
 
     }
 
 
-    /* =======================================================
-       HERO
-    ======================================================= */
+    /* LANGUAGE BUTTON */
+
+    if (currentLanguage) {
+
+      currentLanguage.textContent =
+        language.toUpperCase();
+
+    }
+
+
+    /* MOBILE LANGUAGE */
+
+    const mobileLanguageTitle =
+      document.querySelector(
+        ".mobile-language > span"
+      );
+
+    if (mobileLanguageTitle) {
+
+      mobileLanguageTitle.textContent =
+        t.language;
+
+    }
+
+
+    /* HERO */
 
     const hero =
-      $("#home") ||
-      $(".hero");
+      document.querySelector("#home");
 
-
-    if (hero){
+    if (hero) {
 
       const eyebrow =
-        $(".eyebrow", hero);
+        hero.querySelector(".eyebrow");
 
       const title =
-        $("h1", hero);
+        hero.querySelector("h1");
 
       const description =
-        $(".hero-description", hero) ||
-        $(".lead", hero);
+        hero.querySelector(".hero-description");
 
       const buttons =
-        $$(".button", hero).length
-          ? $$(".button", hero)
-          : $$(".btn", hero);
+        hero.querySelectorAll(".hero-actions .button");
 
 
       if (eyebrow)
@@ -941,43 +459,56 @@ document.addEventListener("DOMContentLoaded", () => {
           t.heroDescription;
 
 
-      if (buttons[0])
-        buttons[0].innerHTML =
-          `${t.explore}
-           <span>→</span>`;
+      if (buttons[0]) {
+
+        const span =
+          buttons[0].querySelectorAll("span");
+
+        if (span[0])
+          span[0].textContent =
+            t.explore;
+
+      }
 
 
-      if (buttons[1])
-        buttons[1].innerHTML =
-          `${t.getInTouch}
-           <span>→</span>`;
+      if (buttons[1]) {
+
+        const span =
+          buttons[1].querySelectorAll("span");
+
+        if (span[0])
+          span[0].textContent =
+            t.getInTouch;
+
+      }
 
     }
 
 
-    /* =======================================================
-       BUILD
-    ======================================================= */
+    /* BUILD */
 
-    const buildSection =
-      $(".build-section");
+    const build =
+      document.querySelector(
+        ".build-section"
+      );
 
-
-    if (buildSection){
+    if (build) {
 
       const eyebrow =
-        $(".eyebrow", buildSection);
+        build.querySelector(".eyebrow");
 
       const title =
-        $("h2", buildSection);
+        build.querySelector("h2");
 
       const cards =
-        $$(".build-card", buildSection);
+        build.querySelectorAll(
+          ".build-card h3"
+        );
 
 
       if (eyebrow)
         eyebrow.textContent =
-          t.whatIBuild;
+          t.whatWeBuild;
 
 
       if (title)
@@ -985,125 +516,88 @@ document.addEventListener("DOMContentLoaded", () => {
           t.buildTitle;
 
 
-      if (cards[0]){
-
-        const heading =
-          $("h3", cards[0]);
-
-        const paragraph =
-          $("p", cards[0]);
-
-        if (heading)
-          heading.textContent =
-            t.games;
-
-        if (paragraph)
-          paragraph.textContent =
-            t.gamesText;
-
-      }
+      if (cards[0])
+        cards[0].textContent =
+          t.games;
 
 
-      if (cards[1]){
-
-        const heading =
-          $("h3", cards[1]);
-
-        const paragraph =
-          $("p", cards[1]);
-
-        if (heading)
-          heading.textContent =
-            t.apps;
-
-        if (paragraph)
-          paragraph.textContent =
-            t.appsText;
-
-      }
+      if (cards[1])
+        cards[1].textContent =
+          t.applications;
 
 
-      if (cards[2]){
-
-        const heading =
-          $("h3", cards[2]);
-
-        const paragraph =
-          $("p", cards[2]);
-
-        if (heading)
-          heading.textContent =
-            t.digital;
-
-        if (paragraph)
-          paragraph.textContent =
-            t.digitalText;
-
-      }
+      if (cards[2])
+        cards[2].textContent =
+          t.digitalProducts;
 
     }
 
 
-    /* =======================================================
-       PROJECTS
-    ======================================================= */
+    /* PROJECTS */
 
-    const projectsSection =
-      $("#projects") ||
-      $(".projects-section");
+    const projects =
+      document.querySelector(
+        "#projects"
+      );
 
-
-    if (projectsSection){
+    if (projects) {
 
       const eyebrow =
-        $(".eyebrow", projectsSection);
+        projects.querySelector(
+          ".eyebrow"
+        );
 
       const title =
-        $("h2", projectsSection);
+        projects.querySelector(
+          ".projects-heading h2"
+        );
 
       const description =
-        $(".section-description", projectsSection);
+        projects.querySelector(
+          ".section-description"
+        );
 
 
       if (eyebrow)
         eyebrow.textContent =
-          t.featured;
+          t.selectedWork;
 
 
       if (title)
-        title.textContent =
-          t.comingNext;
+        title.innerHTML =
+          t.projectsTitle;
 
 
       if (description)
         description.textContent =
-          t.projectsText;
+          t.projectsDescription;
 
     }
 
 
-    /* =======================================================
-       ABOUT
-    ======================================================= */
+    /* ABOUT */
 
-    const aboutSection =
-      $("#about") ||
-      $(".about-section");
+    const about =
+      document.querySelector(
+        "#about"
+      );
 
-
-    if (aboutSection){
+    if (about) {
 
       const eyebrow =
-        $(".eyebrow", aboutSection);
+        about.querySelector(
+          ".about-content .eyebrow"
+        );
 
       const title =
-        $("h2", aboutSection);
+        about.querySelector(
+          ".about-content h2"
+        );
 
       const paragraphs =
-        $$("p", aboutSection);
-
-      const signature =
-        $(".signature", aboutSection);
+        about.querySelectorAll(
+          ".about-content > p"
+        );
 
 
       if (eyebrow)
@@ -1135,47 +629,32 @@ document.addEventListener("DOMContentLoaded", () => {
         paragraphs[3].textContent =
           t.about4;
 
-
-      if (signature)
-        signature.textContent =
-          t.signature;
-
     }
 
 
-    /* =======================================================
-       CONTACT
-    ======================================================= */
+    /* CONTACT */
 
-    const contactSection =
-      $("#contact") ||
-      $(".contact-section");
+    const contact =
+      document.querySelector(
+        "#contact"
+      );
 
-
-    if (contactSection){
+    if (contact) {
 
       const eyebrow =
-        $(".eyebrow", contactSection);
+        contact.querySelector(
+          ".contact-heading .eyebrow"
+        );
 
       const title =
-        $("h2", contactSection);
+        contact.querySelector(
+          ".contact-heading h2"
+        );
 
       const description =
-        $(".contact-heading > p",
-          contactSection);
-
-      const labels =
-        $$("label", contactSection);
-
-      const inputs =
-        $$("input, textarea",
-          contactSection);
-
-      const submit =
-        $(".submit-button",
-          contactSection) ||
-        $(".button",
-          contactSection);
+        contact.querySelector(
+          ".contact-heading > p"
+        );
 
 
       if (eyebrow)
@@ -1192,153 +671,441 @@ document.addEventListener("DOMContentLoaded", () => {
         description.textContent =
           t.contactDescription;
 
-
-      /* LABELS */
-
-      if (labels[0]){
-
-        const span =
-          $("span", labels[0]);
-
-        if (span)
-          span.textContent =
-            t.nameLabel;
-
-      }
-
-
-      if (labels[1]){
-
-        const span =
-          $("span", labels[1]);
-
-        if (span)
-          span.textContent =
-            t.emailLabel;
-
-      }
-
-
-      if (labels[2]){
-
-        const span =
-          $("span", labels[2]);
-
-        if (span)
-          span.textContent =
-            t.subjectLabel;
-
-      }
-
-
-      if (labels[3]){
-
-        const span =
-          $("span", labels[3]);
-
-        if (span)
-          span.textContent =
-            t.messageLabel;
-
-      }
-
-
-      /* PLACEHOLDERS */
-
-      if (inputs[0])
-        inputs[0].placeholder =
-          t.namePlaceholder;
-
-
-      if (inputs[1])
-        inputs[1].placeholder =
-          t.emailPlaceholder;
-
-
-      if (inputs[2])
-        inputs[2].placeholder =
-          t.subjectPlaceholder;
-
-
-      if (inputs[3])
-        inputs[3].placeholder =
-          t.messagePlaceholder;
-
-
-      if (submit){
-
-        submit.innerHTML =
-          `${t.send}
-           <span>→</span>`;
-
-      }
-
     }
 
 
-    /* =======================================================
-       FOOTER
-    ======================================================= */
+    /* FORM LABELS */
 
-    const footer =
-      $(".site-footer") ||
-      $(".footer");
-
-
-    if (footer){
-
-      const paragraph =
-        $("p", footer);
-
-      if (paragraph)
-        paragraph.textContent =
-          t.footer;
-
-
-      const links =
-        $$(".footer-nav a", footer).length
-          ? $$(".footer-nav a", footer)
-          : $$(".footer-links a", footer);
-
-
-      if (links.length >= 4){
-
-        links[0].textContent =
-          t.footerHome;
-
-        links[1].textContent =
-          t.footerProjects;
-
-        links[2].textContent =
-          t.footerAbout;
-
-        links[3].textContent =
-          t.footerContact;
-
-      }
-
-    }
-
-
-    /* =======================================================
-       SAVE LANGUAGE
-    ======================================================= */
-
-    try{
-
-      localStorage.setItem(
-        "burionLanguage",
-        language
+    const labels =
+      document.querySelectorAll(
+        ".contact-form label > span"
       );
 
-    }catch(error){
+    if (labels.length >= 4) {
 
-      console.warn(
-        "Language preference could not be saved.",
-        error
+      labels[0].textContent = t.name;
+      labels[1].textContent = t.email;
+      labels[2].textContent = t.subject;
+      labels[3].textContent = t.message;
+
+    }
+
+
+    /* SEND BUTTON */
+
+    const submitButton =
+      document.querySelector(
+        ".submit-button"
+      );
+
+    if (submitButton) {
+
+      const span =
+        submitButton.querySelector(
+          "span"
+        );
+
+      if (span)
+        span.textContent =
+          t.send;
+
+    }
+
+
+    /* FOOTER */
+
+    const footerText =
+      document.querySelector(
+        ".footer-brand p"
+      );
+
+    if (footerText)
+      footerText.textContent =
+        t.footer;
+
+
+    const privacy =
+      document.querySelector(
+        '.footer-legal a[href="privacy.html"]'
+      );
+
+    const terms =
+      document.querySelector(
+        '.footer-legal a[href="terms.html"]'
+      );
+
+
+    if (privacy)
+      privacy.textContent =
+        t.privacy;
+
+
+    if (terms)
+      terms.textContent =
+        t.terms;
+
+
+    /* FOOTER LANGUAGE ACTIVE STATE */
+
+    document
+      .querySelectorAll(
+        ".footer-languages button"
+      )
+      .forEach(button => {
+
+        button.style.color =
+          button.dataset.language === language
+            ? "var(--gold)"
+            : "var(--muted-dark)";
+
+      });
+
+
+    /* SAVE */
+
+    localStorage.setItem(
+      "burionLanguage",
+      language
+    );
+
+  }
+
+
+  /* =========================================================
+     LANGUAGE MENU
+  ========================================================= */
+
+  function openLanguageMenu() {
+
+    if (!languageMenu) return;
+
+    languageMenu.hidden = false;
+
+    if (languageButton) {
+
+      languageButton.setAttribute(
+        "aria-expanded",
+        "true"
       );
 
     }
+
+  }
+
+
+  function closeLanguageMenu() {
+
+    if (!languageMenu) return;
+
+    languageMenu.hidden = true;
+
+    if (languageButton) {
+
+      languageButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  }
+
+
+  if (languageButton && languageMenu) {
+
+    languageButton.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        if (languageMenu.hidden) {
+
+          openLanguageMenu();
+
+        } else {
+
+          closeLanguageMenu();
+
+        }
+
+      }
+    );
+
+
+    languageMenu
+      .querySelectorAll(
+        "[data-language]"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            setLanguage(
+              button.dataset.language
+            );
+
+            closeLanguageMenu();
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
+
+  function openMobileMenu() {
+
+    if (!mobileMenu) return;
+
+    mobileMenu.hidden = false;
+
+    if (menuButton) {
+
+      menuButton.classList.add(
+        "is-open"
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Close menu"
+      );
+
+    }
+
+  }
+
+
+  function closeMobileMenu() {
+
+    if (!mobileMenu) return;
+
+    mobileMenu.hidden = true;
+
+    if (menuButton) {
+
+      menuButton.classList.remove(
+        "is-open"
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
+
+    }
+
+  }
+
+
+  if (menuButton && mobileMenu) {
+
+    menuButton.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        if (mobileMenu.hidden) {
+
+          openMobileMenu();
+
+        } else {
+
+          closeMobileMenu();
+
+        }
+
+      }
+    );
+
+
+    mobileMenu
+      .querySelectorAll(
+        ".mobile-nav a"
+      )
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            closeMobileMenu();
+
+          }
+        );
+
+      });
+
+
+    mobileMenu
+      .querySelectorAll(
+        "[data-language]"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            setLanguage(
+              button.dataset.language
+            );
+
+            closeMobileMenu();
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =========================================================
+     OUTSIDE CLICK
+  ========================================================= */
+
+  document.addEventListener(
+    "click",
+    event => {
+
+      if (
+        languageMenu &&
+        !languageMenu.hidden &&
+        !languageMenu.contains(event.target) &&
+        event.target !== languageButton
+      ) {
+
+        closeLanguageMenu();
+
+      }
+
+
+      if (
+        mobileMenu &&
+        !mobileMenu.hidden &&
+        !mobileMenu.contains(event.target) &&
+        event.target !== menuButton
+      ) {
+
+        closeMobileMenu();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     ESCAPE KEY
+  ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key !== "Escape")
+        return;
+
+      closeLanguageMenu();
+      closeMobileMenu();
+
+    }
+  );
+
+
+  /* =========================================================
+     ACTIVE NAVIGATION
+  ========================================================= */
+
+  const sections =
+    document.querySelectorAll(
+      "main section[id]"
+    );
+
+  const navLinks =
+    document.querySelectorAll(
+      ".desktop-nav .nav-link"
+    );
+
+
+  if (
+    sections.length &&
+    navLinks.length &&
+    "IntersectionObserver" in window
+  ) {
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting)
+              return;
+
+
+            navLinks.forEach(link => {
+
+              link.classList.remove(
+                "active"
+              );
+
+
+              const href =
+                link.getAttribute(
+                  "href"
+                );
+
+
+              if (
+                href ===
+                `#${entry.target.id}`
+              ) {
+
+                link.classList.add(
+                  "active"
+                );
+
+              }
+
+            });
+
+          });
+
+        },
+        {
+          rootMargin:
+            "-20% 0px -60% 0px",
+
+          threshold:0
+        }
+      );
+
+
+    sections.forEach(section => {
+
+      observer.observe(section);
+
+    });
 
   }
 
@@ -1348,11 +1115,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================================= */
 
   const contactForm =
-    $("#contactForm") ||
-    $(".contact-form");
+    document.querySelector(
+      "#contactForm"
+    );
 
 
-  if (contactForm){
+  if (contactForm) {
 
     contactForm.addEventListener(
       "submit",
@@ -1393,9 +1161,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         const body =
-          `Name: ${name}\n\n` +
-          `Email: ${email}\n\n` +
-          `Message:\n${message}`;
+          [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            "",
+            "Message:",
+            message
+          ].join("\n");
 
 
         const mailto =
@@ -1416,222 +1188,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     ACTIVE NAVIGATION
-  ========================================================= */
-
-  const sections =
-    $$("main section[id]");
-
-
-  const desktopNavLinks =
-    $$('.desktop-nav a[href^="#"]');
-
-
-  if (
-    sections.length &&
-    desktopNavLinks.length &&
-    "IntersectionObserver" in window
-  ){
-
-    const observer =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(
-            entry => {
-
-              if (
-                !entry.isIntersecting
-              )
-                return;
-
-
-              desktopNavLinks
-                .forEach(link => {
-
-                  link.classList.remove(
-                    "active"
-                  );
-
-
-                  if (
-                    link.getAttribute(
-                      "href"
-                    ) ===
-                    `#${entry.target.id}`
-                  ){
-
-                    link.classList.add(
-                      "active"
-                    );
-
-                  }
-
-                });
-
-            }
-          );
-
-        },
-        {
-          rootMargin:
-            "-25% 0px -55% 0px",
-
-          threshold:0
-        }
-      );
-
-
-    sections.forEach(
-      section => {
-
-        observer.observe(
-          section
-        );
-
-      }
-    );
-
-  }
-
-
-  /* =========================================================
-     SMOOTH NAVIGATION
-  ========================================================= */
-
-  $$('a[href^="#"]')
-    .forEach(link => {
-
-      link.addEventListener(
-        "click",
-        event => {
-
-          const targetId =
-            link.getAttribute(
-              "href"
-            );
-
-
-          if (
-            !targetId ||
-            targetId === "#"
-          )
-            return;
-
-
-          const target =
-            document.querySelector(
-              targetId
-            );
-
-
-          if (!target)
-            return;
-
-
-          event.preventDefault();
-
-
-          target.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-          });
-
-        }
-      );
-
-    });
-
-
-  /* =========================================================
-     INITIAL LANGUAGE
-  ========================================================= */
-
-  let savedLanguage = null;
-
-  try{
-
-    savedLanguage =
-      localStorage.getItem(
-        "burionLanguage"
-      );
-
-  }catch(error){
-
-    savedLanguage = null;
-
-  }
-
-
-  const browserLanguage =
-    (
-      navigator.language ||
-      "en"
-    )
-      .toLowerCase()
-      .split("-")[0];
-
-
-  const initialLanguage =
-    savedLanguage &&
-    translations[savedLanguage]
-      ? savedLanguage
-
-      : translations[browserLanguage]
-        ? browserLanguage
-
-        : "en";
-
-
-  setLanguage(
-    initialLanguage
-  );
-
-
-  /* =========================================================
-     INITIAL MENU STATE
+     INITIAL STATE
   ========================================================= */
 
   closeMobileMenu();
   closeLanguageMenu();
 
 
-  /* =========================================================
-     ESCAPE KEY
-  ========================================================= */
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-      if (event.key !== "Escape")
-        return;
+  const savedLanguage =
+    localStorage.getItem(
+      "burionLanguage"
+    ) || "en";
 
 
-      closeMobileMenu();
-      closeLanguageMenu();
-
-    }
-  );
-
-
-  /* =========================================================
-     RESIZE
-  ========================================================= */
-
-  window.addEventListener(
-    "resize",
-    () => {
-
-      if (
-        window.innerWidth > 800
-      ){
-
-        closeMobileMenu();
-
-      }
-
-    }
+  setLanguage(
+    translations[savedLanguage]
+      ? savedLanguage
+      : "en"
   );
 
 
