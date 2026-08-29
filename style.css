@@ -924,3 +924,87 @@ h2 em{
     gap:12px;
   }
 }
+
+/* =========================================
+   BURION STUDIO — BRAND SYSTEM
+   ========================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #c85be8, #8e22b8);
+    box-shadow:
+        0 8px 24px rgba(166, 61, 204, 0.28),
+        inset 0 1px 1px rgba(255,255,255,0.28);
+    overflow: hidden;
+}
+
+.brand-b {
+    display: none;
+}
+
+.brand-lion {
+    display: block;
+    width: 27px;
+    height: 27px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(-18deg);
+}
+
+.brand-lion::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    border: 4px solid #fff;
+    border-left: 0;
+    border-radius: 0 12px 12px 0;
+    right: -7px;
+    top: 1px;
+}
+
+.brand-lion::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+}
+
+.brand-type {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    letter-spacing: 0.28em;
+}
+
+.brand-type b {
+    font-size: 15px;
+    font-weight: 800;
+    color: #f5f2eb;
+}
+
+.brand-type small {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: 500;
+    color: #92979b;
+    letter-spacing: 0.48em;
+}
