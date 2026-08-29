@@ -1,15 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="Burion Studio — independent games, applications and digital experiences."
   >
 
-  <meta name="theme-color" content="#070809">
+  <meta
+    name="theme-color"
+    content="#070809"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://irfanburian.github.io/burionstudio-website/"
+  >
 
   <!-- Favicon -->
   <link
@@ -18,7 +35,7 @@
     href="assets/brand/burion-favicon.png"
   >
 
-  <!-- Apple / iOS -->
+  <!-- Apple Touch Icon -->
   <link
     rel="apple-touch-icon"
     href="assets/brand/burion-app-icon.png"
@@ -26,28 +43,28 @@
 
   <!-- Open Graph -->
   <meta
-    property="og:title"
-    content="Burion Studio — Independent Games & Apps"
-  >
-
-  <meta
-    property="og:description"
-    content="Independent developer creating games, applications and digital experiences from idea to release."
-  >
-
-  <meta
     property="og:type"
     content="website"
   >
 
   <meta
+    property="og:title"
+    content="Burion Studio — Ideas, built into reality."
+  >
+
+  <meta
+    property="og:description"
+    content="Independent games, applications and digital experiences."
+  >
+
+  <meta
     property="og:url"
-    content="https://burionstudio.com/"
+    content="https://irfanburian.github.io/burionstudio-website/"
   >
 
   <meta
     property="og:image"
-    content="https://burionstudio.com/assets/brand/burion-og-social.png"
+    content="https://irfanburian.github.io/burionstudio-website/assets/brand/burion-og-social.png"
   >
 
   <meta
@@ -63,31 +80,44 @@
 
   <meta
     name="twitter:title"
-    content="Burion Studio — Independent Games & Apps"
+    content="Burion Studio — Ideas, built into reality."
   >
 
   <meta
     name="twitter:description"
-    content="Independent developer creating games, applications and digital experiences."
+    content="Independent games, applications and digital experiences."
   >
 
   <meta
     name="twitter:image"
-    content="https://burionstudio.com/assets/brand/burion-og-social.png"
+    content="https://irfanburian.github.io/burionstudio-website/assets/brand/burion-og-social.png"
   >
 
-  <title>Burion Studio — Independent Games & Apps</title>
+  <title>
+    Burion Studio — Independent Games & Apps
+  </title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 
 <body>
@@ -95,27 +125,24 @@
   <div class="site-shell">
 
     <!-- =====================================================
-         NAVIGATION
+         HEADER
     ====================================================== -->
 
-    <header class="nav">
+    <header class="site-header">
 
       <a
-        class="brand"
         href="#home"
-        aria-label="Burion Studio"
+        class="site-logo"
+        aria-label="Burion Studio home"
       >
 
         <img
-          class="brand-logo"
           src="assets/brand/burion-logo-horizontal.png"
           alt="Burion Studio"
         >
 
       </a>
 
-
-      <!-- Desktop Navigation -->
 
       <nav
         class="desktop-nav"
@@ -124,8 +151,88 @@
 
         <a
           href="#home"
-          class="active"
+          class="nav-link active"
         >
+          Home
+        </a>
+
+        <a
+          href="#projects"
+          class="nav-link"
+        >
+          Projects
+        </a>
+
+        <a
+          href="#about"
+          class="nav-link"
+        >
+          About
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-link"
+        >
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="header-actions">
+
+        <button
+          class="language-button"
+          type="button"
+          aria-label="Change language"
+          aria-expanded="false"
+        >
+          <span class="current-language">
+            EN
+          </span>
+
+          <span class="language-arrow">
+            ↓
+          </span>
+
+        </button>
+
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      hidden
+    >
+
+      <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation"
+      >
+
+        <a href="#home">
           Home
         </a>
 
@@ -144,30 +251,74 @@
       </nav>
 
 
-      <!-- Navigation Right -->
+      <div class="mobile-language">
 
-      <div class="nav-right">
+        <span>
+          LANGUAGE
+        </span>
 
-        <button
-          class="lang"
-          type="button"
-          aria-label="Language"
-        >
-          EN
-          <span>⌄</span>
-        </button>
+        <div>
 
-        <button
-          class="menu-btn"
-          type="button"
-          aria-label="Open menu"
-        >
-          ☰
-        </button>
+          <button
+            type="button"
+            data-language="en"
+          >
+            English
+          </button>
+
+          <button
+            type="button"
+            data-language="tr"
+          >
+            Türkçe
+          </button>
+
+          <button
+            type="button"
+            data-language="ru"
+          >
+            Русский
+          </button>
+
+        </div>
 
       </div>
 
-    </header>
+    </div>
+
+
+    <!-- =====================================================
+         LANGUAGE MENU
+    ====================================================== -->
+
+    <div
+      class="language-menu"
+      id="languageMenu"
+      hidden
+    >
+
+      <button
+        type="button"
+        data-language="en"
+      >
+        English
+      </button>
+
+      <button
+        type="button"
+        data-language="tr"
+      >
+        Türkçe
+      </button>
+
+      <button
+        type="button"
+        data-language="ru"
+      >
+        Русский
+      </button>
+
+    </div>
 
 
     <!-- =====================================================
@@ -186,25 +337,7 @@
         class="hero"
       >
 
-        <!-- Hero Image -->
-
-        <div
-          class="hero-background"
-          aria-hidden="true"
-        >
-
-          <img
-            class="hero-lion-image"
-            src="assets/brand/burion-hero-lion.jpg"
-            alt=""
-          >
-
-        </div>
-
-
-        <!-- Hero Content -->
-
-        <div class="hero-copy">
+        <div class="hero-content">
 
           <p class="eyebrow">
             BURION STUDIO
@@ -212,31 +345,72 @@
 
           <h1>
             Ideas,<br>
-            built into <em>reality.</em>
+            built into
+            <em>reality.</em>
           </h1>
 
-          <p class="lead">
-            Independent developer creating games, applications
-            and digital experiences from idea to release.
+          <p class="hero-description">
+            Independent developer creating games,
+            applications and digital experiences
+            from idea to release.
           </p>
 
-          <div class="actions">
+
+          <div class="hero-actions">
 
             <a
-              class="btn btn-primary"
               href="#projects"
+              class="button button-primary"
             >
-              Explore the studio
-              <span>→</span>
+              <span>
+                Explore the studio
+              </span>
+
+              <span>
+                →
+              </span>
             </a>
 
             <a
-              class="btn btn-ghost"
               href="#contact"
+              class="button button-secondary"
             >
-              Get in touch
-              <span>→</span>
+              <span>
+                Get in touch
+              </span>
+
+              <span>
+                →
+              </span>
             </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="hero-visual">
+
+          <div class="hero-image-frame">
+
+            <img
+              src="assets/brand/burion-hero-lion.jpg"
+              alt="Burion Studio lion"
+              class="hero-image"
+            >
+
+            <div class="hero-image-overlay"></div>
+
+            <div class="hero-image-brand">
+
+              <img
+                src="assets/brand/burion-logo-gold.png"
+                alt=""
+              >
+
+            </div>
 
           </div>
 
@@ -246,48 +420,107 @@
 
 
       <!-- ===================================================
-           PRINCIPLES
+           BRAND STATEMENT
       ==================================================== -->
 
-      <section class="principles">
+      <section class="brand-statement">
 
-        <div>
-          <span>◆</span>
-          <b>DEVELOPMENT</b>
-          <small>Clean. Scalable. Stable.</small>
+        <div class="statement-item">
+
+          <span class="statement-number">
+            01
+          </span>
+
+          <div>
+
+            <strong>
+              DEVELOPMENT
+            </strong>
+
+            <span>
+              Clean. Scalable. Stable.
+            </span>
+
+          </div>
+
         </div>
 
-        <div>
-          <span>◆</span>
-          <b>PERFORMANCE</b>
-          <small>Fast and optimized.</small>
+
+        <div class="statement-item">
+
+          <span class="statement-number">
+            02
+          </span>
+
+          <div>
+
+            <strong>
+              PERFORMANCE
+            </strong>
+
+            <span>
+              Fast. Efficient. Optimized.
+            </span>
+
+          </div>
+
         </div>
 
-        <div>
-          <span>◆</span>
-          <b>DESIGN</b>
-          <small>Minimal and focused.</small>
+
+        <div class="statement-item">
+
+          <span class="statement-number">
+            03
+          </span>
+
+          <div>
+
+            <strong>
+              DESIGN
+            </strong>
+
+            <span>
+              Minimal. Intentional. Clear.
+            </span>
+
+          </div>
+
         </div>
 
-        <div>
-          <span>◆</span>
-          <b>EXPERIENCE</b>
-          <small>Made to be used.</small>
+
+        <div class="statement-item">
+
+          <span class="statement-number">
+            04
+          </span>
+
+          <div>
+
+            <strong>
+              EXPERIENCE
+            </strong>
+
+            <span>
+              Built to be used.
+            </span>
+
+          </div>
+
         </div>
 
       </section>
 
 
       <!-- ===================================================
-           WHAT I BUILD
+           WHAT WE BUILD
       ==================================================== -->
 
       <section class="build-section">
 
-        <div class="section-intro">
+        <div class="section-heading">
 
           <p class="eyebrow">
-            WHAT I BUILD
+            WHAT WE BUILD
           </p>
 
           <h2>
@@ -298,51 +531,94 @@
         </div>
 
 
-        <div class="cards">
+        <div class="build-grid">
 
-          <article class="card">
+          <article class="build-card">
 
-            <span class="card-icon">◆</span>
+            <div class="card-top">
+
+              <span class="card-index">
+                01
+              </span>
+
+              <span class="card-symbol">
+                ◆
+              </span>
+
+            </div>
 
             <h3>
               Games
             </h3>
 
             <p>
-              Gameplay systems, mechanics and immersive experiences.
+              Interactive worlds, gameplay systems
+              and experiences built from the ground up.
             </p>
 
-          </article>
-
-
-          <article class="card">
-
-            <span class="card-icon">▯</span>
-
-            <h3>
-              Apps
-            </h3>
-
-            <p>
-              Useful and beautiful applications for real world problems.
-            </p>
-
-          </article>
-
-
-          <article class="card">
-
-            <span class="card-icon">
-              &lt;/&gt;
+            <span class="card-arrow">
+              →
             </span>
 
+          </article>
+
+
+          <article class="build-card">
+
+            <div class="card-top">
+
+              <span class="card-index">
+                02
+              </span>
+
+              <span class="card-symbol">
+                ◇
+              </span>
+
+            </div>
+
             <h3>
-              Digital Experiences
+              Applications
             </h3>
 
             <p>
-              Websites and digital tools when ideas need a place to live.
+              Useful digital products designed
+              around real problems and real people.
             </p>
+
+            <span class="card-arrow">
+              →
+            </span>
+
+          </article>
+
+
+          <article class="build-card">
+
+            <div class="card-top">
+
+              <span class="card-index">
+                03
+              </span>
+
+              <span class="card-symbol">
+                &lt;/&gt;
+              </span>
+
+            </div>
+
+            <h3>
+              Digital Products
+            </h3>
+
+            <p>
+              Websites, platforms and digital
+              experiences when ideas need a place to live.
+            </p>
+
+            <span class="card-arrow">
+              →
+            </span>
 
           </article>
 
@@ -357,102 +633,261 @@
 
       <section
         id="projects"
-        class="content-grid"
+        class="projects-section"
       >
 
-        <div class="panel projects-panel">
+        <div class="section-heading projects-heading">
 
-          <p class="eyebrow">
-            FEATURED PROJECTS
-          </p>
+          <div>
 
-          <h2>
-            What's coming next.
-          </h2>
+            <p class="eyebrow">
+              SELECTED WORK
+            </p>
 
-          <p>
-            New projects are in development.
-            Stay tuned for updates.
-          </p>
-
-
-          <div class="project-list">
-
-            <article class="project">
-
-              <div class="project-visual game-visual">
-                ◆
-              </div>
-
-              <h3>
-                Games
-              </h3>
-
-              <span>
-                COMING SOON
-              </span>
-
-            </article>
-
-
-            <article class="project">
-
-              <div class="project-visual app-visual">
-                ▯
-              </div>
-
-              <h3>
-                Apps
-              </h3>
-
-              <span>
-                COMING SOON
-              </span>
-
-            </article>
+            <h2>
+              Projects currently
+              <em>in development.</em>
+            </h2>
 
           </div>
+
+          <p class="section-description">
+            A selection of products and ideas
+            currently being shaped at Burion Studio.
+          </p>
 
         </div>
 
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
+        <div class="projects-grid">
 
-        <div
-          id="about"
-          class="panel"
-        >
+
+          <!-- PROJECT 01 -->
+
+          <article class="project-card project-featured">
+
+            <div class="project-image">
+
+              <div class="project-image-content">
+
+                <span>
+                  GAME
+                </span>
+
+                <strong>
+                  TRIVIA
+                </strong>
+
+                <small>
+                  KNOWLEDGE · COMPETITION · PLAY
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <span class="project-category">
+                  GAME · IN DEVELOPMENT
+                </span>
+
+                <h3>
+                  Trivia
+                </h3>
+
+                <p>
+                  A competitive quiz experience
+                  designed around knowledge, speed
+                  and progression.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                IN DEVELOPMENT
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project-card">
+
+            <div class="project-image project-image-agriculture">
+
+              <div class="project-image-content">
+
+                <span>
+                  APPLICATION
+                </span>
+
+                <strong>
+                  AGRICULTURE
+                </strong>
+
+                <small>
+                  DATA · FIELD · INTELLIGENCE
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <span class="project-category">
+                  APPLICATION · CONCEPT
+                </span>
+
+                <h3>
+                  Agricultural Platform
+                </h3>
+
+                <p>
+                  A digital platform focused on
+                  smarter agricultural decisions.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                CONCEPT
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project-card">
+
+            <div class="project-image project-image-studio">
+
+              <div class="project-image-content">
+
+                <span>
+                  DIGITAL PRODUCT
+                </span>
+
+                <strong>
+                  BURION
+                </strong>
+
+                <small>
+                  STUDIO · BRAND · DIGITAL
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <span class="project-category">
+                  DIGITAL PRODUCT · LIVE
+                </span>
+
+                <h3>
+                  Burion Studio
+                </h3>
+
+                <p>
+                  The digital home of an independent
+                  developer and creative studio.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                LIVE
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           ABOUT
+      ==================================================== -->
+
+      <section
+        id="about"
+        class="about-section"
+      >
+
+        <div class="about-visual">
+
+          <div class="about-mark">
+
+            <img
+              src="assets/brand/burion-logo-mark.png"
+              alt="Burion Studio mark"
+            >
+
+          </div>
+
+          <span>
+            BURION STUDIO
+          </span>
+
+        </div>
+
+
+        <div class="about-content">
 
           <p class="eyebrow">
-            ABOUT
+            ABOUT BURION STUDIO
           </p>
 
           <h2>
-            The person behind<br>
-            Burion Studio.
+            One developer.
+            <br>
+            <em>Many ideas.</em>
           </h2>
 
           <p>
             Hi, I'm
-            <strong>İrfan Aslan BÜRİAN.</strong>
+            <strong>
+              İrfan Aslan BÜRİAN.
+            </strong>
           </p>
 
           <p>
-            I'm an independent developer based in Türkiye.
-            I build games, applications and digital products
-            from scratch.
+            I'm an independent developer based
+            in Türkiye, building games, applications
+            and digital products from scratch.
           </p>
 
           <p>
-            I handle everything: code, design, systems,
-            and the problems in between.
+            I handle the entire process —
+            code, design, systems and everything
+            in between.
           </p>
 
           <p>
             Burion Studio is my space to create,
-            experiment and build things that matter.
+            experiment and turn ideas into
+            something real.
           </p>
 
           <div class="signature">
@@ -461,82 +896,132 @@
 
         </div>
 
+      </section>
 
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
 
-        <div
-          id="contact"
-          class="panel contact-panel"
-        >
+      <!-- ===================================================
+           CONTACT
+      ==================================================== -->
+
+      <section
+        id="contact"
+        class="contact-section"
+      >
+
+        <div class="contact-heading">
 
           <p class="eyebrow">
             LET'S WORK TOGETHER
           </p>
 
           <h2>
-            Have an idea?<br>
-            Let's build something<br>
-            worth making.
+            Have an idea?
+            <br>
+            Let's build something
+            <em>worth making.</em>
           </h2>
 
+          <p>
+            Have a project, idea or collaboration
+            in mind? I'd love to hear about it.
+          </p>
 
-          <form id="contactForm">
+          <a
+            href="mailto:support@burionstudio.com"
+            class="contact-email"
+          >
+            support@burionstudio.com
+          </a>
 
-            <div class="form-row">
+        </div>
+
+
+        <form
+          id="contactForm"
+          class="contact-form"
+        >
+
+          <div class="form-row">
+
+            <label>
+
+              <span>
+                Name
+              </span>
 
               <input
+                type="text"
                 name="name"
-                placeholder="Name"
                 autocomplete="name"
                 required
               >
 
+            </label>
+
+
+            <label>
+
+              <span>
+                Email
+              </span>
+
               <input
-                name="email"
                 type="email"
-                placeholder="Email"
+                name="email"
                 autocomplete="email"
                 required
               >
 
-            </div>
+            </label>
 
+          </div>
+
+
+          <label>
+
+            <span>
+              Subject
+            </span>
 
             <input
+              type="text"
               name="subject"
-              placeholder="Subject"
             >
 
+          </label>
+
+
+          <label>
+
+            <span>
+              Message
+            </span>
 
             <textarea
               name="message"
-              placeholder="Message"
-              rows="5"
+              rows="6"
               required
             ></textarea>
 
-
-            <button
-              class="btn btn-primary"
-              type="submit"
-            >
-              Send Message
-              <span>→</span>
-            </button>
-
-          </form>
+          </label>
 
 
-          <a
-            class="email"
-            href="mailto:support@burionstudio.com"
+          <button
+            type="submit"
+            class="button button-primary submit-button"
           >
-            ✉ support@burionstudio.com
-          </a>
 
-        </div>
+            <span>
+              Send Message
+            </span>
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </form>
 
       </section>
 
@@ -547,61 +1032,93 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="footer">
+    <footer class="site-footer">
 
-      <div class="footer-brand">
+      <div class="footer-main">
 
-        <img
-          class="footer-logo"
-          src="assets/brand/burion-logo-horizontal.png"
-          alt="Burion Studio"
+        <div class="footer-brand">
+
+          <img
+            src="assets/brand/burion-logo-gold.png"
+            alt="Burion Studio"
+          >
+
+          <p>
+            Independent developer creating games,
+            apps and digital experiences.
+          </p>
+
+        </div>
+
+
+        <nav
+          class="footer-nav"
+          aria-label="Footer navigation"
         >
 
-      </div>
+          <a href="#home">
+            Home
+          </a>
 
+          <a href="#projects">
+            Projects
+          </a>
 
-      <p>
-        Independent developer creating games,
-        apps and digital experiences.
-      </p>
+          <a href="#about">
+            About
+          </a>
 
+          <a href="#contact">
+            Contact
+          </a>
 
-      <div class="footer-links">
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#projects">
-          Projects
-        </a>
-
-        <a href="#about">
-          About
-        </a>
-
-        <a href="#contact">
-          Contact
-        </a>
+        </nav>
 
       </div>
 
 
       <div class="footer-bottom">
 
-        <span>EN</span>
-        <span>TR</span>
-        <span>RU</span>
+        <div class="footer-languages">
 
-        <span>
-          Privacy Policy
-        </span>
+          <button
+            type="button"
+            data-language="en"
+          >
+            EN
+          </button>
 
-        <span>
-          Terms of Use
-        </span>
+          <button
+            type="button"
+            data-language="tr"
+          >
+            TR
+          </button>
 
-        <span>
+          <button
+            type="button"
+            data-language="ru"
+          >
+            RU
+          </button>
+
+        </div>
+
+
+        <div class="footer-legal">
+
+          <a href="privacy.html">
+            Privacy Policy
+          </a>
+
+          <a href="terms.html">
+            Terms of Use
+          </a>
+
+        </div>
+
+
+        <span class="copyright">
           © 2026 Burion Studio. All rights reserved.
         </span>
 
