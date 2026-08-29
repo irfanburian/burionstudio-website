@@ -929,82 +929,156 @@ h2 em{
    BURION STUDIO — BRAND SYSTEM
    ========================================= */
 
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
 }
 
-.brand-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-    border-radius: 11px;
-    background: linear-gradient(145deg, #c85be8, #8e22b8);
-    box-shadow:
-        0 8px 24px rgba(166, 61, 204, 0.28),
-        inset 0 1px 1px rgba(255,255,255,0.28);
-    overflow: hidden;
+.brand-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1b19,
+      #080909
+    );
+
+  border:1px solid rgba(215,169,87,.65);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.08);
+
+  overflow:hidden;
 }
 
-.brand-b {
-    display: none;
+.brand-b{
+  display:none;
 }
 
-.brand-lion {
-    display: block;
-    width: 27px;
-    height: 27px;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    position: relative;
-    transform: rotate(-18deg);
+.brand-lion{
+  display:block;
+  width:27px;
+  height:27px;
+
+  border:4px solid var(--gold-light);
+  border-radius:50%;
+
+  position:relative;
+  transform:rotate(-18deg);
+
+  box-shadow:
+    0 0 10px rgba(215,169,87,.12);
 }
 
-.brand-lion::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 18px;
-    border: 4px solid #fff;
-    border-left: 0;
-    border-radius: 0 12px 12px 0;
-    right: -7px;
-    top: 1px;
+.brand-lion::before{
+  content:"";
+  position:absolute;
+
+  width:10px;
+  height:18px;
+
+  border:4px solid var(--gold-light);
+  border-left:0;
+
+  border-radius:0 12px 12px 0;
+
+  right:-7px;
+  top:1px;
 }
 
-.brand-lion::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 50%;
-    left: 5px;
-    top: 5px;
+.brand-lion::after{
+  content:"";
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  background:var(--gold-light);
+  border-radius:50%;
+
+  left:5px;
+  top:5px;
 }
 
-.brand-type {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-    letter-spacing: 0.28em;
+.brand-type{
+  display:flex;
+  flex-direction:column;
+
+  line-height:1;
+  letter-spacing:.28em;
 }
 
-.brand-type b {
-    font-size: 15px;
-    font-weight: 800;
-    color: #f5f2eb;
+.brand-type b{
+  font-size:15px;
+  font-weight:800;
+  color:var(--text);
 }
 
-.brand-type small {
-    margin-top: 5px;
-    font-size: 8px;
-    font-weight: 500;
-    color: #92979b;
-    letter-spacing: 0.48em;
+.brand-type small{
+  margin-top:5px;
+
+  font-size:8px;
+  font-weight:500;
+
+  color:var(--muted);
+  letter-spacing:.48em;
+}
+
+
+/* =========================================
+   MOBILE BRAND
+   ========================================= */
+
+@media(max-width:430px){
+
+  .brand{
+    gap:9px;
+  }
+
+  .brand-mark{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
+    border-radius:10px;
+  }
+
+  .brand-lion{
+    width:24px;
+    height:24px;
+    border-width:3px;
+  }
+
+  .brand-lion::before{
+    width:9px;
+    height:16px;
+    border-width:3px;
+    right:-6px;
+  }
+
+  .brand-lion::after{
+    width:8px;
+    height:8px;
+    left:5px;
+    top:5px;
+  }
+
+  .brand-type b{
+    font-size:12px;
+  }
+
+  .brand-type small{
+    margin-top:4px;
+    font-size:7px;
+  }
+
 }
