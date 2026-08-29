@@ -35,7 +35,6 @@ html{
 
 body{
   margin:0;
-
   background:var(--bg);
   color:var(--text);
 
@@ -48,7 +47,6 @@ body{
     sans-serif;
 
   line-height:1.6;
-
   overflow-x:hidden;
 }
 
@@ -100,7 +98,6 @@ textarea{
   max-width:var(--max);
 
   margin:0 auto;
-
   padding:0 28px;
 }
 
@@ -289,8 +286,7 @@ textarea{
 
   padding:29px 0;
 
-  transition:
-    color .2s ease;
+  transition:color .2s ease;
 }
 
 .desktop-nav a:hover,
@@ -388,6 +384,7 @@ textarea{
   padding:95px 0 90px;
 
   position:relative;
+
   z-index:2;
 }
 
@@ -489,7 +486,6 @@ h2 em{
 
 .btn span{
   font-size:18px;
-
   line-height:1;
 }
 
@@ -534,7 +530,7 @@ h2 em{
 
 
 /* =========================================================
-   HERO LOGO AREA
+   HERO LOGO
 ========================================================= */
 
 .lion-art{
@@ -580,6 +576,7 @@ h2 em{
   justify-content:center;
 
   position:relative;
+
   z-index:2;
 
   filter:
@@ -652,8 +649,7 @@ h2 em{
 .principles{
   display:grid;
 
-  grid-template-columns:
-    repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
   gap:25px;
 
@@ -731,8 +727,7 @@ h2 em{
 .cards{
   display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:14px;
 }
@@ -799,8 +794,7 @@ h2 em{
 .content-grid{
   display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:14px;
 
@@ -847,8 +841,7 @@ h2 em{
 .project-list{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:10px;
 
@@ -864,8 +857,7 @@ h2 em{
 
   border-radius:7px;
 
-  transition:
-    border-color .2s ease;
+  transition:border-color .2s ease;
 }
 
 .project:hover{
@@ -964,8 +956,7 @@ h2 em{
 .form-row{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:9px;
 }
@@ -1030,8 +1021,7 @@ h2 em{
 
   font-size:11px;
 
-  transition:
-    color .2s ease;
+  transition:color .2s ease;
 }
 
 .email:hover{
@@ -1055,6 +1045,7 @@ h2 em{
 
 .footer-brand{
   display:flex;
+
   align-items:center;
 
   gap:12px;
@@ -1182,8 +1173,7 @@ h2 em{
 }
 
 .footer-links a{
-  transition:
-    color .2s ease;
+  transition:color .2s ease;
 }
 
 .footer-links a:hover{
@@ -1211,6 +1201,8 @@ h2 em{
 
 /* =========================================================
    MOBILE MENU
+   IMPORTANT:
+   JS controls visibility with the hidden attribute.
 ========================================================= */
 
 .mobile-menu{
@@ -1223,12 +1215,9 @@ h2 em{
 
   z-index:1000;
 
-  display:none;
-
   padding:12px;
 
-  background:
-    rgba(10,12,14,.97);
+  background:rgba(10,12,14,.97);
 
   border:1px solid var(--line);
 
@@ -1240,7 +1229,20 @@ h2 em{
   backdrop-filter:blur(18px);
 }
 
-.mobile-menu a{
+/*
+   hidden=true -> browser hides it.
+   hidden=false -> this rule makes it visible.
+*/
+
+.mobile-menu:not([hidden]){
+  display:block;
+}
+
+.mobile-nav{
+  display:block;
+}
+
+.mobile-nav a{
   display:block;
 
   padding:15px;
@@ -1256,11 +1258,11 @@ h2 em{
     background .2s ease;
 }
 
-.mobile-menu a:last-child{
+.mobile-nav a:last-child{
   border-bottom:0;
 }
 
-.mobile-menu a:hover{
+.mobile-nav a:hover{
   color:var(--text);
 
   background:
@@ -1269,7 +1271,73 @@ h2 em{
 
 
 /* =========================================================
+   MOBILE LANGUAGE
+========================================================= */
+
+.mobile-language{
+  margin-top:12px;
+
+  padding-top:12px;
+
+  border-top:1px solid var(--line-soft);
+}
+
+.mobile-language > span{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:var(--gold);
+
+  font-size:8px;
+
+  font-weight:700;
+
+  letter-spacing:.18em;
+}
+
+.mobile-language-buttons{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:7px;
+}
+
+.mobile-language-buttons button{
+  padding:7px 9px;
+
+  background:rgba(255,255,255,.025);
+
+  border:1px solid var(--line);
+
+  border-radius:5px;
+
+  color:var(--muted);
+
+  cursor:pointer;
+
+  font-size:10px;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.mobile-language-buttons button:hover{
+  color:var(--gold-light);
+
+  border-color:#66502c;
+
+  background:
+    rgba(215,169,87,.05);
+}
+
+
+/* =========================================================
    LANGUAGE MENU
+   JS controls visibility with hidden.
 ========================================================= */
 
 .language-menu{
@@ -1294,6 +1362,10 @@ h2 em{
     0 12px 30px rgba(0,0,0,.35);
 
   backdrop-filter:blur(14px);
+}
+
+.language-menu:not([hidden]){
+  display:block;
 }
 
 .language-menu button{
@@ -1355,8 +1427,7 @@ h2 em{
   }
 
   .content-grid{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .projects-panel,
@@ -1385,9 +1456,7 @@ h2 em{
   }
 
   /*
-     Language button remains visible on mobile.
-     This allows language switching without needing
-     another menu system.
+     Language selector remains visible on mobile.
   */
 
   .lang{
@@ -1411,8 +1480,7 @@ h2 em{
   }
 
   .hero h1{
-    font-size:
-      clamp(50px,14vw,68px);
+    font-size:clamp(50px,14vw,68px);
 
     line-height:.94;
   }
@@ -1453,8 +1521,7 @@ h2 em{
   }
 
   .principles{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:22px 15px;
 
@@ -1607,8 +1674,7 @@ h2 em{
   }
 
   .principles div{
-    grid-template-columns:
-      25px 1fr;
+    grid-template-columns:25px 1fr;
   }
 
   .principles b{
