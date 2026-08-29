@@ -1,0 +1,82 @@
+/* BURION STUDIO — final narrow-screen corrections */
+
+@media (max-width:800px){
+  .brand-statement{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:28px 18px !important;
+    width:100% !important;
+    padding:24px 0 !important;
+  }
+
+  .statement-item{
+    display:grid !important;
+    grid-template-columns:24px minmax(0,1fr) !important;
+    align-items:start !important;
+    gap:8px !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .statement-item .statement-number{
+    width:24px !important;
+    flex:none !important;
+    line-height:1.25 !important;
+  }
+
+  .statement-item>div{
+    display:flex !important;
+    flex-direction:column !important;
+    width:auto !important;
+    min-width:0 !important;
+    flex:initial !important;
+  }
+
+  .statement-item strong,
+  .statement-item span:last-child{
+    display:block !important;
+    width:auto !important;
+    min-width:0 !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .statement-item strong{
+    font-size:8px !important;
+    line-height:1.3 !important;
+    letter-spacing:.12em !important;
+  }
+
+  .statement-item span:last-child{
+    margin-top:5px !important;
+    font-size:9px !important;
+    line-height:1.45 !important;
+  }
+}
+
+@media (max-width:430px){
+  .brand-statement{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:24px 12px !important;
+  }
+
+  .statement-item{
+    grid-template-columns:22px minmax(0,1fr) !important;
+    gap:6px !important;
+  }
+
+  .statement-item .statement-number{
+    width:22px !important;
+    font-size:8px !important;
+  }
+
+  .statement-item strong{
+    font-size:7.5px !important;
+    letter-spacing:.1em !important;
+  }
+
+  .statement-item span:last-child{
+    font-size:8.5px !important;
+  }
+}
