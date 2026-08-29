@@ -1,0 +1,39 @@
+name: Temporary SEO Domain Fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-domain-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update production domain metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old = 'https://irfanburian.github.io/burionstudio-website/'
+          new = 'https://burionstudio.com/'
+          if old not in s:
+              raise SystemExit('Expected GitHub Pages URL not found; aborting.')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit production metadata
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix: use production domain for SEO metadata'
+          git push
