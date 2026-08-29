@@ -96,9 +96,26 @@ textarea{
 .site-shell{
   width:100%;
   max-width:var(--max);
-
   margin:0 auto;
   padding:0 28px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav{
+  height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid var(--line-soft);
+
+  position:relative;
+  z-index:50;
 }
 
 
@@ -106,8 +123,7 @@ textarea{
    BRAND
 ========================================================= */
 
-.brand,
-.footer-brand{
+.brand{
   display:inline-flex;
   align-items:center;
 
@@ -117,14 +133,16 @@ textarea{
 }
 
 .brand-mark{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
   width:42px;
   height:42px;
 
   flex:0 0 42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
 
   border-radius:11px;
 
@@ -142,6 +160,10 @@ textarea{
     inset 0 1px 1px rgba(255,255,255,.08);
 
   overflow:hidden;
+}
+
+.brand-b{
+  display:none;
 }
 
 .brand-lion{
@@ -175,8 +197,7 @@ textarea{
   border:4px solid var(--gold-light);
   border-left:0;
 
-  border-radius:
-    0 12px 12px 0;
+  border-radius:0 12px 12px 0;
 }
 
 .brand-lion::after{
@@ -195,15 +216,12 @@ textarea{
   border-radius:50%;
 }
 
-.brand-b{
-  display:none;
-}
-
 .brand-type{
   display:flex;
   flex-direction:column;
 
   line-height:1;
+
   letter-spacing:.28em;
 }
 
@@ -233,21 +251,8 @@ textarea{
 
 
 /* =========================================================
-   NAVIGATION
+   DESKTOP NAVIGATION
 ========================================================= */
-
-.nav{
-  height:82px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  border-bottom:1px solid var(--line-soft);
-
-  position:relative;
-  z-index:50;
-}
 
 .desktop-nav{
   display:flex;
@@ -256,6 +261,7 @@ textarea{
   gap:38px;
 
   font-size:13px;
+
   color:#a9abad;
 }
 
@@ -264,8 +270,7 @@ textarea{
 
   position:relative;
 
-  transition:
-    color .2s ease;
+  transition:color .2s ease;
 }
 
 .desktop-nav a:hover,
@@ -292,6 +297,8 @@ textarea{
   align-items:center;
 
   gap:18px;
+
+  position:relative;
 }
 
 .lang,
@@ -311,6 +318,7 @@ textarea{
 
 .lang span{
   color:var(--gold);
+
   margin-left:5px;
 }
 
@@ -331,11 +339,13 @@ textarea{
   min-height:650px;
 
   display:grid;
+
   grid-template-columns:.95fr 1.05fr;
 
   align-items:center;
 
   position:relative;
+
   overflow:hidden;
 
   border-bottom:1px solid var(--line-soft);
@@ -345,6 +355,7 @@ textarea{
   padding:95px 0 90px;
 
   position:relative;
+
   z-index:2;
 }
 
@@ -397,6 +408,7 @@ h2 em{
   color:var(--muted);
 
   font-size:15px;
+
   line-height:1.75;
 }
 
@@ -407,6 +419,7 @@ h2 em{
 
 .actions{
   display:flex;
+
   flex-wrap:wrap;
 
   gap:12px;
@@ -418,7 +431,9 @@ h2 em{
   min-height:48px;
 
   display:inline-flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:30px;
@@ -430,7 +445,10 @@ h2 em{
   border:1px solid var(--gold);
 
   font-size:12px;
+
   font-weight:700;
+
+  cursor:pointer;
 
   transition:
     transform .2s ease,
@@ -441,6 +459,7 @@ h2 em{
 
 .btn span{
   font-size:18px;
+
   line-height:1;
 }
 
@@ -474,7 +493,8 @@ h2 em{
 
   border-color:#66502c;
 
-  background:rgba(255,255,255,.01);
+  background:
+    rgba(255,255,255,.01);
 }
 
 .btn-ghost:hover{
@@ -487,15 +507,18 @@ h2 em{
 
 /* =========================================================
    HERO SYMBOL
-   CSS ONLY — NO EMOJI
+   CSS DRAWN — NO EMOJI
 ========================================================= */
 
 .lion-art{
   height:100%;
+
   min-height:650px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   position:relative;
@@ -528,13 +551,17 @@ h2 em{
   height:210px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   position:relative;
+
   z-index:2;
 
   font-size:0;
+
   line-height:1;
 
   color:transparent;
@@ -608,8 +635,7 @@ h2 em{
 .principles{
   display:grid;
 
-  grid-template-columns:
-    repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr);
 
   gap:25px;
 
@@ -633,11 +659,13 @@ h2 em{
   color:var(--gold);
 
   font-size:20px;
+
   line-height:1.2;
 }
 
 .principles b{
   font-size:9px;
+
   line-height:1.2;
 
   letter-spacing:.15em;
@@ -649,6 +677,7 @@ h2 em{
   color:var(--muted-2);
 
   font-size:10px;
+
   line-height:1.4;
 }
 
@@ -685,8 +714,7 @@ h2 em{
 .cards{
   display:grid;
 
-  grid-template-columns:
-    repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:14px;
 }
@@ -723,6 +751,7 @@ h2 em{
   color:var(--gold);
 
   font-size:24px;
+
   line-height:1;
 }
 
@@ -752,8 +781,7 @@ h2 em{
 .content-grid{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
 
   gap:14px;
 
@@ -803,8 +831,7 @@ h2 em{
 .project-list{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:10px;
 
@@ -818,8 +845,7 @@ h2 em{
 
   border-radius:7px;
 
-  background:
-    rgba(0,0,0,.15);
+  background:rgba(0,0,0,.15);
 
   transition:
     border-color .2s ease;
@@ -833,12 +859,14 @@ h2 em{
   height:150px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border-radius:5px;
 
-  font-size:70px;
+  font-size:0;
 
   color:var(--gold);
 }
@@ -913,8 +941,7 @@ h2 em{
 .form-row{
   display:grid;
 
-  grid-template-columns:
-    1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
   gap:9px;
 }
@@ -996,7 +1023,72 @@ h2 em{
 }
 
 .footer-brand{
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
   margin-bottom:15px;
+}
+
+.footer-brand .lion-mark{
+  display:none;
+}
+
+.footer-brand::before{
+  content:"";
+
+  width:34px;
+  height:34px;
+
+  flex:0 0 34px;
+
+  border-radius:9px;
+
+  border:1px solid rgba(215,169,87,.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1b19,
+      #080909
+    );
+
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.08);
+}
+
+.footer-brand > span:last-child{
+  display:flex;
+
+  flex-direction:column;
+
+  line-height:1;
+}
+
+.footer-brand b{
+  display:block;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  color:var(--text);
+
+  letter-spacing:.28em;
+}
+
+.footer-brand small{
+  display:block;
+
+  margin-top:5px;
+
+  font-size:7px;
+
+  color:var(--muted);
+
+  letter-spacing:.45em;
 }
 
 .footer > p{
@@ -1054,6 +1146,7 @@ h2 em{
   position:fixed;
 
   top:82px;
+
   left:18px;
   right:18px;
 
@@ -1097,6 +1190,62 @@ h2 em{
 
 
 /* =========================================================
+   LANGUAGE MENU
+========================================================= */
+
+.language-menu{
+  position:absolute;
+
+  top:60px;
+  right:0;
+
+  z-index:1001;
+
+  min-width:130px;
+
+  padding:6px;
+
+  background:#0d0f11;
+
+  border:1px solid var(--line);
+
+  border-radius:6px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.35);
+}
+
+.language-menu button{
+  display:block;
+
+  width:100%;
+
+  padding:9px 10px;
+
+  background:none;
+
+  border:0;
+
+  color:var(--text);
+
+  text-align:left;
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  border-radius:4px;
+}
+
+.language-menu button:hover{
+  background:
+    rgba(215,169,87,.06);
+
+  color:var(--gold-light);
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -1121,8 +1270,7 @@ h2 em{
   }
 
   .content-grid{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .projects-panel{
@@ -1132,7 +1280,6 @@ h2 em{
   .contact-panel{
     grid-column:span 2;
   }
-
 }
 
 
@@ -1230,8 +1377,7 @@ h2 em{
   }
 
   .principles{
-    grid-template-columns:
-      1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:22px 15px;
 
@@ -1291,7 +1437,6 @@ h2 em{
   .mobile-menu{
     top:74px;
   }
-
 }
 
 
@@ -1412,8 +1557,7 @@ h2 em{
   }
 
   .principles div{
-    grid-template-columns:
-      25px 1fr;
+    grid-template-columns:25px 1fr;
   }
 
   .principles b{
@@ -1436,4 +1580,20 @@ h2 em{
     gap:12px;
   }
 
+  .footer-brand::before{
+    width:30px;
+    height:30px;
+
+    flex-basis:30px;
+
+    border-radius:8px;
+  }
+
+  .footer-brand b{
+    font-size:11px;
+  }
+
+  .footer-brand small{
+    font-size:6px;
+  }
 }
