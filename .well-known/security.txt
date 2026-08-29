@@ -1,0 +1,4 @@
+Contact: mailto:support@burionstudio.com
+Expires: 2027-08-29T00:00:00Z
+Preferred-Languages: en, tr, ru
+Canonical: https://burionstudio.com/.well-known/security.txt
