@@ -3,30 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
     en: {
       home: "Home", projects: "Projects", about: "About", contact: "Contact",
       eyebrow: "BURION STUDIO",
-      heroTitle: `Ideas,<br>built into <em>reality.</em>`,
+      heroTitle: "Ideas,<br>built into <em>reality.</em>",
       heroDescription: "Independent developer creating games, applications and digital experiences from idea to release.",
       explore: "Explore the studio", getInTouch: "Get in touch",
-      whatWeBuild: "WHAT WE BUILD", buildTitle: `Turning ideas into <em>digital products.</em>`,
+      whatWeBuild: "WHAT WE BUILD", buildTitle: "Turning ideas into <em>digital products.</em>",
       games: "Games", applications: "Applications", digitalProducts: "Digital Products",
-      selectedWork: "SELECTED WORK", projectsTitle: `Products, concepts and <em>experiments.</em>",
+      selectedWork: "SELECTED WORK", projectsTitle: "Products, concepts and <em>experiments.</em>",
       projectsDescription: "A selection of products and ideas currently being shaped at Burion Studio.",
-      statement: [
-        ["DEVELOPMENT", "Clean. Scalable. Stable."],
-        ["PERFORMANCE", "Fast. Efficient. Optimized."],
-        ["DESIGN", "Minimal. Intentional. Clear."],
-        ["EXPERIENCE", "Built to be used."]
-      ],
+      statement: [["DEVELOPMENT", "Clean. Scalable. Stable."], ["PERFORMANCE", "Fast. Efficient. Optimized."], ["DESIGN", "Minimal. Intentional. Clear."], ["EXPERIENCE", "Built to be used."]],
       project: [
         ["GAME", "TRIVIA", "KNOWLEDGE · COMPETITION · PLAY", "GAME · IN DEVELOPMENT", "Trivia", "A competitive quiz experience designed around knowledge, speed and progression.", "IN DEVELOPMENT"],
         ["APPLICATION", "AGRICULTURE", "DATA · FIELD · INTELLIGENCE", "APPLICATION · CONCEPT", "Agricultural Platform", "A digital platform focused on smarter agricultural decisions.", "CONCEPT"],
         ["DIGITAL PRODUCT", "BURION", "STUDIO · BRAND · DIGITAL", "DIGITAL PRODUCT · LIVE", "Burion Studio", "The digital home of an independent developer and creative studio.", "LIVE"]
       ],
-      aboutEyebrow: "ABOUT BURION STUDIO", aboutTitle: `One developer.<br><em>Many ideas.</em>`,
-      about1: `Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong>`,
+      aboutEyebrow: "ABOUT BURION STUDIO", aboutTitle: "One developer.<br><em>Many ideas.</em>",
+      about1: "Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong>",
       about2: "I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.",
       about3: "I handle the entire process — code, design, systems and everything in between.",
       about4: "Burion Studio is my space to create, experiment and turn ideas into something real.",
-      contactEyebrow: "LET'S WORK TOGETHER", contactTitle: `Have an idea?<br>Let's build something <em>worth making.</em>`,
+      contactEyebrow: "LET'S WORK TOGETHER", contactTitle: "Have an idea?<br>Let's build something <em>worth making.</em>",
       contactDescription: "Have a project, idea or collaboration in mind? I'd love to hear about it.",
       name: "Name", email: "Email", subject: "Subject", message: "Message", send: "Send Message",
       language: "LANGUAGE", privacy: "Privacy Policy", terms: "Terms of Use",
@@ -35,30 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
     tr: {
       home: "Ana Sayfa", projects: "Projeler", about: "Hakkında", contact: "İletişim",
       eyebrow: "BURION STUDIO",
-      heroTitle: `Fikirleri,<br><em>gerçeğe</em> dönüştürüyorum.`,
+      heroTitle: "Fikirleri,<br><em>gerçeğe</em> dönüştürüyorum.",
       heroDescription: "Fikirden yayınlanmaya kadar oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",
       explore: "Stüdyoyu keşfet", getInTouch: "İletişime geç",
-      whatWeBuild: "NELER GELİŞTİRİYORUM", buildTitle: `Fikirleri <em>dijital ürünlere</em> dönüştürüyorum.`,
+      whatWeBuild: "NELER GELİŞTİRİYORUM", buildTitle: "Fikirleri <em>dijital ürünlere</em> dönüştürüyorum.",
       games: "Oyunlar", applications: "Uygulamalar", digitalProducts: "Dijital Ürünler",
-      selectedWork: "SEÇİLİ ÇALIŞMALAR", projectsTitle: `Ürünler, fikirler ve <em>denemeler.</em>",
+      selectedWork: "SEÇİLİ ÇALIŞMALAR", projectsTitle: "Ürünler, fikirler ve <em>denemeler.</em>",
       projectsDescription: "Burion Studio bünyesinde şu anda şekillendirdiğim ürün ve fikirlerden bir seçki.",
-      statement: [
-        ["GELİŞTİRME", "Temiz. Ölçeklenebilir. Sağlam."],
-        ["PERFORMANS", "Hızlı. Verimli. Optimize."],
-        ["TASARIM", "Minimal. Bilinçli. Net."],
-        ["DENEYİM", "Kullanılmak için tasarlandı."]
-      ],
+      statement: [["GELİŞTİRME", "Temiz. Ölçeklenebilir. Sağlam."], ["PERFORMANS", "Hızlı. Verimli. Optimize."], ["TASARIM", "Minimal. Bilinçli. Net."], ["DENEYİM", "Kullanılmak için tasarlandı."]],
       project: [
         ["OYUN", "TRIVIA", "BİLGİ · REKABET · OYUN", "OYUN · GELİŞTİRİLİYOR", "Trivia", "Bilgi, hız ve ilerleme üzerine tasarlanmış rekabetçi bir quiz deneyimi.", "GELİŞTİRİLİYOR"],
         ["UYGULAMA", "TARIM", "VERİ · TARLA · ZEKÂ", "UYGULAMA · KONSEPT", "Tarım Platformu", "Daha akıllı tarımsal kararları desteklemeye odaklanan dijital platform.", "KONSEPT"],
         ["DİJİTAL ÜRÜN", "BURION", "STÜDYO · MARKA · DİJİTAL", "DİJİTAL ÜRÜN · CANLI", "Burion Studio", "Bağımsız geliştirici ve yaratıcı stüdyonun dijital merkezi.", "CANLI"]
       ],
-      aboutEyebrow: "BURION STUDIO HAKKINDA", aboutTitle: `Tek geliştirici.<br><em>Birçok fikir.</em>`,
-      about1: `Merhaba, ben <strong>İrfan Aslan BÜRİAN.</strong>`,
+      aboutEyebrow: "BURION STUDIO HAKKINDA", aboutTitle: "Tek geliştirici.<br><em>Birçok fikir.</em>",
+      about1: "Merhaba, ben <strong>İrfan Aslan BÜRİAN.</strong>",
       about2: "Türkiye'de yaşayan bağımsız bir geliştiriciyim. Oyunları, uygulamaları ve dijital ürünleri sıfırdan geliştiriyorum.",
       about3: "Tüm süreci kendim yürütüyorum — kod, tasarım, sistemler ve aradaki her şey.",
       about4: "Burion Studio; üretmek, denemek ve fikirleri gerçek bir ürüne dönüştürmek için oluşturduğum stüdyom.",
-      contactEyebrow: "BİRLİKTE ÇALIŞALIM", contactTitle: `Bir fikrin mi var?<br>Yapmaya <em>değer</em> bir şey geliştirelim.`,
+      contactEyebrow: "BİRLİKTE ÇALIŞALIM", contactTitle: "Bir fikrin mi var?<br>Yapmaya <em>değer</em> bir şey geliştirelim.",
       contactDescription: "Bir projen, fikrin veya iş birliği önerin varsa senden haber almak isterim.",
       name: "İsim", email: "E-posta", subject: "Konu", message: "Mesaj", send: "Mesaj Gönder",
       language: "DİL", privacy: "Gizlilik Politikası", terms: "Kullanım Koşulları",
@@ -67,30 +57,25 @@ document.addEventListener("DOMContentLoaded", () => {
     ru: {
       home: "Главная", projects: "Проекты", about: "Обо мне", contact: "Контакты",
       eyebrow: "BURION STUDIO",
-      heroTitle: `Идеи,<br>превращённые в <em>реальность.</em>`,
+      heroTitle: "Идеи,<br>превращённые в <em>реальность.</em>",
       heroDescription: "Независимый разработчик, создающий игры, приложения и цифровые продукты от идеи до релиза.",
       explore: "Исследовать студию", getInTouch: "Связаться",
-      whatWeBuild: "ЧТО Я СОЗДАЮ", buildTitle: `Превращаю идеи в <em>цифровые продукты.</em>`,
+      whatWeBuild: "ЧТО Я СОЗДАЮ", buildTitle: "Превращаю идеи в <em>цифровые продукты.</em>",
       games: "Игры", applications: "Приложения", digitalProducts: "Цифровые продукты",
-      selectedWork: "ИЗБРАННЫЕ РАБОТЫ", projectsTitle: `Продукты, концепции и <em>эксперименты.</em>`,
+      selectedWork: "ИЗБРАННЫЕ РАБОТЫ", projectsTitle: "Продукты, концепции и <em>эксперименты.</em>",
       projectsDescription: "Подборка продуктов и идей, которые сейчас развиваются в Burion Studio.",
-      statement: [
-        ["РАЗРАБОТКА", "Чисто. Масштабируемо. Надёжно."],
-        ["ПРОИЗВОДИТЕЛЬНОСТЬ", "Быстро. Эффективно. Оптимизировано."],
-        ["ДИЗАЙН", "Минималистично. Осознанно. Понятно."],
-        ["ОПЫТ", "Создано для использования."]
-      ],
+      statement: [["РАЗРАБОТКА", "Чисто. Масштабируемо. Надёжно."], ["ПРОИЗВОДИТЕЛЬНОСТЬ", "Быстро. Эффективно. Оптимизировано."], ["ДИЗАЙН", "Минималистично. Осознанно. Понятно."], ["ОПЫТ", "Создано для использования."]],
       project: [
         ["ИГРА", "TRIVIA", "ЗНАНИЯ · СОРЕВНОВАНИЕ · ИГРА", "ИГРА · В РАЗРАБОТКЕ", "Trivia", "Соревновательная викторина, построенная вокруг знаний, скорости и прогресса.", "В РАЗРАБОТКЕ"],
         ["ПРИЛОЖЕНИЕ", "СЕЛЬСКОЕ ХОЗЯЙСТВО", "ДАННЫЕ · ПОЛЕ · ИНТЕЛЛЕКТ", "ПРИЛОЖЕНИЕ · КОНЦЕПЦИЯ", "Аграрная платформа", "Цифровая платформа для более эффективных решений в сельском хозяйстве.", "КОНЦЕПЦИЯ"],
         ["ЦИФРОВОЙ ПРОДУКТ", "BURION", "СТУДИЯ · БРЕНД · DIGITAL", "ЦИФРОВОЙ ПРОДУКТ · LIVE", "Burion Studio", "Цифровой дом независимого разработчика и творческой студии.", "LIVE"]
       ],
-      aboutEyebrow: "О BURION STUDIO", aboutTitle: `Один разработчик.<br><em>Много идей.</em>`,
-      about1: `Привет, я <strong>İrfan Aslan BÜRİAN.</strong>`,
+      aboutEyebrow: "О BURION STUDIO", aboutTitle: "Один разработчик.<br><em>Много идей.</em>",
+      about1: "Привет, я <strong>İrfan Aslan BÜRİAN.</strong>",
       about2: "Я независимый разработчик из Турции. Создаю игры, приложения и цифровые продукты с нуля.",
       about3: "Я самостоятельно занимаюсь всем процессом — кодом, дизайном, системами и всеми задачами между ними.",
       about4: "Burion Studio — моё пространство для создания, экспериментов и превращения идей в реальные продукты.",
-      contactEyebrow: "ДАВАЙТЕ СОЗДАДИМ ВМЕСТЕ", contactTitle: `Есть идея?<br>Давайте создадим что-то <em>стоящее.</em>`,
+      contactEyebrow: "ДАВАЙТЕ СОЗДАДИМ ВМЕСТЕ", contactTitle: "Есть идея?<br>Давайте создадим что-то <em>стоящее.</em>",
       contactDescription: "Есть проект, идея или предложение о сотрудничестве? Буду рад услышать о нём.",
       name: "Имя", email: "Эл. почта", subject: "Тема", message: "Сообщение", send: "Отправить сообщение",
       language: "ЯЗЫК", privacy: "Политика конфиденциальности", terms: "Условия использования",
@@ -119,10 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hero = document.querySelector("#home");
     if (hero) {
-      hero.querySelector(".eyebrow")?.replaceChildren(document.createTextNode(t.eyebrow));
+      const eyebrow = hero.querySelector(".eyebrow");
       const title = hero.querySelector("h1");
       const description = hero.querySelector(".hero-description");
       const buttons = hero.querySelectorAll(".hero-actions .button");
+      if (eyebrow) eyebrow.textContent = t.eyebrow;
       if (title) title.innerHTML = t.heroTitle;
       if (description) description.textContent = t.heroDescription;
       if (buttons[0]?.querySelector("span")) buttons[0].querySelector("span").textContent = t.explore;
