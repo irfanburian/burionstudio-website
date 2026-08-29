@@ -3,6 +3,7 @@
   --bg-soft:#0b0d0f;
   --panel:#0d1012;
   --panel-hover:#111416;
+
   --line:#25292d;
   --line-soft:rgba(255,255,255,.07);
 
@@ -18,6 +19,11 @@
   --radius:10px;
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
   box-sizing:border-box;
 }
@@ -31,17 +37,28 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   line-height:1.6;
   overflow-x:hidden;
 }
 
-body:before{
+body::before{
   content:"";
+
   position:fixed;
   inset:0;
+
   pointer-events:none;
   z-index:-1;
+
   background:
     radial-gradient(
       circle at 72% 18%,
@@ -71,12 +88,149 @@ textarea{
   font:inherit;
 }
 
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
 .site-shell{
   width:100%;
   max-width:var(--max);
+
   margin:0 auto;
   padding:0 28px;
 }
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand,
+.footer-brand{
+  display:inline-flex;
+  align-items:center;
+
+  gap:12px;
+
+  text-decoration:none;
+}
+
+.brand-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:42px;
+  height:42px;
+
+  flex:0 0 42px;
+
+  border-radius:11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1b19,
+      #080909
+    );
+
+  border:1px solid rgba(215,169,87,.65);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.35),
+    inset 0 1px 1px rgba(255,255,255,.08);
+
+  overflow:hidden;
+}
+
+.brand-lion{
+  display:block;
+
+  width:27px;
+  height:27px;
+
+  position:relative;
+
+  border:4px solid var(--gold-light);
+  border-radius:50%;
+
+  transform:rotate(-18deg);
+
+  box-shadow:
+    0 0 10px rgba(215,169,87,.12);
+}
+
+.brand-lion::before{
+  content:"";
+
+  position:absolute;
+
+  width:10px;
+  height:18px;
+
+  right:-7px;
+  top:1px;
+
+  border:4px solid var(--gold-light);
+  border-left:0;
+
+  border-radius:
+    0 12px 12px 0;
+}
+
+.brand-lion::after{
+  content:"";
+
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  left:5px;
+  top:5px;
+
+  background:var(--gold-light);
+
+  border-radius:50%;
+}
+
+.brand-b{
+  display:none;
+}
+
+.brand-type{
+  display:flex;
+  flex-direction:column;
+
+  line-height:1;
+  letter-spacing:.28em;
+}
+
+.brand-type b{
+  display:block;
+
+  font-size:15px;
+  font-weight:800;
+
+  color:var(--text);
+
+  letter-spacing:.28em;
+}
+
+.brand-type small{
+  display:block;
+
+  margin-top:5px;
+
+  font-size:8px;
+  font-weight:500;
+
+  color:var(--muted);
+
+  letter-spacing:.48em;
+}
+
 
 /* =========================================================
    NAVIGATION
@@ -84,58 +238,34 @@ textarea{
 
 .nav{
   height:82px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   border-bottom:1px solid var(--line-soft);
+
   position:relative;
   z-index:50;
-}
-
-.brand,
-.footer-brand{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  letter-spacing:.22em;
-}
-
-.brand b,
-.footer-brand b{
-  display:block;
-  font-size:14px;
-  line-height:1;
-  letter-spacing:.28em;
-}
-
-.brand small,
-.footer-brand small{
-  display:block;
-  margin-top:5px;
-  font-size:8px;
-  line-height:1;
-  letter-spacing:.45em;
-  color:var(--muted);
-}
-
-.lion-mark{
-  color:var(--gold);
-  font-size:27px;
-  line-height:1;
 }
 
 .desktop-nav{
   display:flex;
   align-items:center;
+
   gap:38px;
+
   font-size:13px;
   color:#a9abad;
 }
 
 .desktop-nav a{
   padding:29px 0;
+
   position:relative;
-  transition:color .2s ease;
+
+  transition:
+    color .2s ease;
 }
 
 .desktop-nav a:hover,
@@ -143,19 +273,24 @@ textarea{
   color:var(--text);
 }
 
-.desktop-nav a.active:after{
+.desktop-nav a.active::after{
   content:"";
+
   position:absolute;
+
   left:0;
   right:0;
   bottom:-1px;
+
   height:2px;
+
   background:var(--gold);
 }
 
 .nav-right{
   display:flex;
   align-items:center;
+
   gap:18px;
 }
 
@@ -163,7 +298,9 @@ textarea{
 .menu-btn{
   background:none;
   border:0;
+
   color:#bfc2c4;
+
   cursor:pointer;
 }
 
@@ -179,8 +316,12 @@ textarea{
 
 .menu-btn{
   display:none;
+
+  padding:0;
+
   font-size:24px;
 }
+
 
 /* =========================================================
    HERO
@@ -188,72 +329,109 @@ textarea{
 
 .hero{
   min-height:650px;
+
   display:grid;
   grid-template-columns:.95fr 1.05fr;
+
   align-items:center;
+
   position:relative;
   overflow:hidden;
+
   border-bottom:1px solid var(--line-soft);
 }
 
 .hero-copy{
   padding:95px 0 90px;
+
   position:relative;
   z-index:2;
 }
 
 .eyebrow{
   margin:0 0 16px;
+
   color:var(--gold);
+
   font-size:10px;
   line-height:1;
+
   font-weight:700;
+
   letter-spacing:.25em;
 }
 
 .hero h1{
   max-width:700px;
+
   margin:0 0 28px;
+
   font-size:clamp(58px,6.2vw,86px);
+
   line-height:.94;
+
   letter-spacing:-.065em;
+
   font-weight:700;
 }
 
 .hero h1 em,
 h2 em{
-  font-family:"Playfair Display",Georgia,serif;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
   color:var(--gold-light);
+
   font-style:normal;
+
   font-weight:600;
 }
 
 .lead{
   max-width:500px;
+
   margin:0;
+
   color:var(--muted);
+
   font-size:15px;
   line-height:1.75;
 }
 
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
 .actions{
   display:flex;
   flex-wrap:wrap;
+
   gap:12px;
+
   margin-top:36px;
 }
 
 .btn{
   min-height:48px;
+
   display:inline-flex;
   align-items:center;
   justify-content:space-between;
+
   gap:30px;
+
   padding:13px 18px;
+
   border-radius:7px;
+
   border:1px solid var(--gold);
+
   font-size:12px;
   font-weight:700;
+
   transition:
     transform .2s ease,
     background .2s ease,
@@ -272,48 +450,65 @@ h2 em{
 
 .btn-primary{
   color:#111;
-  background:linear-gradient(
-    135deg,
-    var(--gold-light),
-    #b98740
-  );
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      #b98740
+    );
+
   border-color:var(--gold-light);
-  box-shadow:0 8px 25px rgba(215,169,87,.08);
+
+  box-shadow:
+    0 8px 25px rgba(215,169,87,.08);
 }
 
 .btn-primary:hover{
-  box-shadow:0 12px 30px rgba(215,169,87,.16);
+  box-shadow:
+    0 12px 30px rgba(215,169,87,.16);
 }
 
 .btn-ghost{
   color:var(--text);
+
   border-color:#66502c;
+
   background:rgba(255,255,255,.01);
 }
 
 .btn-ghost:hover{
   border-color:var(--gold);
-  background:rgba(215,169,87,.04);
+
+  background:
+    rgba(215,169,87,.04);
 }
 
+
 /* =========================================================
-   HERO ART
+   HERO SYMBOL
+   CSS ONLY — NO EMOJI
 ========================================================= */
 
 .lion-art{
   height:100%;
   min-height:650px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   position:relative;
 }
 
 .lion-glow{
   position:absolute;
+
   width:470px;
   height:470px;
+
   border-radius:50%;
+
   background:
     radial-gradient(
       circle,
@@ -321,21 +516,90 @@ h2 em{
       rgba(215,169,87,.025) 48%,
       transparent 70%
     );
+
   border:1px solid rgba(215,169,87,.20);
+
   box-shadow:
     0 0 80px rgba(215,169,87,.06);
 }
 
 .lion-face{
+  width:210px;
+  height:210px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   position:relative;
   z-index:2;
-  font-size:285px;
+
+  font-size:0;
   line-height:1;
-  color:#b98a45;
-  filter:
-    drop-shadow(0 0 25px rgba(215,169,87,.20));
+
+  color:transparent;
+
   transform:rotate(-8deg);
+
+  filter:
+    drop-shadow(
+      0 0 25px rgba(215,169,87,.20)
+    );
 }
+
+.lion-symbol{
+  position:relative;
+
+  width:145px;
+  height:145px;
+
+  border:8px solid var(--gold-light);
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 25px rgba(215,169,87,.12),
+    inset 0 0 18px rgba(215,169,87,.05);
+}
+
+.lion-symbol::before{
+  content:"";
+
+  position:absolute;
+
+  width:48px;
+  height:82px;
+
+  right:-34px;
+  top:26px;
+
+  border:8px solid var(--gold-light);
+
+  border-left:0;
+
+  border-radius:
+    0 50px 50px 0;
+}
+
+.lion-symbol::after{
+  content:"";
+
+  position:absolute;
+
+  width:38px;
+  height:38px;
+
+  left:45px;
+  top:45px;
+
+  background:var(--gold-light);
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 15px rgba(215,169,87,.15);
+}
+
 
 /* =========================================================
    PRINCIPLES
@@ -343,21 +607,31 @@ h2 em{
 
 .principles{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+
+  grid-template-columns:
+    repeat(4,1fr);
+
   gap:25px;
+
   padding:25px 0;
-  border-bottom:1px solid var(--line-soft);
+
+  border-bottom:
+    1px solid var(--line-soft);
 }
 
 .principles div{
   display:grid;
+
   grid-template-columns:30px 1fr;
+
   column-gap:9px;
 }
 
 .principles span{
   grid-row:span 2;
+
   color:var(--gold);
+
   font-size:20px;
   line-height:1.2;
 }
@@ -365,15 +639,19 @@ h2 em{
 .principles b{
   font-size:9px;
   line-height:1.2;
+
   letter-spacing:.15em;
 }
 
 .principles small{
   margin-top:3px;
+
   color:var(--muted-2);
+
   font-size:10px;
   line-height:1.4;
 }
+
 
 /* =========================================================
    WHAT I BUILD
@@ -381,8 +659,11 @@ h2 em{
 
 .build-section{
   display:grid;
+
   grid-template-columns:.7fr 1.7fr;
+
   gap:60px;
+
   padding:95px 0;
 }
 
@@ -393,27 +674,37 @@ h2 em{
 .build-section h2,
 .panel h2{
   margin:0;
+
   font-size:31px;
+
   line-height:1.1;
+
   letter-spacing:-.035em;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:14px;
 }
 
 .card{
   padding:27px;
+
   background:
     linear-gradient(
       145deg,
       rgba(255,255,255,.035),
       rgba(255,255,255,.012)
     );
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
+
   transition:
     transform .25s ease,
     border-color .25s ease,
@@ -422,57 +713,77 @@ h2 em{
 
 .card:hover{
   transform:translateY(-4px);
+
   border-color:#4a402d;
+
   background:var(--panel-hover);
 }
 
 .card-icon{
   color:var(--gold);
+
   font-size:24px;
   line-height:1;
 }
 
 .card h3{
   margin:28px 0 9px;
+
   font-size:15px;
+
   line-height:1.2;
 }
 
 .card p{
   margin:0;
+
   color:var(--muted);
+
   font-size:12px;
+
   line-height:1.65;
 }
 
+
 /* =========================================================
-   CONTENT / PROJECTS / ABOUT / CONTACT
+   CONTENT GRID
 ========================================================= */
 
 .content-grid{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr 1fr;
+
   gap:14px;
+
   padding-bottom:90px;
 }
 
 .panel{
   min-height:430px;
+
   padding:30px;
+
   background:
     linear-gradient(
       145deg,
       rgba(255,255,255,.028),
       rgba(255,255,255,.008)
     );
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
 }
 
 .panel > p{
   color:var(--muted);
+
   font-size:12px;
+
   line-height:1.7;
+
   margin:0 0 13px;
 }
 
@@ -484,19 +795,34 @@ h2 em{
   grid-column:span 1;
 }
 
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
 .project-list{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:10px;
+
   margin-top:30px;
 }
 
 .project{
   padding:10px;
+
   border:1px solid var(--line);
+
   border-radius:7px;
-  background:rgba(0,0,0,.15);
-  transition:border-color .2s ease;
+
+  background:
+    rgba(0,0,0,.15);
+
+  transition:
+    border-color .2s ease;
 }
 
 .project:hover{
@@ -505,11 +831,15 @@ h2 em{
 
 .project-visual{
   height:150px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   border-radius:5px;
+
   font-size:70px;
+
   color:var(--gold);
 }
 
@@ -533,15 +863,20 @@ h2 em{
 
 .project h3{
   margin:10px 0 2px;
+
   font-size:12px;
+
   line-height:1.2;
 }
 
 .project span{
   color:var(--muted-2);
+
   font-size:7px;
+
   letter-spacing:.15em;
 }
+
 
 /* =========================================================
    ABOUT
@@ -549,11 +884,19 @@ h2 em{
 
 .signature{
   margin-top:30px;
+
   color:var(--gold);
-  font-family:"Playfair Display",Georgia,serif;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
   font-size:20px;
+
   font-style:italic;
 }
+
 
 /* =========================================================
    CONTACT
@@ -561,31 +904,46 @@ h2 em{
 
 .contact-panel form{
   display:grid;
+
   gap:9px;
+
   margin-top:23px;
 }
 
 .form-row{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:9px;
 }
 
 .contact-panel input,
 .contact-panel textarea{
   width:100%;
+
   padding:12px;
+
   color:var(--text);
+
   background:#090b0c;
+
   border:1px solid var(--line);
+
   border-radius:5px;
+
   outline:none;
+
   font-size:11px;
-  transition:border-color .2s ease;
+
+  transition:
+    border-color .2s ease;
 }
 
 .contact-panel textarea{
   resize:vertical;
+
   min-height:120px;
 }
 
@@ -601,20 +959,27 @@ h2 em{
 
 .contact-panel .btn{
   width:100%;
+
   margin-top:3px;
 }
 
 .email{
   display:block;
+
   margin-top:18px;
+
   color:var(--muted);
+
   font-size:11px;
-  transition:color .2s ease;
+
+  transition:
+    color .2s ease;
 }
 
 .email:hover{
   color:var(--gold);
 }
+
 
 /* =========================================================
    FOOTER
@@ -622,8 +987,11 @@ h2 em{
 
 .footer{
   padding:45px 0 28px;
+
   color:var(--muted);
+
   font-size:11px;
+
   border-top:1px solid var(--line);
 }
 
@@ -633,19 +1001,25 @@ h2 em{
 
 .footer > p{
   max-width:430px;
+
   margin:0;
+
   line-height:1.6;
 }
 
 .footer-links{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:25px;
+
   margin:27px 0;
 }
 
 .footer-links a{
-  transition:color .2s ease;
+  transition:
+    color .2s ease;
 }
 
 .footer-links a:hover{
@@ -654,10 +1028,16 @@ h2 em{
 
 .footer-bottom{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:18px;
+
   padding-top:20px;
-  border-top:1px solid var(--line);
+
+  border-top:
+    1px solid var(--line);
+
   font-size:9px;
 }
 
@@ -665,29 +1045,45 @@ h2 em{
   color:var(--gold);
 }
 
+
 /* =========================================================
    MOBILE MENU
 ========================================================= */
 
 .mobile-menu{
   position:fixed;
+
   top:82px;
   left:18px;
   right:18px;
+
   z-index:100;
+
   padding:12px;
-  background:rgba(10,12,14,.97);
+
+  background:
+    rgba(10,12,14,.97);
+
   border:1px solid var(--line);
+
   border-radius:10px;
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
   backdrop-filter:blur(18px);
 }
 
 .mobile-menu a{
   display:block;
+
   padding:15px;
+
   color:var(--muted);
-  border-bottom:1px solid var(--line-soft);
+
+  border-bottom:
+    1px solid var(--line-soft);
+
   font-size:13px;
 }
 
@@ -699,8 +1095,9 @@ h2 em{
   color:var(--text);
 }
 
+
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media(max-width:1000px){
@@ -719,11 +1116,13 @@ h2 em{
 
   .build-section{
     grid-template-columns:1fr;
+
     gap:35px;
   }
 
   .content-grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .projects-panel{
@@ -733,7 +1132,13 @@ h2 em{
   .contact-panel{
     grid-column:span 2;
   }
+
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:800px){
 
@@ -763,12 +1168,15 @@ h2 em{
   }
 
   .hero h1{
-    font-size:clamp(50px,14vw,68px);
+    font-size:
+      clamp(50px,14vw,68px);
+
     line-height:.94;
   }
 
   .lead{
     font-size:14px;
+
     line-height:1.7;
   }
 
@@ -778,6 +1186,7 @@ h2 em{
 
   .btn{
     flex:1;
+
     min-width:145px;
   }
 
@@ -791,12 +1200,41 @@ h2 em{
   }
 
   .lion-face{
-    font-size:185px;
+    width:170px;
+    height:170px;
+  }
+
+  .lion-symbol{
+    width:115px;
+    height:115px;
+
+    border-width:6px;
+  }
+
+  .lion-symbol::before{
+    width:38px;
+    height:66px;
+
+    right:-27px;
+    top:20px;
+
+    border-width:6px;
+  }
+
+  .lion-symbol::after{
+    width:30px;
+    height:30px;
+
+    left:36px;
+    top:36px;
   }
 
   .principles{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
+
     gap:22px 15px;
+
     padding:23px 0;
   }
 
@@ -819,6 +1257,7 @@ h2 em{
 
   .content-grid{
     grid-template-columns:1fr;
+
     padding-bottom:65px;
   }
 
@@ -829,6 +1268,7 @@ h2 em{
 
   .panel{
     min-height:auto;
+
     padding:25px;
   }
 
@@ -851,12 +1291,65 @@ h2 em{
   .mobile-menu{
     top:74px;
   }
+
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media(max-width:430px){
 
   .site-shell{
     padding:0 15px;
+  }
+
+  .brand{
+    gap:9px;
+  }
+
+  .brand-mark{
+    width:38px;
+    height:38px;
+
+    flex:0 0 38px;
+
+    border-radius:10px;
+  }
+
+  .brand-lion{
+    width:24px;
+    height:24px;
+
+    border-width:3px;
+  }
+
+  .brand-lion::before{
+    width:9px;
+    height:16px;
+
+    right:-6px;
+
+    border-width:3px;
+  }
+
+  .brand-lion::after{
+    width:8px;
+    height:8px;
+
+    left:5px;
+    top:5px;
+  }
+
+  .brand-type b{
+    font-size:12px;
+  }
+
+  .brand-type small{
+    margin-top:4px;
+
+    font-size:7px;
   }
 
   .hero-copy{
@@ -885,7 +1378,33 @@ h2 em{
   }
 
   .lion-face{
-    font-size:160px;
+    width:150px;
+    height:150px;
+  }
+
+  .lion-symbol{
+    width:100px;
+    height:100px;
+
+    border-width:5px;
+  }
+
+  .lion-symbol::before{
+    width:32px;
+    height:58px;
+
+    right:-23px;
+    top:17px;
+
+    border-width:5px;
+  }
+
+  .lion-symbol::after{
+    width:26px;
+    height:26px;
+
+    left:31px;
+    top:31px;
   }
 
   .principles{
@@ -893,7 +1412,8 @@ h2 em{
   }
 
   .principles div{
-    grid-template-columns:25px 1fr;
+    grid-template-columns:
+      25px 1fr;
   }
 
   .principles b{
@@ -914,162 +1434,6 @@ h2 em{
 
   .footer-bottom{
     gap:12px;
-  }
-}
-
-/* =========================================================
-   BURION STUDIO — BRAND SYSTEM
-========================================================= */
-
-.brand{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-
-.brand-mark{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:42px;
-  height:42px;
-  flex:0 0 42px;
-  border-radius:11px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #1b1b19,
-      #080909
-    );
-
-  border:1px solid rgba(215,169,87,.65);
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.35),
-    inset 0 1px 1px rgba(255,255,255,.08);
-
-  overflow:hidden;
-}
-
-.brand-b{
-  display:none;
-}
-
-.brand-lion{
-  display:block;
-  width:27px;
-  height:27px;
-
-  border:4px solid var(--gold-light);
-  border-radius:50%;
-
-  position:relative;
-  transform:rotate(-18deg);
-
-  box-shadow:
-    0 0 10px rgba(215,169,87,.12);
-}
-
-.brand-lion::before{
-  content:"";
-  position:absolute;
-
-  width:10px;
-  height:18px;
-
-  border:4px solid var(--gold-light);
-  border-left:0;
-
-  border-radius:0 12px 12px 0;
-
-  right:-7px;
-  top:1px;
-}
-
-.brand-lion::after{
-  content:"";
-  position:absolute;
-
-  width:10px;
-  height:10px;
-
-  background:var(--gold-light);
-  border-radius:50%;
-
-  left:5px;
-  top:5px;
-}
-
-.brand-type{
-  display:flex;
-  flex-direction:column;
-
-  line-height:1;
-  letter-spacing:.28em;
-}
-
-.brand-type b{
-  font-size:15px;
-  font-weight:800;
-  color:var(--text);
-}
-
-.brand-type small{
-  margin-top:5px;
-
-  font-size:8px;
-  font-weight:500;
-
-  color:var(--muted);
-  letter-spacing:.48em;
-}
-
-/* =========================================================
-   MOBILE BRAND
-========================================================= */
-
-@media(max-width:430px){
-
-  .brand{
-    gap:9px;
-  }
-
-  .brand-mark{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-    border-radius:10px;
-  }
-
-  .brand-lion{
-    width:24px;
-    height:24px;
-    border-width:3px;
-  }
-
-  .brand-lion::before{
-    width:9px;
-    height:16px;
-    border-width:3px;
-    right:-6px;
-  }
-
-  .brand-lion::after{
-    width:8px;
-    height:8px;
-    left:5px;
-    top:5px;
-  }
-
-  .brand-type b{
-    font-size:12px;
-  }
-
-  .brand-type small{
-    margin-top:4px;
-    font-size:7px;
   }
 
 }
