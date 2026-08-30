@@ -13,4 +13,26 @@
 @media(min-width:801px){.project-card:not(.project-featured) .project-image{min-height:270px}.project-card:not(.project-featured) .project-info{min-height:128px}}
 @media(max-width:800px){.project-featured .project-image{min-height:235px!important}.project-featured .project-info h3{font-size:19px!important}.project-status{padding:4px 7px!important;font-size:6.5px!important}}
 @media(max-width:430px){.project-featured .project-image{min-height:220px!important}.project-image{min-height:210px!important}.project-status{font-size:6px!important;letter-spacing:.13em!important}}
+@media(max-width:800px){
+  .site-footer{width:100%!important;overflow:hidden!important}
+  .footer-main{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:30px!important;width:100%!important;align-items:start!important}
+  .footer-brand{width:100%!important;max-width:230px!important}
+  .footer-brand img{width:120px!important;max-width:100%!important;height:auto!important}
+  .footer-brand p{max-width:210px!important;margin:14px 0 0!important}
+  .footer-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px 22px!important;width:100%!important;min-width:0!important;align-items:start!important}
+  .footer-nav a{display:block!important;min-width:0!important;width:auto!important;white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.45!important}
+  .footer-bottom{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;width:100%!important;align-items:start!important}
+  .footer-languages,.footer-legal{display:flex!important;flex-wrap:wrap!important;gap:8px 14px!important;align-items:center!important;min-width:0!important}
+  .footer-languages button{flex:0 0 auto!important}
+  .footer-legal a{display:inline-block!important;white-space:normal!important}
+  .copyright{display:block!important;max-width:280px!important;line-height:1.5!important}
+}
+@media(max-width:430px){
+  .footer-main{gap:26px!important}
+  .footer-nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px 16px!important}
+  .footer-brand{max-width:210px!important}
+  .footer-brand img{width:112px!important}
+  .footer-brand p{max-width:190px!important;font-size:11px!important;line-height:1.6!important}
+  .footer-bottom{gap:16px!important}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.hero-image{transition:none!important}.button,.build-card,.project-card{transition:none!important}}
