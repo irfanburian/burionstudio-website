@@ -1,4 +1,4 @@
-/* BURION STUDIO — responsive hardening V6 */
+/* BURION STUDIO — responsive hardening V7 — stable lion crop */
 
 @media (min-width:1201px){
   .hero{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;min-height:680px!important}
@@ -22,7 +22,7 @@
   .hero-description{max-width:410px!important;font-size:14px!important}
   .hero-visual{min-height:610px!important;padding:30px 0 30px 14px!important}
   .hero-image-frame{max-width:440px!important;aspect-ratio:.86/1!important;border-radius:18px!important}
-  .hero-image{object-position:60% center!important;transform:scale(1.035)!important}
+  .hero-image{object-position:58% center!important;transform:scale(1.035)!important}
   .hero-image-overlay{background:linear-gradient(90deg,rgba(7,8,9,.04),transparent 45%,rgba(0,0,0,.30)),linear-gradient(180deg,transparent 58%,rgba(0,0,0,.58))!important}
   .hero-image-brand{display:none!important}
   .brand-statement{gap:16px!important}
@@ -31,6 +31,9 @@
   .statement-item span:last-child{font-size:9.5px!important}
 }
 
+/* MOBILE: the source artwork places the lion on the left side of the original image.
+   Therefore a LOW object-position is intentional: it reveals the lion while the
+   text/overlay keeps the lion visually anchored on the RIGHT side of the viewport. */
 @media (max-width:800px){
   .site-shell{padding-left:28px!important;padding-right:28px!important}
   .site-header{height:74px!important}
@@ -48,7 +51,7 @@
   .hero-visual{position:absolute!important;inset:0!important;z-index:1!important;width:100%!important;min-height:100%!important;padding:0!important;pointer-events:none!important}
   .hero-visual::before{display:none!important}
   .hero-image-frame{position:absolute!important;top:0!important;right:0!important;width:92%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;border:0!important;border-left:1px solid rgba(215,169,87,.13)!important;border-radius:0!important;box-shadow:none!important;background:#070809!important}
-  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:62% center!important;transform:scale(1.045)!important;transform-origin:center center!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.93!important}
+  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:3% center!important;transform:scale(1.045)!important;transform-origin:center center!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.93!important}
   .hero-image-overlay{background:linear-gradient(90deg,#070809 0%,rgba(7,8,9,.98) 10%,rgba(7,8,9,.84) 25%,rgba(7,8,9,.46) 45%,rgba(7,8,9,.10) 70%,rgba(7,8,9,.18) 100%),linear-gradient(180deg,rgba(7,8,9,.10) 0%,transparent 34%,rgba(7,8,9,.25) 72%,rgba(7,8,9,.68) 100%)!important}
   .hero-image-brand{display:none!important}
   .brand-statement{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 18px!important;width:100%!important;padding:26px 0!important}
@@ -96,7 +99,7 @@
   .hero-actions{max-width:250px!important}
   .hero-actions .button{max-width:250px!important}
   .hero-image-frame{width:93%!important}
-  .hero-image{object-position:64% center!important;transform:scale(1.04)!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.94!important}
+  .hero-image{object-position:2% center!important;transform:scale(1.04)!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.94!important}
   .brand-statement{gap:24px 14px!important}
   .statement-item{grid-template-columns:21px minmax(0,1fr)!important;gap:6px!important}
   .statement-item .statement-number{width:21px!important;font-size:7px!important}
