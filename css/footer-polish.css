@@ -1,20 +1,51 @@
-/* BURION STUDIO — Footer V8
-   Premium compact footer. Burion identity preserved.
-   Modern studio hierarchy without copying another brand.
+/* BURION STUDIO — Final Footer
+   Dream-inspired structure, Burion identity preserved.
+   Social icons restored; footer language duplicates removed.
 */
-.site-footer{margin-top:0!important;padding:42px 0 0!important;background:#0a0b0c!important;border-top:1px solid rgba(255,255,255,.075)!important;overflow:hidden!important}
-.footer-main{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;padding:0 24px 34px!important;text-align:center!important}
-.footer-brand{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;max-width:760px!important;min-width:0!important}
-.footer-brand img{display:block!important;width:118px!important;height:auto!important;max-width:60vw!important;margin:0!important}
+.site-footer{margin-top:0!important;padding:54px 0 0!important;background:#0a0b0c!important;border-top:1px solid rgba(255,255,255,.08)!important;overflow:hidden!important}
+.footer-main{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;padding:0 28px 46px!important;text-align:center!important}
+.footer-brand{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;max-width:720px!important;min-width:0!important}
+.footer-brand img{display:block!important;width:210px!important;height:auto!important;max-width:72vw!important;margin:0!important}
 .footer-brand p{display:none!important}
-.footer-nav{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;width:100%!important;gap:12px 34px!important;margin:30px 0 0!important;padding:0!important}
-.footer-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:32px!important;width:auto!important;padding:0!important;color:#f1eee7!important;font-size:15px!important;font-weight:500!important;line-height:1.25!important;letter-spacing:-.02em!important;white-space:nowrap!important;transition:color .2s ease,opacity .2s ease!important}
+.footer-nav{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;width:100%!important;gap:16px 58px!important;margin:42px 0 0!important;padding:0!important}
+.footer-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:34px!important;width:auto!important;padding:0!important;color:#f1eee7!important;font-size:18px!important;font-weight:600!important;line-height:1.25!important;letter-spacing:-.025em!important;white-space:nowrap!important;transition:color .2s ease,opacity .2s ease!important}
 .footer-nav a:hover,.footer-nav a:focus-visible{color:var(--gold-light)!important}
+.footer-socials{display:flex!important;align-items:center!important;justify-content:center!important;gap:18px!important;width:100%!important;margin:30px 0 0!important}
+.footer-social{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:46px!important;height:46px!important;padding:0!important;color:#f3f1ec!important;background:transparent!important;border:1px solid transparent!important;border-radius:10px!important;text-decoration:none!important;transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease!important}
+.footer-social svg{display:block!important;width:24px!important;height:24px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.footer-social svg path:not([d="m4.2 7 7.8 6 7.8-6"]),.footer-social svg .fill{fill:currentColor!important;stroke:none!important}
+.footer-social:hover,.footer-social:focus-visible{color:var(--gold-light)!important;border-color:rgba(215,169,87,.24)!important;background:rgba(215,169,87,.05)!important;transform:translateY(-2px)!important}
+.footer-bottom{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:100%!important;gap:22px!important;margin:0!important;padding:26px 28px 34px!important;border-top:1px solid rgba(255,255,255,.08)!important}
 .footer-languages{display:none!important}
-.footer-bottom{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:100%!important;gap:14px!important;margin:0!important;padding:20px 24px 26px!important;border-top:1px solid rgba(255,255,255,.075)!important}
-.footer-legal{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:8px 28px!important;min-width:0!important}
-.footer-legal a{display:inline-flex!important;align-items:center!important;min-height:26px!important;color:#7f8489!important;font-size:11px!important;font-weight:400!important;line-height:1.4!important;white-space:nowrap!important;transition:color .2s ease!important}
-.footer-legal a:hover,.footer-legal a:focus-visible{color:#d0ccc4!important}
-.copyright{display:block!important;margin:0!important;color:#62676c!important;font-size:9.5px!important;font-weight:400!important;line-height:1.5!important;text-align:center!important}
-@media(max-width:800px){.site-footer{padding:38px 0 0!important}.footer-main{padding:0 20px 30px!important}.footer-brand img{width:112px!important}.footer-nav{gap:10px 24px!important;margin-top:27px!important}.footer-nav a{min-height:30px!important;font-size:14px!important}.footer-bottom{gap:12px!important;padding:18px 20px 24px!important}.footer-legal{gap:7px 22px!important}.footer-legal a{font-size:10.5px!important}.copyright{font-size:9px!important}}
-@media(max-width:430px){.site-footer{padding-top:34px!important}.footer-main{padding-bottom:26px!important}.footer-brand img{width:106px!important}.footer-nav{gap:9px 20px!important;margin-top:24px!important}.footer-nav a{font-size:13.5px!important}.footer-bottom{padding:16px 18px 22px!important}.footer-legal{gap:6px 20px!important}.footer-legal a{font-size:10px!important}.copyright{font-size:8.8px!important}}
+.footer-legal{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:10px 42px!important;min-width:0!important}
+.footer-legal a{display:inline-flex!important;align-items:center!important;min-height:28px!important;color:#858a8f!important;font-size:13px!important;font-weight:400!important;line-height:1.4!important;white-space:nowrap!important;transition:color .2s ease!important}
+.footer-legal a:hover,.footer-legal a:focus-visible{color:#d6d1c8!important}
+.copyright{display:block!important;margin:0!important;color:#686d72!important;font-size:11px!important;font-weight:400!important;line-height:1.5!important;text-align:center!important}
+@media(max-width:800px){
+  .site-footer{padding:46px 0 0!important}
+  .footer-main{padding:0 22px 38px!important}
+  .footer-brand img{width:190px!important;max-width:78vw!important}
+  .footer-nav{gap:15px 38px!important;margin-top:36px!important}
+  .footer-nav a{font-size:17px!important;min-height:32px!important}
+  .footer-socials{gap:13px!important;margin-top:28px!important}
+  .footer-social{width:44px!important;height:44px!important;border-radius:10px!important}
+  .footer-social svg{width:23px!important;height:23px!important}
+  .footer-bottom{gap:18px!important;padding:23px 22px 30px!important}
+  .footer-legal{gap:8px 28px!important}
+  .footer-legal a{font-size:12px!important}
+  .copyright{font-size:10px!important}
+}
+@media(max-width:430px){
+  .site-footer{padding-top:40px!important}
+  .footer-main{padding:0 18px 32px!important}
+  .footer-brand img{width:174px!important}
+  .footer-nav{gap:13px 25px!important;margin-top:32px!important}
+  .footer-nav a{font-size:16px!important}
+  .footer-socials{gap:9px!important;margin-top:25px!important}
+  .footer-social{width:42px!important;height:42px!important;border-radius:9px!important}
+  .footer-social svg{width:21px!important;height:21px!important}
+  .footer-bottom{gap:16px!important;padding:20px 18px 27px!important}
+  .footer-legal{gap:7px 22px!important}
+  .footer-legal a{font-size:11px!important}
+  .copyright{font-size:9.5px!important}
+}
