@@ -1,4 +1,7 @@
-/* BURION STUDIO — responsive hardening V10 — cinematic single-eye lion framing */
+/* BURION STUDIO — Responsive System
+   Consolidated from V10–V12 stabilization overrides.
+   Goal: preserve current layout while removing duplicate cascade rules.
+*/
 
 @media (min-width:1201px){
   .hero{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;min-height:680px!important}
@@ -48,7 +51,7 @@
   .hero-visual{position:absolute!important;inset:0!important;z-index:1!important;width:100%!important;min-height:100%!important;padding:0!important;pointer-events:none!important}
   .hero-visual::before{display:none!important}
   .hero-image-frame{position:absolute!important;top:0!important;right:0!important;width:92%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;border:0!important;border-left:1px solid rgba(215,169,87,.13)!important;border-radius:0!important;box-shadow:none!important;background:#070809!important}
-  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:3% center!important;transform:scale(1.045)!important;transform-origin:center center!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.93!important}
+  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:0 center!important;transform:translateX(9%) scale(1.02)!important;transform-origin:center center!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.93!important}
   .hero-image-overlay{background:linear-gradient(90deg,#070809 0%,rgba(7,8,9,.98) 10%,rgba(7,8,9,.84) 25%,rgba(7,8,9,.46) 45%,rgba(7,8,9,.10) 70%,rgba(7,8,9,.18) 100%),linear-gradient(180deg,rgba(7,8,9,.10) 0%,transparent 34%,rgba(7,8,9,.25) 72%,rgba(7,8,9,.68) 100%)!important}
   .hero-image-brand{display:none!important}
   .brand-statement{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 18px!important;width:100%!important;padding:26px 0!important}
@@ -61,14 +64,19 @@
   .build-section{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:34px!important;padding:70px 0!important}
   .build-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
   .build-card{min-height:230px!important}
-  .projects-section{padding-bottom:72px!important}
-  .projects-heading{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important;align-items:start!important;margin-bottom:26px!important}
+  .projects-section{padding-bottom:76px!important}
+  .projects-heading{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:15px!important;align-items:start!important;margin-bottom:24px!important}
   .projects-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
   .project-card.project-featured{grid-column:auto!important}
-  .project-image{min-height:250px!important}
-  .project-info{gap:18px!important;padding:20px!important}
-  .project-info p{max-width:none!important}
-  .project-status{white-space:nowrap!important}
+  .project-card::before{width:26px!important}
+  .project-featured .project-image{min-height:235px!important}
+  .project-image{min-height:225px!important}
+  .project-info{gap:14px!important;padding:18px 19px 19px!important}
+  .project-featured .project-info{padding-top:18px!important}
+  .project-featured .project-info h3{font-size:19px!important}
+  .project-info h3{margin-top:7px!important;margin-bottom:6px!important}
+  .project-info p{max-width:none!important;font-size:10.5px!important;line-height:1.6!important}
+  .project-status{align-self:flex-start!important;white-space:nowrap!important;padding:4px 7px!important;font-size:6.5px!important}
   .about-section{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:42px!important;padding:68px 0 70px!important}
   .about-visual{min-height:300px!important}
   .about-mark{width:120px!important;height:120px!important}
@@ -91,8 +99,7 @@
   html[lang="ru"] .hero-content{width:80%!important}
   html[lang="ru"] .hero h1{font-size:clamp(39px,10vw,45px)!important;letter-spacing:-.065em!important;max-width:none!important}
   html[lang="ru"] .hero-description{max-width:260px!important}
-  html[lang="ru"] .hero-actions{max-width:250px!important}
-  html[lang="ru"] .hero-actions .button{max-width:250px!important}
+  html[lang="ru"] .hero-actions,html[lang="ru"] .hero-actions .button{max-width:250px!important}
 }
 
 @media (max-width:430px){
@@ -101,68 +108,45 @@
   .hero-content{width:60%!important;min-height:670px!important;padding-top:54px!important;padding-bottom:54px!important}
   .hero h1{font-size:clamp(40px,11.4vw,47px)!important}
   .hero-description{max-width:260px!important;font-size:12.1px!important}
-  .hero-actions{max-width:250px!important}
+  .hero-actions,html[lang="ru"] .hero-actions,html[lang="ru"] .hero-actions .button{max-width:250px!important}
   .hero-actions .button{max-width:250px!important}
   .hero-image-frame{width:93%!important}
-  .hero-image{object-position:2% center!important;transform:scale(1.04)!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.94!important}
+  .hero-image{transform:translateX(10%) scale(1.02)!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.94!important}
   .brand-statement{gap:24px 14px!important}
   .statement-item{grid-template-columns:21px minmax(0,1fr)!important;gap:6px!important}
   .statement-item .statement-number{width:21px!important;font-size:7px!important}
   .statement-item strong{font-size:7.6px!important;letter-spacing:.095em!important}
   .statement-item span:last-child{font-size:8.8px!important}
+  .projects-heading{gap:15px!important}
+  .project-featured .project-image{min-height:220px!important}
+  .project-image{min-height:210px!important}
+  .project-info{padding:17px 17px 18px!important}
+  .project-status{font-size:6px!important;letter-spacing:.13em!important}
 }
 
 @media (max-width:430px){
   html[lang="ru"] .hero-content{width:80%!important}
   html[lang="ru"] .hero h1{font-size:clamp(37px,10vw,43px)!important;letter-spacing:-.065em!important}
   html[lang="ru"] .hero-description{max-width:260px!important}
-  html[lang="ru"] .hero-actions{max-width:250px!important}
-  html[lang="ru"] .hero-actions .button{max-width:250px!important}
+  html[lang="ru"] .hero-actions,html[lang="ru"] .hero-actions .button{max-width:250px!important}
 }
 
-/* V10: mobile cinematic crop. The source artwork has the lion on the left.
-   A positive X translation moves the lion visually toward the RIGHT edge,
-   creating a deliberate one-eye reveal while preserving a clean text zone. */
-@media (max-width:800px){
-  .hero-image{object-position:0 center!important;transform:translateX(9%) scale(1.02)!important;transform-origin:center center!important}
-}
-
-@media (max-width:430px){
-  .hero-image{object-position:0 center!important;transform:translateX(10%) scale(1.02)!important;transform-origin:center center!important}
-}
-
-/* V11: Projects refinement — stronger editorial hierarchy without fake links. */
 .projects-heading .eyebrow{margin-bottom:15px}
 .project-card{position:relative}
 .project-card::before{content:"";position:absolute;left:0;top:0;width:34px;height:1px;background:rgba(215,169,87,.55);z-index:3;opacity:.7}
-.project-featured .project-image{min-height:340px}
+.project-featured .project-image{min-height:315px}
+.project-featured .project-image-content{transform:translateY(-2px)}
 .project-featured .project-image-content strong{font-size:clamp(48px,6.5vw,76px)}
 .project-info{border-top:1px solid rgba(255,255,255,.035)}
 .project-category{display:inline-block;margin-bottom:1px}
-.project-status{padding:5px 8px;border:1px solid rgba(215,169,87,.14);border-radius:999px;background:rgba(215,169,87,.035)}
+.project-status{padding:5px 9px;border:1px solid rgba(215,169,87,.14);border-radius:999px;background:rgba(215,169,87,.025)}
 .project-card:hover .project-status{border-color:rgba(215,169,87,.28);color:var(--gold-light)}
-@media(max-width:800px){
-  .project-featured .project-image{min-height:250px}
-  .project-card::before{width:26px}
-  .project-status{align-self:flex-start}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto!important}
-  .hero-image{transition:none!important}
-  .button,.build-card,.project-card{transition:none!important}
-}
-
-/* V12: Projects polish — restrained premium hierarchy and tighter mobile rhythm. */
-.projects-heading{position:relative}
-.projects-heading .section-description{max-width:390px}
 .project-card{background:linear-gradient(145deg,rgba(255,255,255,.022),rgba(255,255,255,.008))}
 .project-card:hover{box-shadow:0 18px 45px rgba(0,0,0,.18)}
-.project-featured .project-image{min-height:315px}
-.project-featured .project-image-content{transform:translateY(-2px)}
 .project-featured .project-info{padding-top:20px}
 .project-featured .project-info h3{font-size:21px;letter-spacing:-.025em}
 .project-info h3{letter-spacing:-.02em}
-.project-status{font-size:7px;letter-spacing:.16em;padding:5px 9px;background:rgba(215,169,87,.025)}
+.project-status{font-size:7px;letter-spacing:.16em}
 .project-image-content small{opacity:.9}
 .project-image-agriculture .project-image-content strong{font-size:clamp(36px,5vw,58px)}
 .project-image-studio .project-image-content strong{font-size:clamp(36px,5vw,58px)}
@@ -173,21 +157,19 @@
 }
 
 @media(max-width:800px){
-  .projects-section{padding-bottom:76px!important}
-  .projects-heading{margin-bottom:24px!important}
   .project-featured .project-image{min-height:235px!important}
-  .project-image{min-height:225px!important}
-  .project-info{padding:18px 19px 19px!important;gap:14px!important}
   .project-featured .project-info h3{font-size:19px!important}
-  .project-info h3{margin-top:7px!important;margin-bottom:6px!important}
-  .project-info p{font-size:10.5px!important;line-height:1.6!important}
   .project-status{padding:4px 7px!important;font-size:6.5px!important}
 }
 
 @media(max-width:430px){
-  .projects-heading{gap:15px!important}
   .project-featured .project-image{min-height:220px!important}
   .project-image{min-height:210px!important}
-  .project-info{padding:17px 17px 18px!important}
   .project-status{font-size:6px!important;letter-spacing:.13em!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .hero-image{transition:none!important}
+  .button,.build-card,.project-card{transition:none!important}
 }
