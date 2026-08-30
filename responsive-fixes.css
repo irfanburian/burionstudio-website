@@ -1,4 +1,4 @@
-/* BURION STUDIO — responsive hardening V7 — stable lion crop */
+/* BURION STUDIO — responsive hardening V8 — stable lion crop + language typography */
 
 @media (min-width:1201px){
   .hero{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;min-height:680px!important}
@@ -90,6 +90,17 @@
   .footer-main{gap:38px!important}
 }
 
+/* Russian mobile hero: preserve the premium three-line composition.
+   The Cyrillic headline is wider than EN/TR, so give only the headline
+   additional horizontal room while keeping the body copy and CTA widths stable. */
+@media (max-width:800px){
+  html[lang="ru"] .hero-content{width:80%!important}
+  html[lang="ru"] .hero h1{font-size:clamp(39px,10vw,45px)!important;letter-spacing:-.065em!important;max-width:none!important}
+  html[lang="ru"] .hero-description{max-width:260px!important}
+  html[lang="ru"] .hero-actions{max-width:250px!important}
+  html[lang="ru"] .hero-actions .button{max-width:250px!important}
+}
+
 @media (max-width:430px){
   .site-shell{padding-left:24px!important;padding-right:24px!important}
   .hero{min-height:670px!important}
@@ -105,6 +116,15 @@
   .statement-item .statement-number{width:21px!important;font-size:7px!important}
   .statement-item strong{font-size:7.6px!important;letter-spacing:.095em!important}
   .statement-item span:last-child{font-size:8.8px!important}
+}
+
+/* Keep the Russian overrides active after the narrower 430px mobile rules above. */
+@media (max-width:430px){
+  html[lang="ru"] .hero-content{width:80%!important}
+  html[lang="ru"] .hero h1{font-size:clamp(37px,10vw,43px)!important;letter-spacing:-.065em!important}
+  html[lang="ru"] .hero-description{max-width:260px!important}
+  html[lang="ru"] .hero-actions{max-width:250px!important}
+  html[lang="ru"] .hero-actions .button{max-width:250px!important}
 }
 
 @media (prefers-reduced-motion:reduce){
