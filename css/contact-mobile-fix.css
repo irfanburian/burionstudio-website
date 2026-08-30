@@ -1,4 +1,7 @@
-/* BURION STUDIO — Contact section mobile stability */
+/* BURION STUDIO — Premium contact form
+   Mobile-first visual refinement.
+   Keeps the existing contact structure and submission behavior intact.
+*/
 
 #contact{scroll-margin-top:96px}
 
@@ -11,7 +14,7 @@
   .contact-section{
     position:relative!important;
     min-width:0!important;
-    padding:76px 0 72px!important;
+    padding:72px 0 82px!important;
   }
 
   .contact-heading{
@@ -21,17 +24,18 @@
 
   .contact-heading h2{
     max-width:100%!important;
-    margin:0 0 20px!important;
+    margin:0 0 22px!important;
     font-size:clamp(32px,8.6vw,43px)!important;
-    line-height:1.06!important;
+    line-height:1.04!important;
     letter-spacing:-.055em!important;
-    overflow-wrap:normal!important;
   }
 
   .contact-description{
     max-width:100%!important;
-    margin:0 0 14px!important;
+    margin:0 0 13px!important;
+    color:#969a9d!important;
     font-size:12px!important;
+    font-weight:400!important;
     line-height:1.7!important;
   }
 
@@ -39,28 +43,40 @@
     display:inline-block!important;
     max-width:100%!important;
     overflow-wrap:anywhere!important;
+    color:#f4f1ea!important;
     font-size:clamp(17px,4.7vw,22px)!important;
+    font-weight:400!important;
     line-height:1.3!important;
+    letter-spacing:-.025em!important;
   }
 
   .contact-form{
     min-width:0!important;
     width:100%!important;
-    margin:0!important;
+    margin:46px 0 0!important;
+  }
+
+  .contact-form .form-row{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:20px!important;
   }
 
   .contact-form label{
     display:block!important;
     min-width:0!important;
+    margin:0!important;
   }
 
   .contact-form label>span{
     display:block!important;
-    margin:0 0 7px!important;
-  }
-
-  .contact-form .form-row{
-    gap:18px!important;
+    margin:0 0 9px!important;
+    color:#969a9d!important;
+    font-size:10px!important;
+    font-weight:600!important;
+    line-height:1.2!important;
+    letter-spacing:.17em!important;
+    text-transform:uppercase!important;
   }
 
   .contact-form input,
@@ -69,25 +85,90 @@
     width:100%!important;
     max-width:100%!important;
     min-width:0!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:10px!important;
+    background:#0b0d0f!important;
+    color:#f4f1ea!important;
+    outline:none!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.018)!important;
+    transition:border-color .2s ease,background .2s ease,box-shadow .2s ease!important;
+  }
+
+  .contact-form input{
+    min-height:54px!important;
+    padding:14px 16px!important;
+    font-size:14px!important;
+    line-height:1.3!important;
   }
 
   .contact-form textarea{
-    min-height:180px!important;
+    min-height:176px!important;
+    padding:15px 16px!important;
     resize:vertical!important;
+    font-size:14px!important;
+    line-height:1.6!important;
   }
 
-  .submit-button{
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder{color:#686e73!important}
+
+  .contact-form input:focus,
+  .contact-form textarea:focus{
+    border-color:rgba(215,169,87,.48)!important;
+    background:#0d1012!important;
+    box-shadow:0 0 0 3px rgba(215,169,87,.055)!important;
+  }
+
+  .contact-form>label{
+    margin-top:20px!important;
+  }
+
+  .contact-form .submit-button{
     width:100%!important;
     max-width:100%!important;
+    min-height:58px!important;
+    margin-top:24px!important;
+    padding:15px 18px!important;
+    border-radius:10px!important;
+    font-size:11px!important;
+    letter-spacing:.06em!important;
   }
 }
 
 @media (max-width:430px){
   #contact{scroll-margin-top:82px!important}
-  .contact-section{padding:68px 0 64px!important}
+
+  .contact-section{padding:64px 0 72px!important}
+
   .contact-heading h2{font-size:clamp(31px,8.5vw,40px)!important}
+
   .contact-description{font-size:11.5px!important}
+
   .contact-email{font-size:18px!important}
-  .contact-form .form-row{gap:16px!important}
-  .contact-form textarea{min-height:175px!important}
+
+  .contact-form{margin-top:42px!important}
+
+  .contact-form .form-row{gap:18px!important}
+
+  .contact-form label>span{
+    margin-bottom:8px!important;
+    font-size:9.5px!important;
+  }
+
+  .contact-form input{
+    min-height:52px!important;
+    padding:13px 15px!important;
+  }
+
+  .contact-form textarea{
+    min-height:174px!important;
+    padding:14px 15px!important;
+  }
+
+  .contact-form>label{margin-top:18px!important}
+
+  .contact-form .submit-button{
+    min-height:56px!important;
+    margin-top:22px!important;
+  }
 }
