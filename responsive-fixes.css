@@ -1,9 +1,150 @@
-/* BURION STUDIO — responsive hardening layer */
+/* BURION STUDIO — responsive hardening + cinematic hero */
 
+/* =========================================================
+   CINEMATIC HERO — DESKTOP / TABLET
+========================================================= */
+@media (min-width:801px){
+  .hero{
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr) !important;
+    min-height:680px !important;
+  }
+
+  .hero-content{
+    padding:72px 42px 72px 0 !important;
+  }
+
+  .hero h1{
+    max-width:620px !important;
+    margin-bottom:24px !important;
+  }
+
+  .hero-visual{
+    min-height:680px !important;
+    padding:34px 0 34px 18px !important;
+  }
+
+  .hero-visual::before{
+    width:520px !important;
+    height:520px !important;
+    background:radial-gradient(circle,rgba(215,169,87,.12),rgba(215,169,87,.025) 48%,transparent 72%) !important;
+  }
+
+  .hero-image-frame{
+    width:min(100%,470px) !important;
+    max-width:470px !important;
+    aspect-ratio:.82 / 1 !important;
+    border-radius:20px !important;
+    border-color:rgba(215,169,87,.25) !important;
+    box-shadow:0 34px 100px rgba(0,0,0,.55) !important;
+  }
+
+  .hero-image{
+    object-position:58% center !important;
+    transform:scale(1.045) !important;
+  }
+
+  .hero-image-overlay{
+    background:
+      linear-gradient(90deg,rgba(7,8,9,.02),transparent 42%,rgba(0,0,0,.28)),
+      linear-gradient(180deg,rgba(0,0,0,.02),transparent 58%,rgba(0,0,0,.62)) !important;
+  }
+
+  .hero-image-brand{display:none !important}
+}
+
+/* =========================================================
+   MOBILE — KEEP THE 2×2 VALUE GRID + CINEMATIC HERO
+========================================================= */
 @media (max-width:800px){
-  .site-shell{padding-left:32px;padding-right:32px}
+  .site-shell{padding-left:32px !important;padding-right:32px !important}
 
-  /* Values / brand statement — deliberate 2×2 mobile grid. */
+  .hero{
+    position:relative !important;
+    display:block !important;
+    min-height:690px !important;
+    overflow:hidden !important;
+    border-bottom:1px solid var(--line-soft) !important;
+  }
+
+  .hero-content{
+    position:relative !important;
+    z-index:3 !important;
+    width:74% !important;
+    min-height:690px !important;
+    display:flex !important;
+    justify-content:center !important;
+    padding:58px 0 62px !important;
+  }
+
+  .hero h1{
+    max-width:100% !important;
+    margin-bottom:22px !important;
+    font-size:clamp(43px,11.8vw,51px) !important;
+    line-height:.96 !important;
+  }
+
+  .hero-description{
+    max-width:340px !important;
+    font-size:13px !important;
+    line-height:1.72 !important;
+  }
+
+  .hero-actions{
+    width:100% !important;
+    flex-direction:column !important;
+    gap:9px !important;
+    margin-top:27px !important;
+  }
+
+  .hero-actions .button{
+    width:100% !important;
+    min-height:49px !important;
+  }
+
+  .hero-visual{
+    position:absolute !important;
+    inset:0 !important;
+    z-index:1 !important;
+    width:100% !important;
+    min-height:100% !important;
+    padding:0 !important;
+    pointer-events:none !important;
+  }
+
+  .hero-visual::before{display:none !important}
+
+  .hero-image-frame{
+    position:absolute !important;
+    top:0 !important;
+    right:0 !important;
+    width:88% !important;
+    height:100% !important;
+    max-width:none !important;
+    aspect-ratio:auto !important;
+    border:0 !important;
+    border-left:1px solid rgba(215,169,87,.12) !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:#070809 !important;
+  }
+
+  .hero-image{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:62% center !important;
+    transform:scale(1.06) !important;
+    opacity:.74 !important;
+  }
+
+  .hero-image-overlay{
+    background:
+      linear-gradient(90deg,#070809 0%,rgba(7,8,9,.96) 18%,rgba(7,8,9,.72) 45%,rgba(7,8,9,.22) 78%,rgba(7,8,9,.42) 100%),
+      linear-gradient(180deg,rgba(7,8,9,.18),transparent 40%,rgba(7,8,9,.78) 100%) !important;
+  }
+
+  .hero-image-brand{display:none !important}
+
   .brand-statement{
     display:grid !important;
     grid-template-columns:repeat(2,minmax(0,1fr)) !important;
@@ -11,6 +152,7 @@
     width:100% !important;
     padding:26px 0 !important;
   }
+
   .statement-item{
     display:grid !important;
     grid-template-columns:24px minmax(0,1fr) !important;
@@ -19,12 +161,14 @@
     width:100% !important;
     min-width:0 !important;
   }
+
   .statement-item .statement-number{
     width:24px !important;
     flex:none !important;
     line-height:1.35 !important;
     font-size:8px !important;
   }
+
   .statement-item>div{
     display:flex !important;
     flex-direction:column !important;
@@ -32,6 +176,7 @@
     min-width:0 !important;
     flex:initial !important;
   }
+
   .statement-item strong,
   .statement-item span:last-child{
     display:block !important;
@@ -42,11 +187,13 @@
     overflow-wrap:normal !important;
     hyphens:none !important;
   }
+
   .statement-item strong{
     font-size:8.5px !important;
     line-height:1.3 !important;
     letter-spacing:.11em !important;
   }
+
   .statement-item span:last-child{
     margin-top:5px !important;
     font-size:9.5px !important;
@@ -59,11 +206,13 @@
     gap:34px !important;
     padding:70px 0 !important;
   }
+
   .build-grid{
     display:grid !important;
     grid-template-columns:minmax(0,1fr) !important;
     gap:14px !important;
   }
+
   .build-card{min-height:230px !important}
 
   .projects-section{padding-bottom:72px !important}
@@ -74,11 +223,13 @@
     align-items:start !important;
     margin-bottom:26px !important;
   }
+
   .projects-grid{
     display:grid !important;
     grid-template-columns:minmax(0,1fr) !important;
     gap:14px !important;
   }
+
   .project-card.project-featured{grid-column:auto !important}
   .project-image{min-height:250px !important}
   .project-info{gap:18px !important;padding:20px !important}
@@ -89,6 +240,7 @@
     gap:42px !important;
     padding:68px 0 70px !important;
   }
+
   .about-visual{min-height:300px !important}
   .about-mark{width:120px !important;height:120px !important}
   .about-content{max-width:none !important}
@@ -102,50 +254,38 @@
     gap:38px !important;
     padding:68px 0 72px !important;
   }
+
   .contact-heading h2{margin-bottom:20px !important}
   .contact-description{margin-right:0 !important}
   .contact-form{width:100% !important;min-width:0 !important}
+
   .contact-form .form-row{
     display:grid !important;
     grid-template-columns:minmax(0,1fr) !important;
     gap:18px !important;
   }
+
   .contact-form input,
   .contact-form textarea{width:100% !important;max-width:100% !important}
   .submit-button{width:100% !important}
-
   .site-footer{margin-top:0 !important}
   .footer-main{gap:38px !important}
-
-  .brand-statement>*,
-  .build-section>*,
-  .build-card,
-  .projects-section>*,
-  .project-card,
-  .about-section>*,
-  .contact-section>*,
-  .site-footer>*{min-width:0 !important}
 }
 
 @media (max-width:430px){
-  .site-shell{padding-left:32px;padding-right:32px}
-  .brand-statement{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:24px 12px !important;padding:22px 0 !important}
-  .statement-item{grid-template-columns:22px minmax(0,1fr) !important;gap:6px !important}
-  .statement-item .statement-number{width:22px !important;font-size:8px !important}
-  .statement-item strong{font-size:8px !important;letter-spacing:.09em !important}
-  .statement-item span:last-child{font-size:9px !important}
-  .about-section{gap:36px !important;padding:60px 0 62px !important}
-  .contact-section{gap:34px !important;padding:60px 0 64px !important}
-  .project-image{min-height:225px !important}
+  .site-shell{padding-left:26px !important;padding-right:26px !important}
+  .hero{min-height:670px !important}
+  .hero-content{width:78% !important;min-height:670px !important;padding-top:54px !important;padding-bottom:54px !important}
+  .hero h1{font-size:clamp(40px,11.6vw,47px) !important}
+  .hero-image-frame{width:92% !important}
+  .hero-image{object-position:64% center !important;opacity:.68 !important}
+  .brand-statement{gap:24px 14px !important}
+  .statement-item{grid-template-columns:21px minmax(0,1fr) !important;gap:6px !important}
+  .statement-item .statement-number{width:21px !important;font-size:7px !important}
+  .statement-item strong{font-size:7.6px !important;letter-spacing:.095em !important}
+  .statement-item span:last-child{font-size:8.8px !important}
 }
-
-:focus-visible{outline:2px solid var(--gold-light) !important;outline-offset:4px !important}
-.contact-form input:focus-visible,.contact-form textarea:focus-visible{border-color:var(--gold-light) !important;box-shadow:0 0 0 3px rgba(241,204,123,.10) !important}
 
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto !important}
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .hero-image{transform:none !important}
 }
-
-.project-info,.contact-section,.about-section,.build-section{min-width:0}
-.project-info p,.section-description,.about-content p,.contact-heading>p,.contact-description{overflow-wrap:anywhere}
