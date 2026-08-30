@@ -117,39 +117,31 @@
     position:absolute !important;
     top:0 !important;
     right:0 !important;
-    width:100% !important;
+    width:92% !important;
     height:100% !important;
     max-width:none !important;
     aspect-ratio:auto !important;
     border:0 !important;
+    border-left:1px solid rgba(215,169,87,.16) !important;
     border-radius:0 !important;
     box-shadow:none !important;
     background:#070809 !important;
   }
 
-  /* The previous crop pushed the lion out of frame on iPhone.
-     Keep the source centered and reveal the subject on the right. */
   .hero-image{
     width:100% !important;
     height:100% !important;
     object-fit:cover !important;
-    object-position:center center !important;
-    transform:scale(1.01) !important;
-    opacity:.92 !important;
+    /* The lion sits left-of-center in the source asset. Keep its face inside the mobile crop. */
+    object-position:40% center !important;
+    transform:scale(1.02) !important;
+    opacity:.9 !important;
   }
 
   .hero-image-overlay{
     background:
-      linear-gradient(90deg,
-        rgba(7,8,9,.98) 0%,
-        rgba(7,8,9,.94) 22%,
-        rgba(7,8,9,.72) 43%,
-        rgba(7,8,9,.30) 68%,
-        rgba(7,8,9,.10) 100%),
-      linear-gradient(180deg,
-        rgba(7,8,9,.12) 0%,
-        transparent 42%,
-        rgba(7,8,9,.58) 100%) !important;
+      linear-gradient(90deg,#070809 0%,rgba(7,8,9,.90) 15%,rgba(7,8,9,.55) 35%,rgba(7,8,9,.12) 65%,rgba(7,8,9,.22) 100%),
+      linear-gradient(180deg,rgba(7,8,9,.12),transparent 38%,rgba(7,8,9,.60) 100%) !important;
   }
 
   .hero-image-brand{display:none !important}
@@ -286,12 +278,11 @@
   .hero{min-height:670px !important}
   .hero-content{width:78% !important;min-height:670px !important;padding-top:54px !important;padding-bottom:54px !important}
   .hero h1{font-size:clamp(40px,11.6vw,47px) !important}
-  .hero-image-frame{width:100% !important}
-  .hero-image{object-position:center center !important;opacity:.94 !important;transform:scale(1.01) !important}
-  .hero-image-overlay{
-    background:
-      linear-gradient(90deg,rgba(7,8,9,.98) 0%,rgba(7,8,9,.93) 20%,rgba(7,8,9,.66) 43%,rgba(7,8,9,.22) 72%,rgba(7,8,9,.08) 100%),
-      linear-gradient(180deg,rgba(7,8,9,.10),transparent 42%,rgba(7,8,9,.52) 100%) !important;
+  .hero-image-frame{width:92% !important}
+  .hero-image{
+    object-position:40% center !important;
+    transform:scale(1.01) !important;
+    opacity:.92 !important;
   }
   .brand-statement{gap:24px 14px !important}
   .statement-item{grid-template-columns:21px minmax(0,1fr) !important;gap:6px !important}
