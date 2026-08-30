@@ -1,147 +1,20 @@
-/* BURION STUDIO — Footer V7
-   Dream Games-inspired hierarchy, Burion identity preserved.
-   No invented social links: real social accounts should be added only when available.
+/* BURION STUDIO — Footer V8
+   Premium compact footer. Burion identity preserved.
+   Modern studio hierarchy without copying another brand.
 */
-.site-footer{
-  margin-top:0!important;
-  padding:64px 0 0!important;
-  background:#080909!important;
-  border-top:1px solid rgba(255,255,255,.08)!important;
-  overflow:visible!important;
-}
-
-.footer-main{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  text-align:center!important;
-  width:100%!important;
-  padding:0 24px 46px!important;
-}
-
-.footer-brand{
-  width:100%!important;
-  max-width:720px!important;
-  min-width:0!important;
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-}
-
-/* Use the compact brand mark treatment in the footer. */
-.footer-brand img{
-  display:block!important;
-  width:132px!important;
-  max-width:60vw!important;
-  height:auto!important;
-  margin:0 auto!important;
-}
-
-/* The longer studio description is already communicated elsewhere on the site. */
-.footer-brand p{
-  display:none!important;
-}
-
-.footer-nav{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex-wrap:wrap!important;
-  gap:14px 44px!important;
-  width:100%!important;
-  min-width:0!important;
-  margin:38px 0 0!important;
-  padding:0!important;
-}
-
-.footer-nav a{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  width:auto!important;
-  min-height:34px!important;
-  padding:0!important;
-  color:#f1eee7!important;
-  font-size:16px!important;
-  font-weight:500!important;
-  line-height:1.25!important;
-  letter-spacing:-.018em!important;
-  white-space:nowrap!important;
-  transition:color .2s ease,opacity .2s ease!important;
-}
-
-.footer-nav a:hover,.footer-nav a:focus-visible{
-  color:var(--gold-light)!important;
-}
-
-/* Language controls stay in the header/mobile menu, not the footer. */
+.site-footer{margin-top:0!important;padding:42px 0 0!important;background:#0a0b0c!important;border-top:1px solid rgba(255,255,255,.075)!important;overflow:hidden!important}
+.footer-main{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;padding:0 24px 34px!important;text-align:center!important}
+.footer-brand{display:flex!important;flex-direction:column!important;align-items:center!important;width:100%!important;max-width:760px!important;min-width:0!important}
+.footer-brand img{display:block!important;width:118px!important;height:auto!important;max-width:60vw!important;margin:0!important}
+.footer-brand p{display:none!important}
+.footer-nav{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;width:100%!important;gap:12px 34px!important;margin:30px 0 0!important;padding:0!important}
+.footer-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:32px!important;width:auto!important;padding:0!important;color:#f1eee7!important;font-size:15px!important;font-weight:500!important;line-height:1.25!important;letter-spacing:-.02em!important;white-space:nowrap!important;transition:color .2s ease,opacity .2s ease!important}
+.footer-nav a:hover,.footer-nav a:focus-visible{color:var(--gold-light)!important}
 .footer-languages{display:none!important}
-
-.footer-bottom{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:18px!important;
-  width:100%!important;
-  margin:0!important;
-  padding:26px 24px 32px!important;
-  border-top:1px solid rgba(255,255,255,.08)!important;
-}
-
-.footer-legal{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex-wrap:wrap!important;
-  gap:10px 34px!important;
-  min-width:0!important;
-}
-
-.footer-legal a{
-  display:inline-flex!important;
-  align-items:center!important;
-  min-height:28px!important;
-  color:#85898d!important;
-  font-size:12px!important;
-  font-weight:400!important;
-  line-height:1.4!important;
-  white-space:nowrap!important;
-  transition:color .2s ease!important;
-}
-
-.footer-legal a:hover,.footer-legal a:focus-visible{
-  color:#d0ccc4!important;
-}
-
-.copyright{
-  display:block!important;
-  margin:0!important;
-  max-width:none!important;
-  color:#666b6f!important;
-  font-size:10px!important;
-  font-weight:400!important;
-  line-height:1.5!important;
-  text-align:center!important;
-}
-
-@media(max-width:800px){
-  .site-footer{padding:50px 0 0!important}
-  .footer-main{padding:0 20px 40px!important}
-  .footer-brand img{width:126px!important}
-  .footer-nav{gap:12px 30px!important;margin-top:34px!important;padding:0 10px!important}
-  .footer-nav a{min-height:34px!important;font-size:15px!important}
-  .footer-bottom{gap:15px!important;padding:22px 20px 28px!important}
-  .footer-legal{gap:8px 24px!important}
-  .footer-legal a{font-size:11px!important}
-  .copyright{font-size:9.5px!important}
-}
-
-@media(max-width:430px){
-  .site-footer{padding-top:44px!important}
-  .footer-main{padding-bottom:36px!important}
-  .footer-brand img{width:118px!important}
-  .footer-nav{gap:10px 22px!important;margin-top:30px!important;padding:0!important}
-  .footer-nav a{font-size:14px!important}
-  .footer-bottom{padding-bottom:24px!important}
-}
+.footer-bottom{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;width:100%!important;gap:14px!important;margin:0!important;padding:20px 24px 26px!important;border-top:1px solid rgba(255,255,255,.075)!important}
+.footer-legal{display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:8px 28px!important;min-width:0!important}
+.footer-legal a{display:inline-flex!important;align-items:center!important;min-height:26px!important;color:#7f8489!important;font-size:11px!important;font-weight:400!important;line-height:1.4!important;white-space:nowrap!important;transition:color .2s ease!important}
+.footer-legal a:hover,.footer-legal a:focus-visible{color:#d0ccc4!important}
+.copyright{display:block!important;margin:0!important;color:#62676c!important;font-size:9.5px!important;font-weight:400!important;line-height:1.5!important;text-align:center!important}
+@media(max-width:800px){.site-footer{padding:38px 0 0!important}.footer-main{padding:0 20px 30px!important}.footer-brand img{width:112px!important}.footer-nav{gap:10px 24px!important;margin-top:27px!important}.footer-nav a{min-height:30px!important;font-size:14px!important}.footer-bottom{gap:12px!important;padding:18px 20px 24px!important}.footer-legal{gap:7px 22px!important}.footer-legal a{font-size:10.5px!important}.copyright{font-size:9px!important}}
+@media(max-width:430px){.site-footer{padding-top:34px!important}.footer-main{padding-bottom:26px!important}.footer-brand img{width:106px!important}.footer-nav{gap:9px 20px!important;margin-top:24px!important}.footer-nav a{font-size:13.5px!important}.footer-bottom{padding:16px 18px 22px!important}.footer-legal{gap:6px 20px!important}.footer-legal a{font-size:10px!important}.copyright{font-size:8.8px!important}}
