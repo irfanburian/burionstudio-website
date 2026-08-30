@@ -1,4 +1,4 @@
-/* BURION STUDIO — responsive hardening V9 — cinematic focal point */
+/* BURION STUDIO — responsive hardening V10 — cinematic single-eye lion framing */
 
 @media (min-width:1201px){
   .hero{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;min-height:680px!important}
@@ -40,16 +40,16 @@
   .header-actions{margin-left:auto!important;gap:10px!important}
   .menu-button{display:flex!important}
   .hero{position:relative!important;display:block!important;min-height:690px!important;overflow:hidden!important;border-bottom:1px solid var(--line-soft)!important;background:#070809!important}
-  .hero-content{position:relative!important;z-index:3!important;width:58%!important;min-height:690px!important;display:flex!important;justify-content:center!important;padding:58px 0 62px!important}
+  .hero-content{position:relative!important;z-index:3!important;width:61%!important;min-height:690px!important;display:flex!important;justify-content:center!important;padding:58px 0 62px!important}
   .hero h1{max-width:100%!important;margin-bottom:22px!important;font-size:clamp(42px,11vw,50px)!important;line-height:.96!important;letter-spacing:-.06em!important}
-  .hero-description{max-width:275px!important;font-size:12.4px!important;line-height:1.7!important}
-  .hero-actions{width:100%!important;max-width:250px!important;flex-direction:column!important;gap:9px!important;margin-top:27px!important}
-  .hero-actions .button{width:100%!important;max-width:250px!important;min-height:48px!important;padding-left:16px!important;padding-right:16px!important;border-radius:8px!important;font-size:10.5px!important}
+  .hero-description{max-width:285px!important;font-size:12.5px!important;line-height:1.7!important}
+  .hero-actions{width:100%!important;max-width:270px!important;flex-direction:column!important;gap:9px!important;margin-top:27px!important}
+  .hero-actions .button{width:100%!important;max-width:270px!important;min-height:48px!important;padding-left:16px!important;padding-right:16px!important;border-radius:8px!important;font-size:10.5px!important}
   .hero-visual{position:absolute!important;inset:0!important;z-index:1!important;width:100%!important;min-height:100%!important;padding:0!important;pointer-events:none!important}
   .hero-visual::before{display:none!important}
-  .hero-image-frame{position:absolute!important;top:0!important;right:0!important;width:90%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;border:0!important;border-left:1px solid rgba(215,169,87,.13)!important;border-radius:0!important;box-shadow:none!important;background:#070809!important}
-  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:1% center!important;transform:scale(1.02)!important;transform-origin:center center!important;filter:brightness(.70) saturate(.84) contrast(1.07)!important;opacity:.91!important}
-  .hero-image-overlay{background:linear-gradient(90deg,#070809 0%,rgba(7,8,9,.98) 9%,rgba(7,8,9,.88) 23%,rgba(7,8,9,.54) 40%,rgba(7,8,9,.18) 61%,rgba(7,8,9,.12) 100%),linear-gradient(180deg,rgba(7,8,9,.08) 0%,transparent 38%,rgba(7,8,9,.32) 72%,rgba(7,8,9,.76) 100%)!important}
+  .hero-image-frame{position:absolute!important;top:0!important;right:0!important;width:92%!important;height:100%!important;max-width:none!important;aspect-ratio:auto!important;border:0!important;border-left:1px solid rgba(215,169,87,.13)!important;border-radius:0!important;box-shadow:none!important;background:#070809!important}
+  .hero-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:3% center!important;transform:scale(1.045)!important;transform-origin:center center!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.93!important}
+  .hero-image-overlay{background:linear-gradient(90deg,#070809 0%,rgba(7,8,9,.98) 10%,rgba(7,8,9,.84) 25%,rgba(7,8,9,.46) 45%,rgba(7,8,9,.10) 70%,rgba(7,8,9,.18) 100%),linear-gradient(180deg,rgba(7,8,9,.10) 0%,transparent 34%,rgba(7,8,9,.25) 72%,rgba(7,8,9,.68) 100%)!important}
   .hero-image-brand{display:none!important}
   .brand-statement{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 18px!important;width:100%!important;padding:26px 0!important}
   .statement-item{display:grid!important;grid-template-columns:24px minmax(0,1fr)!important;align-items:start!important;gap:8px!important;width:100%!important;min-width:0!important}
@@ -87,9 +87,8 @@
   .footer-main{gap:38px!important}
 }
 
-/* RU mobile: give the Cyrillic headline a little more room without changing the focal point. */
 @media (max-width:800px){
-  html[lang="ru"] .hero-content{width:76%!important}
+  html[lang="ru"] .hero-content{width:80%!important}
   html[lang="ru"] .hero h1{font-size:clamp(39px,10vw,45px)!important;letter-spacing:-.065em!important;max-width:none!important}
   html[lang="ru"] .hero-description{max-width:260px!important}
   html[lang="ru"] .hero-actions{max-width:250px!important}
@@ -99,13 +98,13 @@
 @media (max-width:430px){
   .site-shell{padding-left:24px!important;padding-right:24px!important}
   .hero{min-height:670px!important}
-  .hero-content{width:57%!important;min-height:670px!important;padding-top:54px!important;padding-bottom:54px!important}
+  .hero-content{width:60%!important;min-height:670px!important;padding-top:54px!important;padding-bottom:54px!important}
   .hero h1{font-size:clamp(40px,11.4vw,47px)!important}
-  .hero-description{max-width:245px!important;font-size:12.1px!important}
-  .hero-actions{max-width:238px!important}
-  .hero-actions .button{max-width:238px!important}
-  .hero-image-frame{width:91%!important}
-  .hero-image{object-position:1% center!important;transform:scale(1.02)!important;filter:brightness(.70) saturate(.84) contrast(1.07)!important;opacity:.92!important}
+  .hero-description{max-width:260px!important;font-size:12.1px!important}
+  .hero-actions{max-width:250px!important}
+  .hero-actions .button{max-width:250px!important}
+  .hero-image-frame{width:93%!important}
+  .hero-image{object-position:2% center!important;transform:scale(1.04)!important;filter:brightness(.74) saturate(.88) contrast(1.06)!important;opacity:.94!important}
   .brand-statement{gap:24px 14px!important}
   .statement-item{grid-template-columns:21px minmax(0,1fr)!important;gap:6px!important}
   .statement-item .statement-number{width:21px!important;font-size:7px!important}
@@ -114,15 +113,26 @@
 }
 
 @media (max-width:430px){
-  html[lang="ru"] .hero-content{width:76%!important}
+  html[lang="ru"] .hero-content{width:80%!important}
   html[lang="ru"] .hero h1{font-size:clamp(37px,10vw,43px)!important;letter-spacing:-.065em!important}
-  html[lang="ru"] .hero-description{max-width:255px!important}
-  html[lang="ru"] .hero-actions{max-width:245px!important}
-  html[lang="ru"] .hero-actions .button{max-width:245px!important}
+  html[lang="ru"] .hero-description{max-width:260px!important}
+  html[lang="ru"] .hero-actions{max-width:250px!important}
+  html[lang="ru"] .hero-actions .button{max-width:250px!important}
+}
+
+/* V10: mobile cinematic crop. The source artwork has the lion on the left.
+   A positive X translation moves the lion visually toward the RIGHT edge,
+   creating a deliberate one-eye reveal while preserving a clean text zone. */
+@media (max-width:800px){
+  .hero-image{object-position:0 center!important;transform:translateX(9%) scale(1.02)!important;transform-origin:center center!important}
+}
+
+@media (max-width:430px){
+  .hero-image{object-position:0 center!important;transform:translateX(10%) scale(1.02)!important;transform-origin:center center!important}
 }
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto!important}
-  .hero-image{transform:none!important}
+  .hero-image{transition:none!important}
   .button,.build-card,.project-card{transition:none!important}
 }
