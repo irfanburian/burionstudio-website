@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded",()=>{
     ru:{nav:{home:"Главная",projects:"Проекты",about:"Обо мне",contact:"Контакты"},eyebrow:"BURION STUDIO",heroTitle:"Идеи,<br>превращённые в <em>реальность.</em>",heroDescription:"Независимый разработчик, создающий игры, приложения и цифровые продукты от идеи до релиза.",explore:"Исследовать студию",getInTouch:"Связаться",what:"ЧТО Я СОЗДАЮ",buildTitle:"Превращаю идеи в <em>цифровые продукты.</em>",build:[["Игры","Интерактивные миры, игровые системы и впечатления, созданные с нуля."],["Приложения","Полезные цифровые продукты, созданные вокруг реальных задач и людей."],["Цифровые продукты","Сайты, платформы и цифровые решения, где идеи получают своё место."]],selected:"ИЗБРАННЫЕ РАБОТЫ",projectsTitle:"Продукты, концепции и <em>эксперименты.</em>",projectsDescription:"Подборка продуктов и идей, которые сейчас развиваются в Burion Studio.",statement:[["РАЗРАБОТКА","Чисто. Масштабируемо. Надёжно."],["ПРОИЗВОДИТЕЛЬНОСТЬ","Быстро. Эффективно. Оптимизировано."],["ДИЗАЙН","Минималистично. Осознанно. Понятно."],["ОПЫТ","Создано для использования."]],project:[["ИГРА","TRIVIA","ЗНАНИЯ · СОРЕВНОВАНИЕ · ИГРА","ИГРА · В РАЗРАБОТКЕ","Trivia","Соревновательная викторина, построенная вокруг знаний, скорости и прогресса.","В РАЗРАБОТКЕ"],["ПРИЛОЖЕНИЕ","СЕЛЬСКОЕ ХОЗЯЙСТВО","ДАННЫЕ · ПОЛЕ · ИНТЕЛЛЕКТ","ПРИЛОЖЕНИЕ · КОНЦЕПЦИЯ","Аграрная платформа","Цифровая платформа для более эффективных решений в сельском хозяйстве.","КОНЦЕПЦИЯ"],["ЦИФРОВОЙ ПРОДУКТ","BURION","СТУДИЯ · БРЕНД · ЦИФРОВОЕ","ЦИФРОВОЙ ПРОДУКТ · LIVE","Burion Studio","Цифровой дом независимого разработчика и творческой студии.","LIVE"]],aboutEyebrow:"О BURION STUDIO",aboutTitle:"Один разработчик.<br><em>Много идей.</em>",aboutText:["Привет, я <strong>İrfan Aslan BÜRİAN.</strong>","Я независимый разработчик из Турции. Создаю игры, приложения и цифровые продукты с нуля.","Я самостоятельно занимаюсь всем процессом — кодом, дизайном, системами и всеми задачами между ними.","Burion Studio — моё пространство для создания, экспериментов и превращения идей в реальные продукты."],contactEyebrow:"ДАВАЙТЕ СОЗДАДИМ ВМЕСТЕ",contactTitle:"Есть идея?<br>Давайте создадим что-то <em>стоящее.</em>",contactDescription:"Есть проект, идея или предложение о сотрудничестве? Буду рад услышать о нём.",labels:["Имя","Эл. почта","Тема","Сообщение"],send:"Отправить сообщение",language:"ЯЗЫК",privacy:"Политика конфиденциальности",terms:"Условия использования",footer:"Независимый разработчик игр, приложений и цифровых продуктов.",seoTitle:"Burion Studio — Независимая студия игр и приложений",seoDescription:"Burion Studio — независимые игры, приложения и цифровые продукты.",languageAria:"Изменить язык",menuOpen:"Открыть меню",menuClose:"Закрыть меню"}
   };
 
+  function pageLanguage(){
+    const path=window.location.pathname.replace(/\/+$/,'/');
+    if(path==='/tr/')return 'tr';
+    if(path==='/ru/')return 'ru';
+    return 'en';
+  }
+
   function setLanguage(lang){
     const t=T[lang]||T.en;
     document.documentElement.lang=lang;
@@ -35,33 +42,43 @@ document.addEventListener("DOMContentLoaded",()=>{
     const about=q("#about");
     if(about){about.querySelector(".eyebrow").textContent=t.aboutEyebrow;about.querySelector("h2").innerHTML=t.aboutTitle;const p=about.querySelectorAll(".about-content>p:not(.eyebrow)");t.aboutText.forEach((v,i)=>{if(p[i])p[i].innerHTML=v;});}
     const contact=q("#contact");
-    if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;const contactDescription=q(".contact-description");if(contactDescription)contactDescription.textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});}
-    const fp=q(".footer-brand p");if(fp)fp.textContent=t.footer;
-    const privacy=q('.footer-legal a[href="privacy.html"]');if(privacy)privacy.textContent=t.privacy;
-    const terms=q('.footer-legal a[href="terms.html"]');if(terms)terms.textContent=t.terms;
-    qa(".footer-languages button").forEach(b=>b.style.color=b.dataset.language===lang?"var(--gold)":"var(--muted-dark)");
-    localStorage.setItem("burionLanguage",lang);
+    if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;const contactDescription=q(".contact-description");if(contactDescription)contactDescription.textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});const send=q("#contactForm .submit-button span:first-child");if(send)send.textContent=t.send;}
+    qa(".footer-legal a").forEach((e,i)=>{e.textContent=i===0?t.privacy:t.terms;});
+    const footerText=q(".footer-brand p");if(footerText)footerText.textContent=t.footer;
   }
 
-  function closeMenu(){if(menu){menu.hidden=true;document.body.style.overflow="";}menuBtn?.classList.remove("is-open");menuBtn?.setAttribute("aria-expanded","false");if(menuBtn)menuBtn.setAttribute("aria-label",(T[document.documentElement.lang]||T.en).menuOpen);}
-  function closeLang(){if(langMenu)langMenu.hidden=true;langBtn?.setAttribute("aria-expanded","false");}
-  langBtn?.addEventListener("click",e=>{e.stopPropagation();if(langMenu)langMenu.hidden?(langMenu.hidden=false,langBtn.setAttribute("aria-expanded","true")):closeLang();});
-  langMenu?.querySelectorAll("[data-language]").forEach(b=>b.addEventListener("click",()=>{setLanguage(b.dataset.language);closeLang();}));
-  qa(".footer-languages button").forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.language)));
-  menuBtn?.setAttribute("aria-controls","mobileMenu");
-  menuBtn?.addEventListener("click",e=>{e.stopPropagation();if(!menu)return;if(menu.hidden){menu.hidden=false;document.body.style.overflow="hidden";menuBtn.classList.add("is-open");menuBtn.setAttribute("aria-expanded","true");menuBtn.setAttribute("aria-label",(T[document.documentElement.lang]||T.en).menuClose);}else closeMenu();});
-  menu?.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",closeMenu));
-  menu?.querySelectorAll("[data-language]").forEach(b=>b.addEventListener("click",()=>{setLanguage(b.dataset.language);closeMenu();}));
-  document.addEventListener("click",e=>{if(langMenu&&!langMenu.hidden&&!langMenu.contains(e.target)&&e.target!==langBtn)closeLang();if(menu&&!menu.hidden&&!menu.contains(e.target)&&e.target!==menuBtn)closeMenu();});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeLang();closeMenu();}});
-  const sections=qa("main section[id]"),links=qa(".desktop-nav .nav-link");
-  if(sections.length&&links.length&&"IntersectionObserver"in window){const o=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+x.target.id));}),{rootMargin:"-20% 0px -60% 0px"});sections.forEach(s=>o.observe(s));}
-  const form=q("#contactForm");
-  form?.addEventListener("submit",e=>{e.preventDefault();const f=new FormData(form),name=String(f.get("name")||"").trim(),email=String(f.get("email")||"").trim(),subject=String(f.get("subject")||"Burion Studio Contact").trim(),message=String(f.get("message")||"").trim(),body=[`Name: ${name}`,`Email: ${email}`,"","Message:",message].join("\n");location.href="mailto:support@burionstudio.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);});
-  const schema={"@context":"https://schema.org","@type":"Organization","name":"Burion Studio","url":"https://burionstudio.com/","logo":"https://burionstudio.com/assets/brand/burion-logo-primary.png","description":"Independent games, applications and digital experiences.","founder":{"@type":"Person","name":"İrfan Aslan BÜRİAN"}};
-  const schemaScript=document.createElement("script");schemaScript.type="application/ld+json";schemaScript.textContent=JSON.stringify(schema);document.head.appendChild(schemaScript);
-  qa(".about-visual img,.footer-brand img").forEach(img=>{img.loading="lazy";img.decoding="async";});
-  closeMenu();closeLang();
-  const saved=localStorage.getItem("burionLanguage")||"en";
-  setLanguage(T[saved]?saved:"en");
+  function closeLanguageMenu(){
+    if(!langMenu||langMenu.hidden)return;
+    langMenu.hidden=true;
+    if(langBtn)langBtn.setAttribute("aria-expanded","false");
+  }
+
+  if(menuBtn&&menu){
+    menuBtn.addEventListener("click",()=>{
+      const open=menuBtn.getAttribute("aria-expanded")==="true";
+      menuBtn.setAttribute("aria-expanded",String(!open));
+      menuBtn.setAttribute("aria-label",!open?"Close menu":"Open menu");
+      menu.hidden=open;
+      if(!open)closeLanguageMenu();
+    });
+  }
+
+  if(langBtn&&langMenu){
+    langBtn.addEventListener("click",e=>{
+      e.stopPropagation();
+      langMenu.hidden=!langMenu.hidden;
+      langBtn.setAttribute("aria-expanded",String(!langMenu.hidden));
+      if(!langMenu.hidden&&menuBtn&&menu){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");}
+    });
+  }
+
+  document.addEventListener("click",e=>{
+    if(langMenu&&!langMenu.hidden&&!e.target.closest(".language-menu,.language-button"))closeLanguageMenu();
+  });
+
+  qa(".mobile-nav a,.desktop-nav a,.footer-nav a").forEach(a=>a.addEventListener("click",()=>{
+    if(menu&&menuBtn){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");}
+  }));
+
+  setLanguage(pageLanguage());
 });
