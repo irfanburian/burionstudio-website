@@ -35,4 +35,31 @@
   .footer-brand p{max-width:190px!important;font-size:11px!important;line-height:1.6!important}
   .footer-bottom{gap:16px!important}
 }
+@media(max-width:800px){
+  .site-footer{padding-top:34px!important}
+  .footer-main{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:22px!important;align-items:start!important}
+  .footer-brand{max-width:150px!important}
+  .footer-brand img{width:128px!important}
+  .footer-brand p{max-width:145px!important;margin-top:12px!important;font-size:11.5px!important;line-height:1.65!important}
+  .footer-nav{padding-top:6px!important;gap:16px 14px!important}
+  .footer-nav a{font-size:21px!important;line-height:1.22!important;letter-spacing:-.025em!important;overflow-wrap:normal!important}
+  .footer-bottom{grid-template-columns:auto minmax(0,1fr)!important;gap:16px 22px!important;margin-top:28px!important}
+  .footer-languages{align-self:start!important;gap:7px!important}
+  .footer-legal{align-self:start!important;gap:7px 16px!important;line-height:1.35!important}
+  .footer-legal a{font-size:11px!important}
+  .copyright{grid-column:1 / -1!important;max-width:100%!important;font-size:11px!important;line-height:1.5!important}
+}
+@media(max-width:430px){
+  .site-footer{padding-top:30px!important}
+  .footer-main{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;gap:18px!important}
+  .footer-brand{max-width:145px!important}
+  .footer-brand img{width:124px!important}
+  .footer-brand p{max-width:138px!important;font-size:11px!important;line-height:1.62!important}
+  .footer-nav{padding-top:4px!important;gap:14px 12px!important}
+  .footer-nav a{font-size:19px!important;line-height:1.2!important}
+  .footer-bottom{gap:14px 18px!important;margin-top:24px!important}
+  .footer-legal{gap:6px 12px!important}
+  .footer-legal a{font-size:10.5px!important}
+  .copyright{font-size:10.5px!important}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.hero-image{transition:none!important}.button,.build-card,.project-card{transition:none!important}}
