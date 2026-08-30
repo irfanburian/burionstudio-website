@@ -132,8 +132,8 @@
     width:100% !important;
     height:100% !important;
     object-fit:cover !important;
-    /* The lion sits left-of-center in the source asset. Keep its face inside the mobile crop. */
-    object-position:40% center !important;
+    /* The source lion is left-of-center. A low object-position moves the lion visually toward the right side of the mobile crop. */
+    object-position:10% center !important;
     transform:scale(1.02) !important;
     opacity:.9 !important;
   }
@@ -280,7 +280,7 @@
   .hero h1{font-size:clamp(40px,11.6vw,47px) !important}
   .hero-image-frame{width:92% !important}
   .hero-image{
-    object-position:40% center !important;
+    object-position:8% center !important;
     transform:scale(1.01) !important;
     opacity:.92 !important;
   }
