@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     const about=q("#about");
     if(about){about.querySelector(".eyebrow").textContent=t.aboutEyebrow;about.querySelector("h2").innerHTML=t.aboutTitle;const p=about.querySelectorAll(".about-content>p:not(.eyebrow)");t.aboutText.forEach((v,i)=>{if(p[i])p[i].innerHTML=v;});}
     const contact=q("#contact");
-    if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;contact.querySelector(".contact-heading>p").textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});const s=q(".submit-button span");if(s)s.textContent=t.send;}
+    if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;const contactDescription=q(".contact-description");if(contactDescription)contactDescription.textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});}
     const fp=q(".footer-brand p");if(fp)fp.textContent=t.footer;
     const privacy=q('.footer-legal a[href="privacy.html"]');if(privacy)privacy.textContent=t.privacy;
     const terms=q('.footer-legal a[href="terms.html"]');if(terms)terms.textContent=t.terms;
