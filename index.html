@@ -24,94 +24,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive-fixes.css?v=20260830-4">
+  <link rel="stylesheet" href="responsive-fixes.css?v=20260830-5">
 </head>
 <body>
   <div class="site-shell">
     <header class="site-header">
       <a href="#home" class="site-logo" aria-label="Burion Studio home"><img src="assets/brand/burion-logo-horizontal.png" alt="Burion Studio"></a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link active">Home</a><a href="#projects" class="nav-link">Projects</a><a href="#about" class="nav-link">About</a><a href="#contact" class="nav-link">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="language-button" type="button" aria-label="Change language" aria-expanded="false"><span class="current-language">EN</span><span class="language-arrow">↓</span></button>
         <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
       </div>
     </header>
-
     <div class="mobile-menu" id="mobileMenu" hidden>
-      <nav class="mobile-nav" aria-label="Mobile navigation">
-        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
-      </nav>
+      <nav class="mobile-nav" aria-label="Mobile navigation"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
       <div class="mobile-language"><span>LANGUAGE</span><div><button type="button" data-language="en">English</button><button type="button" data-language="tr">Türkçe</button><button type="button" data-language="ru">Русский</button></div></div>
     </div>
-
-    <div class="language-menu" id="languageMenu" hidden>
-      <button type="button" data-language="en">English</button><button type="button" data-language="tr">Türkçe</button><button type="button" data-language="ru">Русский</button>
-    </div>
-
+    <div class="language-menu" id="languageMenu" hidden><button type="button" data-language="en">English</button><button type="button" data-language="tr">Türkçe</button><button type="button" data-language="ru">Русский</button></div>
     <main>
       <section id="home" class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">BURION STUDIO</p>
-          <h1>Ideas,<br>built into <em>reality.</em></h1>
-          <p class="hero-description">Independent developer creating games, applications and digital experiences from idea to release.</p>
-          <div class="hero-actions">
-            <a href="#projects" class="button button-primary"><span>Explore the studio</span><span>→</span></a>
-            <a href="#contact" class="button button-secondary"><span>Get in touch</span><span>→</span></a>
-          </div>
-        </div>
+        <div class="hero-content"><p class="eyebrow">BURION STUDIO</p><h1>Ideas,<br>built into <em>reality.</em></h1><p class="hero-description">Independent developer creating games, applications and digital experiences from idea to release.</p><div class="hero-actions"><a href="#projects" class="button button-primary"><span>Explore the studio</span><span>→</span></a><a href="#contact" class="button button-secondary"><span>Get in touch</span><span>→</span></a></div></div>
         <div class="hero-visual"><div class="hero-image-frame"><img src="assets/brand/burion-hero-lion.jpg" alt="Burion Studio lion" class="hero-image"><div class="hero-image-overlay"></div><div class="hero-image-brand"><img src="assets/brand/burion-logo-gold.png" alt=""></div></div></div>
       </section>
-
-      <section class="brand-statement">
-        <div class="statement-item"><span class="statement-number">01</span><div><strong>DEVELOPMENT</strong><span>Clean. Scalable. Stable.</span></div></div>
-        <div class="statement-item"><span class="statement-number">02</span><div><strong>PERFORMANCE</strong><span>Fast. Efficient. Optimized.</span></div></div>
-        <div class="statement-item"><span class="statement-number">03</span><div><strong>DESIGN</strong><span>Minimal. Intentional. Clear.</span></div></div>
-        <div class="statement-item"><span class="statement-number">04</span><div><strong>EXPERIENCE</strong><span>Built to be used.</span></div></div>
-      </section>
-
-      <section class="build-section">
-        <div class="section-heading"><p class="eyebrow">WHAT WE BUILD</p><h2>Turning ideas into <em>digital products.</em></h2></div>
-        <div class="build-grid">
-          <article class="build-card"><div class="card-top"><span class="card-index">01</span><span class="card-symbol">◆</span></div><h3>Games</h3><p>Interactive worlds, gameplay systems and experiences built from the ground up.</p><span class="card-arrow">→</span></article>
-          <article class="build-card"><div class="card-top"><span class="card-index">02</span><span class="card-symbol">◇</span></div><h3>Applications</h3><p>Useful digital products designed around real problems and real people.</p><span class="card-arrow">→</span></article>
-          <article class="build-card"><div class="card-top"><span class="card-index">03</span><span class="card-symbol">&lt;/&gt;</span></div><h3>Digital Products</h3><p>Websites, platforms and digital experiences when ideas need a place to live.</p><span class="card-arrow">→</span></article>
-        </div>
-      </section>
-
-      <section id="projects" class="projects-section">
-        <div class="section-heading projects-heading"><div><p class="eyebrow">SELECTED WORK</p><h2>Projects currently <em>in development.</em></h2></div><p class="section-description">A selection of products and ideas currently being shaped at Burion Studio.</p></div>
-        <div class="projects-grid">
-          <article class="project-card project-featured"><div class="project-image"><div class="project-image-content"><span>GAME</span><strong>TRIVIA</strong><small>KNOWLEDGE · COMPETITION · PLAY</small></div></div><div class="project-info"><div><span class="project-category">GAME · IN DEVELOPMENT</span><h3>Trivia</h3><p>A competitive quiz experience designed around knowledge, speed and progression.</p></div><span class="project-status">IN DEVELOPMENT</span></div></article>
-          <article class="project-card"><div class="project-image project-image-agriculture"><div class="project-image-content"><span>APPLICATION</span><strong>AGRICULTURE</strong><small>DATA · FIELD · INTELLIGENCE</small></div></div><div class="project-info"><div><span class="project-category">APPLICATION · CONCEPT</span><h3>Agricultural Platform</h3><p>A digital platform focused on smarter agricultural decisions.</p></div><span class="project-status">CONCEPT</span></div></article>
-          <article class="project-card"><div class="project-image project-image-studio"><div class="project-image-content"><span>DIGITAL PRODUCT</span><strong>BURION</strong><small>STUDIO · BRAND · DIGITAL</small></div></div><div class="project-info"><div><span class="project-category">DIGITAL PRODUCT · LIVE</span><h3>Burion Studio</h3><p>The digital home of an independent developer and creative studio.</p></div><span class="project-status">LIVE</span></div></article>
-        </div>
-      </section>
-
-      <section id="about" class="about-section">
-        <div class="about-visual"><div class="about-mark"><img src="assets/brand/burion-logo-mark.png" alt="Burion Studio mark" loading="lazy" decoding="async"></div><span>BURION STUDIO</span></div>
-        <div class="about-content"><p class="eyebrow">ABOUT BURION STUDIO</p><h2>One developer.<br><em>Many ideas.</em></h2><p>Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong></p><p>I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.</p><p>I handle the entire process — code, design, systems and everything in between.</p><p>Burion Studio is my space to create, experiment and turn ideas into something real.</p><div class="signature">İrfan Aslan BÜRİAN</div></div>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div class="contact-heading"><p class="eyebrow">LET'S WORK TOGETHER</p><h2>Have an idea?<br>Let's build something <em>worth making.</em></h2><p class="contact-description">Have a project, idea or collaboration in mind? I'd love to hear about it.</p><a href="mailto:support@burionstudio.com" class="contact-email">support@burionstudio.com</a></div>
-        <form id="contactForm" class="contact-form">
-          <div class="form-row"><label><span>Name</span><input type="text" name="name" autocomplete="name" required></label><label><span>Email</span><input type="email" name="email" autocomplete="email" required></label></div>
-          <label><span>Subject</span><input type="text" name="subject"></label>
-          <label><span>Message</span><textarea name="message" rows="6" required></textarea></label>
-          <button type="submit" class="button button-primary submit-button"><span>Send Message</span><span>→</span></button>
-        </form>
-      </section>
+      <section class="brand-statement"><div class="statement-item"><span class="statement-number">01</span><div><strong>DEVELOPMENT</strong><span>Clean. Scalable. Stable.</span></div></div><div class="statement-item"><span class="statement-number">02</span><div><strong>PERFORMANCE</strong><span>Fast. Efficient. Optimized.</span></div></div><div class="statement-item"><span class="statement-number">03</span><div><strong>DESIGN</strong><span>Minimal. Intentional. Clear.</span></div></div><div class="statement-item"><span class="statement-number">04</span><div><strong>EXPERIENCE</strong><span>Built to be used.</span></div></div></section>
+      <section class="build-section"><div class="section-heading"><p class="eyebrow">WHAT WE BUILD</p><h2>Turning ideas into <em>digital products.</em></h2></div><div class="build-grid"><article class="build-card"><div class="card-top"><span class="card-index">01</span><span class="card-symbol">◆</span></div><h3>Games</h3><p>Interactive worlds, gameplay systems and experiences built from the ground up.</p><span class="card-arrow">→</span></article><article class="build-card"><div class="card-top"><span class="card-index">02</span><span class="card-symbol">◇</span></div><h3>Applications</h3><p>Useful digital products designed around real problems and real people.</p><span class="card-arrow">→</span></article><article class="build-card"><div class="card-top"><span class="card-index">03</span><span class="card-symbol">&lt;/&gt;</span></div><h3>Digital Products</h3><p>Websites, platforms and digital experiences when ideas need a place to live.</p><span class="card-arrow">→</span></article></div></section>
+      <section id="projects" class="projects-section"><div class="section-heading projects-heading"><div><p class="eyebrow">SELECTED WORK</p><h2>Projects currently <em>in development.</em></h2></div><p class="section-description">A selection of products and ideas currently being shaped at Burion Studio.</p></div><div class="projects-grid"><article class="project-card project-featured"><div class="project-image"><div class="project-image-content"><span>GAME</span><strong>TRIVIA</strong><small>KNOWLEDGE · COMPETITION · PLAY</small></div></div><div class="project-info"><div><span class="project-category">GAME · IN DEVELOPMENT</span><h3>Trivia</h3><p>A competitive quiz experience designed around knowledge, speed and progression.</p></div><span class="project-status">IN DEVELOPMENT</span></div></article><article class="project-card"><div class="project-image project-image-agriculture"><div class="project-image-content"><span>APPLICATION</span><strong>AGRICULTURE</strong><small>DATA · FIELD · INTELLIGENCE</small></div></div><div class="project-info"><div><span class="project-category">APPLICATION · CONCEPT</span><h3>Agricultural Platform</h3><p>A digital platform focused on smarter agricultural decisions.</p></div><span class="project-status">CONCEPT</span></div></article><article class="project-card"><div class="project-image project-image-studio"><div class="project-image-content"><span>DIGITAL PRODUCT</span><strong>BURION</strong><small>STUDIO · BRAND · DIGITAL</small></div></div><div class="project-info"><div><span class="project-category">DIGITAL PRODUCT · LIVE</span><h3>Burion Studio</h3><p>The digital home of an independent developer and creative studio.</p></div><span class="project-status">LIVE</span></div></article></div></section>
+      <section id="about" class="about-section"><div class="about-visual"><div class="about-mark"><img src="assets/brand/burion-logo-mark.png" alt="Burion Studio mark" loading="lazy" decoding="async"></div><span>BURION STUDIO</span></div><div class="about-content"><p class="eyebrow">ABOUT BURION STUDIO</p><h2>One developer.<br><em>Many ideas.</em></h2><p>Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong></p><p>I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.</p><p>I handle the entire process — code, design, systems and everything in between.</p><p>Burion Studio is my space to create, experiment and turn ideas into something real.</p><div class="signature">İrfan Aslan BÜRİAN</div></div></section>
+      <section id="contact" class="contact-section"><div class="contact-heading"><p class="eyebrow">LET'S WORK TOGETHER</p><h2>Have an idea?<br>Let's build something <em>worth making.</em></h2><p class="contact-description">Have a project, idea or collaboration in mind? I'd love to hear about it.</p><a href="mailto:support@burionstudio.com" class="contact-email">support@burionstudio.com</a></div><form id="contactForm" class="contact-form"><div class="form-row"><label><span>Name</span><input type="text" name="name" autocomplete="name" required></label><label><span>Email</span><input type="email" name="email" autocomplete="email" required></label></div><label><span>Subject</span><input type="text" name="subject"></label><label><span>Message</span><textarea name="message" rows="6" required></textarea></label><button type="submit" class="button button-primary submit-button"><span>Send Message</span><span>→</span></button></form></section>
     </main>
-
-    <footer class="site-footer">
-      <div class="footer-main"><div class="footer-brand"><img src="assets/brand/burion-logo-gold.png" alt="Burion Studio" loading="lazy" decoding="async"><p>Independent developer creating games, apps and digital experiences.</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div>
-      <div class="footer-bottom"><div class="footer-languages"><button type="button" data-language="en">EN</button><button type="button" data-language="tr">TR</button><button type="button" data-language="ru">RU</button></div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div><span class="copyright">© 2026 Burion Studio. All rights reserved.</span></div>
-    </footer>
+    <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/brand/burion-logo-gold.png" alt="Burion Studio" loading="lazy" decoding="async"><p>Independent developer creating games, apps and digital experiences.</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div><div class="footer-bottom"><div class="footer-languages"><button type="button" data-language="en">EN</button><button type="button" data-language="tr">TR</button><button type="button" data-language="ru">RU</button></div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div><span class="copyright">© 2026 Burion Studio. All rights reserved.</span></div></footer>
   </div>
   <script src="script.js"></script>
 </body>
