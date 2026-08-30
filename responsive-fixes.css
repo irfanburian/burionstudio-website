@@ -67,7 +67,7 @@
     background:#070809 !important;
   }
 
-  /* Keep the copy deliberately narrow so the composition has negative space. */
+  /* Deliberately narrower copy preserves the cinematic negative space. */
   .hero-content{
     position:relative !important;
     z-index:3 !important;
@@ -141,11 +141,13 @@
     width:100% !important;
     height:100% !important;
     object-fit:cover !important;
-    object-position:center center !important;
-    transform:scale(1.08) translateX(13%) !important;
+    /* The lion sits on the left side of the source image. 38% keeps it
+       visible while the crop still reads as a right-weighted composition. */
+    object-position:38% center !important;
+    transform:scale(1.06) !important;
     transform-origin:center center !important;
-    filter:brightness(.68) saturate(.82) contrast(1.08) !important;
-    opacity:.82 !important;
+    filter:brightness(.72) saturate(.86) contrast(1.06) !important;
+    opacity:.88 !important;
   }
 
   /* Strong left falloff + subtle bottom vignette = text/image separation. */
@@ -153,16 +155,16 @@
     background:
       linear-gradient(90deg,
         #070809 0%,
-        rgba(7,8,9,.98) 12%,
-        rgba(7,8,9,.88) 28%,
-        rgba(7,8,9,.52) 48%,
-        rgba(7,8,9,.16) 72%,
-        rgba(7,8,9,.30) 100%),
+        rgba(7,8,9,.96) 10%,
+        rgba(7,8,9,.80) 27%,
+        rgba(7,8,9,.42) 47%,
+        rgba(7,8,9,.10) 72%,
+        rgba(7,8,9,.24) 100%),
       linear-gradient(180deg,
-        rgba(7,8,9,.16) 0%,
+        rgba(7,8,9,.12) 0%,
         transparent 35%,
-        rgba(7,8,9,.34) 72%,
-        rgba(7,8,9,.78) 100%) !important;
+        rgba(7,8,9,.28) 72%,
+        rgba(7,8,9,.72) 100%) !important;
   }
 
   .hero-image-brand{display:none !important}
@@ -309,10 +311,10 @@
   .hero-actions .button{max-width:270px !important}
   .hero-image-frame{width:91% !important}
   .hero-image{
-    object-position:center center !important;
-    transform:scale(1.08) translateX(15%) !important;
-    filter:brightness(.64) saturate(.80) contrast(1.08) !important;
-    opacity:.80 !important;
+    object-position:38% center !important;
+    transform:scale(1.06) !important;
+    filter:brightness(.68) saturate(.84) contrast(1.06) !important;
+    opacity:.86 !important;
   }
   .brand-statement{gap:24px 14px !important}
   .statement-item{grid-template-columns:21px minmax(0,1fr) !important;gap:6px !important}
