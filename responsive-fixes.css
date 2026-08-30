@@ -131,7 +131,22 @@
   .hero-image{object-position:0 center!important;transform:translateX(10%) scale(1.02)!important;transform-origin:center center!important}
 }
 
-@media (prefers-reduced-motion:reduce){
+/* V11: Projects refinement — stronger editorial hierarchy without fake links. */
+.projects-heading .eyebrow{margin-bottom:15px}
+.project-card{position:relative}
+.project-card::before{content:"";position:absolute;left:0;top:0;width:34px;height:1px;background:rgba(215,169,87,.55);z-index:3;opacity:.7}
+.project-featured .project-image{min-height:340px}
+.project-featured .project-image-content strong{font-size:clamp(48px,6.5vw,76px)}
+.project-info{border-top:1px solid rgba(255,255,255,.035)}
+.project-category{display:inline-block;margin-bottom:1px}
+.project-status{padding:5px 8px;border:1px solid rgba(215,169,87,.14);border-radius:999px;background:rgba(215,169,87,.035)}
+.project-card:hover .project-status{border-color:rgba(215,169,87,.28);color:var(--gold-light)}
+@media(max-width:800px){
+  .project-featured .project-image{min-height:250px}
+  .project-card::before{width:26px}
+  .project-status{align-self:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto!important}
   .hero-image{transition:none!important}
   .button,.build-card,.project-card{transition:none!important}
