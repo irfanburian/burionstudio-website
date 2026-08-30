@@ -67,7 +67,7 @@
     background:#070809 !important;
   }
 
-  /* Deliberately narrower copy preserves the cinematic negative space. */
+  /* Left copy / right-weighted visual composition. */
   .hero-content{
     position:relative !important;
     z-index:3 !important;
@@ -141,25 +141,24 @@
     width:100% !important;
     height:100% !important;
     object-fit:cover !important;
-    /* The lion sits on the left side of the source image. 38% keeps it
-       visible while the crop still reads as a right-weighted composition. */
-    object-position:38% center !important;
-    transform:scale(1.06) !important;
+    /* Source lion is left-biased; move the focal point to the right third. */
+    object-position:73% center !important;
+    transform:scale(1.10) !important;
     transform-origin:center center !important;
     filter:brightness(.72) saturate(.86) contrast(1.06) !important;
-    opacity:.88 !important;
+    opacity:.90 !important;
   }
 
-  /* Strong left falloff + subtle bottom vignette = text/image separation. */
+  /* Strong left falloff keeps typography readable while preserving the lion. */
   .hero-image-overlay{
     background:
       linear-gradient(90deg,
         #070809 0%,
-        rgba(7,8,9,.96) 10%,
-        rgba(7,8,9,.80) 27%,
-        rgba(7,8,9,.42) 47%,
-        rgba(7,8,9,.10) 72%,
-        rgba(7,8,9,.24) 100%),
+        rgba(7,8,9,.98) 10%,
+        rgba(7,8,9,.82) 27%,
+        rgba(7,8,9,.46) 45%,
+        rgba(7,8,9,.12) 68%,
+        rgba(7,8,9,.20) 100%),
       linear-gradient(180deg,
         rgba(7,8,9,.12) 0%,
         transparent 35%,
@@ -311,10 +310,10 @@
   .hero-actions .button{max-width:270px !important}
   .hero-image-frame{width:91% !important}
   .hero-image{
-    object-position:38% center !important;
-    transform:scale(1.06) !important;
-    filter:brightness(.68) saturate(.84) contrast(1.06) !important;
-    opacity:.86 !important;
+    object-position:74% center !important;
+    transform:scale(1.12) !important;
+    filter:brightness(.70) saturate(.84) contrast(1.06) !important;
+    opacity:.90 !important;
   }
   .brand-statement{gap:24px 14px !important}
   .statement-item{grid-template-columns:21px minmax(0,1fr) !important;gap:6px !important}
