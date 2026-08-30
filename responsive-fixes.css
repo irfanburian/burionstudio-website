@@ -53,7 +53,7 @@
 }
 
 /* =========================================================
-   MOBILE — KEEP THE 2×2 VALUE GRID + CINEMATIC HERO
+   MOBILE — CINEMATIC / PREMIUM HERO
 ========================================================= */
 @media (max-width:800px){
   .site-shell{padding-left:32px !important;padding-right:32px !important}
@@ -64,12 +64,14 @@
     min-height:690px !important;
     overflow:hidden !important;
     border-bottom:1px solid var(--line-soft) !important;
+    background:#070809 !important;
   }
 
+  /* Keep the copy deliberately narrow so the composition has negative space. */
   .hero-content{
     position:relative !important;
     z-index:3 !important;
-    width:74% !important;
+    width:64% !important;
     min-height:690px !important;
     display:flex !important;
     justify-content:center !important;
@@ -79,18 +81,20 @@
   .hero h1{
     max-width:100% !important;
     margin-bottom:22px !important;
-    font-size:clamp(43px,11.8vw,51px) !important;
+    font-size:clamp(42px,11.2vw,49px) !important;
     line-height:.96 !important;
+    letter-spacing:-.06em !important;
   }
 
   .hero-description{
-    max-width:340px !important;
-    font-size:13px !important;
-    line-height:1.72 !important;
+    max-width:285px !important;
+    font-size:12.5px !important;
+    line-height:1.7 !important;
   }
 
   .hero-actions{
     width:100% !important;
+    max-width:280px !important;
     flex-direction:column !important;
     gap:9px !important;
     margin-top:27px !important;
@@ -98,7 +102,12 @@
 
   .hero-actions .button{
     width:100% !important;
-    min-height:49px !important;
+    max-width:280px !important;
+    min-height:48px !important;
+    padding-left:16px !important;
+    padding-right:16px !important;
+    border-radius:8px !important;
+    font-size:10.5px !important;
   }
 
   .hero-visual{
@@ -117,12 +126,12 @@
     position:absolute !important;
     top:0 !important;
     right:0 !important;
-    width:92% !important;
+    width:91% !important;
     height:100% !important;
     max-width:none !important;
     aspect-ratio:auto !important;
     border:0 !important;
-    border-left:1px solid rgba(215,169,87,.16) !important;
+    border-left:1px solid rgba(215,169,87,.13) !important;
     border-radius:0 !important;
     box-shadow:none !important;
     background:#070809 !important;
@@ -132,16 +141,28 @@
     width:100% !important;
     height:100% !important;
     object-fit:cover !important;
-    /* The source lion is left-of-center. A low object-position moves the lion visually toward the right side of the mobile crop. */
-    object-position:10% center !important;
-    transform:scale(1.02) !important;
-    opacity:.9 !important;
+    object-position:center center !important;
+    transform:scale(1.08) translateX(13%) !important;
+    transform-origin:center center !important;
+    filter:brightness(.68) saturate(.82) contrast(1.08) !important;
+    opacity:.82 !important;
   }
 
+  /* Strong left falloff + subtle bottom vignette = text/image separation. */
   .hero-image-overlay{
     background:
-      linear-gradient(90deg,#070809 0%,rgba(7,8,9,.90) 15%,rgba(7,8,9,.55) 35%,rgba(7,8,9,.12) 65%,rgba(7,8,9,.22) 100%),
-      linear-gradient(180deg,rgba(7,8,9,.12),transparent 38%,rgba(7,8,9,.60) 100%) !important;
+      linear-gradient(90deg,
+        #070809 0%,
+        rgba(7,8,9,.98) 12%,
+        rgba(7,8,9,.88) 28%,
+        rgba(7,8,9,.52) 48%,
+        rgba(7,8,9,.16) 72%,
+        rgba(7,8,9,.30) 100%),
+      linear-gradient(180deg,
+        rgba(7,8,9,.16) 0%,
+        transparent 35%,
+        rgba(7,8,9,.34) 72%,
+        rgba(7,8,9,.78) 100%) !important;
   }
 
   .hero-image-brand{display:none !important}
@@ -276,13 +297,22 @@
 @media (max-width:430px){
   .site-shell{padding-left:26px !important;padding-right:26px !important}
   .hero{min-height:670px !important}
-  .hero-content{width:78% !important;min-height:670px !important;padding-top:54px !important;padding-bottom:54px !important}
-  .hero h1{font-size:clamp(40px,11.6vw,47px) !important}
-  .hero-image-frame{width:92% !important}
+  .hero-content{
+    width:63% !important;
+    min-height:670px !important;
+    padding-top:54px !important;
+    padding-bottom:54px !important;
+  }
+  .hero h1{font-size:clamp(40px,11.3vw,47px) !important}
+  .hero-description{max-width:270px !important;font-size:12.2px !important}
+  .hero-actions{max-width:270px !important}
+  .hero-actions .button{max-width:270px !important}
+  .hero-image-frame{width:91% !important}
   .hero-image{
-    object-position:8% center !important;
-    transform:scale(1.01) !important;
-    opacity:.92 !important;
+    object-position:center center !important;
+    transform:scale(1.08) translateX(15%) !important;
+    filter:brightness(.64) saturate(.80) contrast(1.08) !important;
+    opacity:.80 !important;
   }
   .brand-statement{gap:24px 14px !important}
   .statement-item{grid-template-columns:21px minmax(0,1fr) !important;gap:6px !important}
