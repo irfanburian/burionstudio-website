@@ -1,4 +1,4 @@
-/* BURION STUDIO — i18n / SEO polish */
+/* BURION STUDIO — canonical URL language routing */
 (function(){
   const labels={en:"Send Message",tr:"Mesaj Gönder",ru:"Отправить сообщение"};
   const urls={en:"/",tr:"/tr/",ru:"/ru/"};
@@ -8,46 +8,56 @@
     ru:{description:"Независимая студия, создающая игры, приложения и цифровые продукты.",locale:"ru_RU"}
   };
 
+  function currentLanguage(){
+    const path=window.location.pathname.replace(/\/+$/,'/');
+    if(path==='/tr/')return 'tr';
+    if(path==='/ru/')return 'ru';
+    return 'en';
+  }
+
   function sync(){
-    const lang=(document.documentElement.lang||"en").toLowerCase().slice(0,2);
-    const send=document.querySelector("#contactForm .submit-button span:first-child");
-    if(send)send.textContent=labels[lang]||labels.en;
+    const lang=currentLanguage();
+    document.documentElement.lang=lang;
+    const send=document.querySelector('#contactForm .submit-button span:first-child');
+    if(send)send.textContent=labels[lang];
+    document.querySelectorAll('.current-language').forEach(el=>{el.textContent=lang.toUpperCase();});
   }
 
   function addStructuredData(){
     if(document.querySelector('script[data-burion-structured-data]'))return;
-    const lang=(document.documentElement.lang||"en").toLowerCase().slice(0,2);
+    const lang=currentLanguage();
     const data=seo[lang]||seo.en;
-    const path=window.location.pathname.replace(/\/$/,"")||"/";
-    const url="https://burionstudio.com"+(path==="/"?"/":path+"/");
-    const script=document.createElement("script");
-    script.type="application/ld+json";
-    script.dataset.burionStructuredData="true";
+    const path=window.location.pathname.replace(/\/$/,'')||'/';
+    const url='https://burionstudio.com'+(path==='/'?'/':path+'/');
+    const script=document.createElement('script');
+    script.type='application/ld+json';
+    script.dataset.burionStructuredData='true';
     script.textContent=JSON.stringify({
-      "@context":"https://schema.org",
-      "@graph":[
-        {"@type":"Organization","@id":"https://burionstudio.com/#organization","name":"Burion Studio","url":"https://burionstudio.com/","logo":{"@type":"ImageObject","url":"https://burionstudio.com/assets/brand/burion-logo-primary.png"},"description":data.description},
-        {"@type":"WebSite","@id":"https://burionstudio.com/#website","url":"https://burionstudio.com/","name":"Burion Studio","publisher":{"@id":"https://burionstudio.com/#organization"},"inLanguage":lang},
-        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":"Burion Studio","description":data.description,"isPartOf":{"@id":"https://burionstudio.com/#website"},"inLanguage":lang}
+      '@context':'https://schema.org',
+      '@graph':[
+        {'@type':'Organization','@id':'https://burionstudio.com/#organization','name':'Burion Studio','url':'https://burionstudio.com/','logo':{'@type':'ImageObject','url':'https://burionstudio.com/assets/brand/burion-logo-primary.png'},'description':data.description},
+        {'@type':'WebSite','@id':'https://burionstudio.com/#website','url':'https://burionstudio.com/','name':'Burion Studio','publisher':{'@id':'https://burionstudio.com/#organization'},'inLanguage':lang},
+        {'@type':'WebPage','@id':url+'#webpage','url':url,'name':'Burion Studio','description':data.description,'isPartOf':{'@id':'https://burionstudio.com/#website'},'inLanguage':lang}
       ]
     });
     document.head.appendChild(script);
     document.documentElement.dataset.ogLocale=data.locale;
   }
 
-  // Language is URL-based; remove the legacy forced localStorage value.
-  try{localStorage.removeItem('burionLanguage')}catch(e){}
-
-  document.addEventListener("click",function(e){
-    const control=e.target.closest("[data-language]");
+  // Language is determined exclusively by the canonical URL.
+  // Do not use localStorage/cookies for language state.
+  document.addEventListener('click',function(e){
+    const control=e.target.closest('[data-language]');
     if(!control)return;
-    const lang=control.getAttribute("data-language");
+    const lang=control.getAttribute('data-language');
     if(!urls[lang])return;
     e.preventDefault();
     e.stopImmediatePropagation();
     window.location.assign(urls[lang]);
   },true);
 
-  document.addEventListener("DOMContentLoaded",function(){sync();addStructuredData()});
-  new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+  document.addEventListener('DOMContentLoaded',function(){
+    sync();
+    addStructuredData();
+  });
 })();
