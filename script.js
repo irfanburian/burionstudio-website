@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded",()=>{
   const q=s=>document.querySelector(s), menu=q("#mobileMenu"), menuBtn=q(".menu-button"), header=q(".site-header");
-  document.documentElement.lang="en";
   if(menuBtn&&menu){menuBtn.addEventListener("click",()=>{const open=menuBtn.getAttribute("aria-expanded")==="true";menuBtn.setAttribute("aria-expanded",String(!open));menuBtn.setAttribute("aria-label",!open?"Close menu":"Open menu");menuBtn.classList.toggle("is-open",!open);menu.hidden=open;});}
   document.querySelectorAll(".mobile-nav a,.desktop-nav a,.footer-nav a").forEach(a=>a.addEventListener("click",()=>{if(menu&&menuBtn){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");menuBtn.setAttribute("aria-label","Open menu");menuBtn.classList.remove("is-open");}}));
   const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const carousel=q("[data-projects-carousel]");
   if(carousel){
     const track=carousel.querySelector(".projects-track"), cards=[...carousel.querySelectorAll(".project-card")], prev=q(".projects-prev"), next=q(".projects-next"), current=q(".projects-pagination-current");
-    let index=0;
+    let index=0, resizeFrame=0;
     const isMobile=()=>window.matchMedia("(max-width:800px)").matches;
     const maxIndex=()=>isMobile()?Math.max(0,cards.length-1):Math.max(0,cards.length-2);
     const calcDesktopStep=()=>{
@@ -17,8 +16,8 @@ document.addEventListener("DOMContentLoaded",()=>{
       return ((track.clientWidth/2+gap/2)/track.clientWidth)*100;
     };
     const update=()=>{
-      const mobile=isMobile();
-      const step=mobile?100:calcDesktopStep();
+      if(!track)return;
+      const mobile=isMobile(), step=mobile?100:calcDesktopStep();
       track.style.transform=`translate3d(-${index*step}%,0,0)`;
       if(prev)prev.disabled=index===0;
       if(next)next.disabled=index>=maxIndex();
@@ -32,7 +31,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     const go=delta=>{index=Math.min(maxIndex(),Math.max(0,index+delta));update();};
     prev?.addEventListener("click",()=>go(-1));
     next?.addEventListener("click",()=>go(1));
-    window.addEventListener("resize",()=>{index=Math.min(index,maxIndex());update();});
+    const onResize=()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{index=Math.min(index,maxIndex());update();});};
+    window.addEventListener("resize",onResize,{passive:true});
     let startX=0,startY=0;
     carousel.addEventListener("touchstart",e=>{const t=e.changedTouches[0];startX=t.clientX;startY=t.clientY},{passive:true});
     carousel.addEventListener("touchend",e=>{const t=e.changedTouches[0],dx=t.clientX-startX,dy=t.clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1)},{passive:true});
