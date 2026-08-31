@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     let index=0;
     const isMobile=()=>window.matchMedia("(max-width:800px)").matches;
     const maxIndex=()=>isMobile()?Math.max(0,cards.length-1):Math.max(0,cards.length-2);
+    const calcDesktopStep=()=>{
+      if(!track||cards.length<2)return 0;
+      const gap=parseFloat(getComputedStyle(track).gap)||14;
+      return ((track.clientWidth/2+gap/2)/track.clientWidth)*100;
+    };
     const update=()=>{
       const mobile=isMobile();
       const step=mobile?100:calcDesktopStep();
@@ -18,12 +23,11 @@ document.addEventListener("DOMContentLoaded",()=>{
       if(prev)prev.disabled=index===0;
       if(next)next.disabled=index>=maxIndex();
       if(current)current.textContent=String(index+1).padStart(2,"0");
-      cards.forEach((card,i)=>card.setAttribute("aria-hidden",String(mobile?i!==index:(i<index||i>index+1))));
-    };
-    const calcDesktopStep=()=>{
-      if(!track||cards.length<2)return 0;
-      const gap=parseFloat(getComputedStyle(track).gap)||14;
-      return ((track.clientWidth/2+gap/2)/track.clientWidth)*100;
+      cards.forEach((card,i)=>{
+        const visible=mobile?i===index:(i===index||i===index+1);
+        card.setAttribute("aria-hidden",String(!visible));
+        card.inert=!visible;
+      });
     };
     const go=delta=>{index=Math.min(maxIndex(),Math.max(0,index+delta));update();};
     prev?.addEventListener("click",()=>go(-1));
