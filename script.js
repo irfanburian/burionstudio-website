@@ -1,50 +1,10 @@
 document.addEventListener("DOMContentLoaded",()=>{
   const q=s=>document.querySelector(s);
-  const qa=s=>document.querySelectorAll(s);
   const menu=q("#mobileMenu");
   const menuBtn=q(".menu-button");
-  const langBtn=q(".language-button");
-  const langMenu=q("#languageMenu");
-  const current=q(".current-language");
 
-  const T={
-    en:{nav:{home:"Home",projects:"Projects",about:"About",contact:"Contact"},eyebrow:"BURION STUDIO",heroTitle:"Ideas,<br>built into <em>reality.</em>",heroDescription:"Independent developer creating games, applications and digital experiences from idea to release.",explore:"Explore the studio",getInTouch:"Get in touch",what:"WHAT WE BUILD",buildTitle:"Turning ideas into <em>digital products.</em>",build:[["Games","Interactive worlds, gameplay systems and experiences built from the ground up."],["Applications","Useful digital products designed around real problems and real people."],["Digital Products","Websites, platforms and digital experiences when ideas need a place to live."]],selected:"SELECTED WORK",projectsTitle:"Products, concepts and <em>experiments.</em>",projectsDescription:"A selection of products and ideas currently being shaped at Burion Studio.",statement:[["DEVELOPMENT","Clean. Scalable. Stable."],["PERFORMANCE","Fast. Efficient. Optimized."],["DESIGN","Minimal. Intentional. Clear."],["EXPERIENCE","Built to be used."]],project:[["GAME","TRIVIA","KNOWLEDGE · COMPETITION · PLAY","GAME · IN DEVELOPMENT","Trivia","A competitive quiz experience designed around knowledge, speed and progression.","IN DEVELOPMENT"],["APPLICATION","AGRICULTURE","DATA · FIELD · INTELLIGENCE","APPLICATION · CONCEPT","Agricultural Platform","A digital platform focused on smarter agricultural decisions.","CONCEPT"],["DIGITAL PRODUCT","BURION","STUDIO · BRAND · DIGITAL","DIGITAL PRODUCT · LIVE","Burion Studio","The digital home of an independent developer and creative studio.","LIVE"]],aboutEyebrow:"ABOUT BURION STUDIO",aboutTitle:"One developer.<br><em>Many ideas.</em>",aboutText:["Hi, I'm <strong>İrfan Aslan BÜRİAN.</strong>","I'm an independent developer based in Türkiye, building games, applications and digital products from scratch.","I handle the entire process — code, design, systems and everything in between.","Burion Studio is my space to create, experiment and turn ideas into something real."],contactEyebrow:"LET'S WORK TOGETHER",contactTitle:"Have an idea?<br>Let's build something <em>worth making.</em>",contactDescription:"Have a project, idea or collaboration in mind? I'd love to hear about it.",labels:["Name","Email","Subject","Message"],send:"Send Message",language:"LANGUAGE",privacy:"Privacy Policy",terms:"Terms of Use",footer:"Independent developer creating games, apps and digital experiences.",seoTitle:"Burion Studio — Independent Games & Apps",seoDescription:"Burion Studio — independent games, applications and digital experiences.",languageAria:"Change language",menuOpen:"Open menu",menuClose:"Close menu"},
-    tr:{nav:{home:"Ana Sayfa",projects:"Projeler",about:"Hakkında",contact:"İletişim"},eyebrow:"BURION STUDIO",heroTitle:"Fikirleri,<br><em>gerçeğe</em> dönüştürüyorum.",heroDescription:"Fikirden yayınlanmaya kadar oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",explore:"Stüdyoyu keşfet",getInTouch:"İletişime geç",what:"NELER GELİŞTİRİYORUM",buildTitle:"Fikirleri <em>dijital ürünlere</em> dönüştürüyorum.",build:[["Oyunlar","Sıfırdan geliştirilen interaktif dünyalar, oyun sistemleri ve deneyimler."],["Uygulamalar","Gerçek problemler ve gerçek insanlar etrafında tasarlanan faydalı dijital ürünler."],["Dijital Ürünler","Fikirlerin yaşayacağı web siteleri, platformlar ve dijital deneyimler."]],selected:"SEÇİLİ ÇALIŞMALAR",projectsTitle:"Ürünler, fikirler ve <em>denemeler.</em>",projectsDescription:"Burion Studio bünyesinde şu anda şekillendirdiğim ürün ve fikirlerden bir seçki.",statement:[["GELİŞTİRME","Temiz. Ölçeklenebilir. Sağlam."],["PERFORMANS","Hızlı. Verimli. Optimize."],["TASARIM","Minimal. Bilinçli. Net."],["DENEYİM","Kullanılmak için tasarlandı."]],project:[["OYUN","TRIVIA","BİLGİ · REKABET · OYUN","OYUN · GELİŞTİRİLİYOR","Trivia","Bilgi, hız ve ilerleme üzerine tasarlanmış rekabetçi bir quiz deneyimi.","GELİŞTİRİLİYOR"],["UYGULAMA","TARIM","VERİ · TARLA · ZEKÂ","UYGULAMA · KONSEPT","Tarım Platformu","Daha akıllı tarımsal kararları desteklemeye odaklanan dijital platform.","KONSEPT"],["DİJİTAL ÜRÜN","BURION","STÜDYO · MARKA · DİJİTAL","DİJİTAL ÜRÜN · CANLI","Burion Studio","Bağımsız geliştirici ve yaratıcı stüdyonun dijital merkezi.","CANLI"]],aboutEyebrow:"BURION STUDIO HAKKINDA",aboutTitle:"Tek geliştirici.<br><em>Birçok fikir.</em>",aboutText:["Merhaba, ben <strong>İrfan Aslan BÜRİAN.</strong>","Türkiye'de yaşayan bağımsız bir geliştiriciyim. Oyunları, uygulamaları ve dijital ürünleri sıfırdan geliştiriyorum.","Tüm süreci kendim yürütüyorum — kod, tasarım, sistemler ve aradaki her şey.","Burion Studio; üretmek, denemek ve fikirleri gerçek bir ürüne dönüştürmek için oluşturduğum stüdyom."],contactEyebrow:"BİRLİKTE ÇALIŞALIM",contactTitle:"Bir fikrin mi var?<br>Yapmaya <em>değer</em> bir şey geliştirelim.",contactDescription:"Bir projen, fikrin veya iş birliği önerin varsa senden haber almak isterim.",labels:["İsim","E-posta","Konu","Mesaj"],send:"Mesaj Gönder",language:"DİL",privacy:"Gizlilik Politikası",terms:"Kullanım Koşulları",footer:"Oyunlar, uygulamalar ve dijital deneyimler geliştiren bağımsız geliştirici.",seoTitle:"Burion Studio — Bağımsız Oyun ve Uygulama Stüdyosu",seoDescription:"Burion Studio — bağımsız oyunlar, uygulamalar ve dijital deneyimler geliştirir.",languageAria:"Dil değiştir",menuOpen:"Menüyü aç",menuClose:"Menüyü kapat"},
-    ru:{nav:{home:"Главная",projects:"Проекты",about:"Обо мне",contact:"Контакты"},eyebrow:"BURION STUDIO",heroTitle:"Идеи,<br>превращённые в <em>реальность.</em>",heroDescription:"Независимый разработчик, создающий игры, приложения и цифровые продукты от идеи до релиза.",explore:"Исследовать студию",getInTouch:"Связаться",what:"ЧТО Я СОЗДАЮ",buildTitle:"Превращаю идеи в <em>цифровые продукты.</em>",build:[["Игры","Интерактивные миры, игровые системы и впечатления, созданные с нуля."],["Приложения","Полезные цифровые продукты, созданные вокруг реальных задач и людей."],["Цифровые продукты","Сайты, платформы и цифровые решения, где идеи получают своё место."]],selected:"ИЗБРАННЫЕ РАБОТЫ",projectsTitle:"Продукты, концепции и <em>эксперименты.</em>",projectsDescription:"Подборка продуктов и идей, которые сейчас развиваются в Burion Studio.",statement:[["РАЗРАБОТКА","Чисто. Масштабируемо. Надёжно."],["ПРОИЗВОДИТЕЛЬНОСТЬ","Быстро. Эффективно. Оптимизировано."],["ДИЗАЙН","Минималистично. Осознанно. Понятно."],["ОПЫТ","Создано для использования."]],project:[["ИГРА","TRIVIA","ЗНАНИЯ · СОРЕВНОВАНИЕ · ИГРА","ИГРА · В РАЗРАБОТКЕ","Trivia","Соревновательная викторина, построенная вокруг знаний, скорости и прогресса.","В РАЗРАБОТКЕ"],["ПРИЛОЖЕНИЕ","СЕЛЬСКОЕ ХОЗЯЙСТВО","ДАННЫЕ · ПОЛЕ · ИНТЕЛЛЕКТ","ПРИЛОЖЕНИЕ · КОНЦЕПЦИЯ","Аграрная платформа","Цифровая платформа для более эффективных решений в сельском хозяйстве.","КОНЦЕПЦИЯ"],["ЦИФРОВОЙ ПРОДУКТ","BURION","СТУДИЯ · БРЕНД · ЦИФРОВОЕ","ЦИФРОВОЙ ПРОДУКТ · LIVE","Burion Studio","Цифровой дом независимого разработчика и творческой студии.","LIVE"]],aboutEyebrow:"О BURION STUDIO",aboutTitle:"Один разработчик.<br><em>Много идей.</em>",aboutText:["Привет, я <strong>İrfan Aslan BÜRİAN.</strong>","Я независимый разработчик из Турции. Создаю игры, приложения и цифровые продукты с нуля.","Я самостоятельно занимаюсь всем процессом — кодом, дизайном, системами и всеми задачами между ними.","Burion Studio — моё пространство для создания, экспериментов и превращения идей в реальные продукты."],contactEyebrow:"ДАВАЙТЕ СОЗДАДИМ ВМЕСТЕ",contactTitle:"Есть идея?<br>Давайте создадим что-то <em>стоящее.</em>",contactDescription:"Есть проект, идея или предложение о сотрудничестве? Буду рад услышать о нём.",labels:["Имя","Эл. почта","Тема","Сообщение"],send:"Отправить сообщение",language:"ЯЗЫК",privacy:"Политика конфиденциальности",terms:"Условия использования",footer:"Независимый разработчик игр, приложений и цифровых продуктов.",seoTitle:"Burion Studio — Независимая студия игр и приложений",seoDescription:"Burion Studio — независимые игры, приложения и цифровые продукты.",languageAria:"Изменить язык",menuOpen:"Открыть меню",menuClose:"Закрыть меню"}
-  };
-
-  function setLanguage(lang){
-    const t=T[lang]||T.en;
-    document.documentElement.lang=lang;
-    document.title=t.seoTitle;
-    const description=q('meta[name="description"]');
-    if(description)description.setAttribute("content",t.seoDescription);
-    if(current)current.textContent=lang.toUpperCase();
-    if(langBtn)langBtn.setAttribute("aria-label",t.languageAria);
-    if(menuBtn)menuBtn.setAttribute("aria-label",menuBtn.getAttribute("aria-expanded")==="true"?t.menuClose:t.menuOpen);
-    const nav=[t.nav.home,t.nav.projects,t.nav.about,t.nav.contact];
-    qa(".desktop-nav .nav-link,.mobile-nav a,.footer-nav a").forEach((e,i)=>{e.textContent=nav[i%4];});
-    const ml=q(".mobile-language>span");if(ml)ml.textContent=t.language;
-    const hero=q("#home");
-    if(hero){hero.querySelector(".eyebrow").textContent=t.eyebrow;hero.querySelector("h1").innerHTML=t.heroTitle;hero.querySelector(".hero-description").textContent=t.heroDescription;const b=qa(".hero-actions .button span:first-child");if(b[0])b[0].textContent=t.explore;if(b[1])b[1].textContent=t.getInTouch;}
-    const build=q(".build-section");
-    if(build){build.querySelector(".eyebrow").textContent=t.what;build.querySelector("h2").innerHTML=t.buildTitle;qa(".build-card").forEach((c,i)=>{if(!t.build[i])return;c.querySelector("h3").textContent=t.build[i][0];c.querySelector("p").textContent=t.build[i][1];});}
-    qa(".statement-item").forEach((e,i)=>{if(!t.statement[i])return;e.querySelector("strong").textContent=t.statement[i][0];e.querySelector("span:last-child").textContent=t.statement[i][1];});
-    const projects=q("#projects");
-    if(projects){projects.querySelector(".projects-heading .eyebrow").textContent=t.selected;projects.querySelector(".projects-heading h2").innerHTML=t.projectsTitle;projects.querySelector(".section-description").textContent=t.projectsDescription;qa(".project-card").forEach((c,i)=>{const v=t.project[i];if(!v)return;const im=c.querySelectorAll(".project-image-content span,.project-image-content strong,.project-image-content small");im[0].textContent=v[0];im[1].textContent=v[1];im[2].textContent=v[2];c.querySelector(".project-category").textContent=v[3];c.querySelector(".project-info h3").textContent=v[4];c.querySelector(".project-info p").textContent=v[5];c.querySelector(".project-status").textContent=v[6];});}
-    const about=q("#about");
-    if(about){about.querySelector(".eyebrow").textContent=t.aboutEyebrow;about.querySelector("h2").innerHTML=t.aboutTitle;const p=about.querySelectorAll(".about-content>p:not(.eyebrow)");t.aboutText.forEach((v,i)=>{if(p[i])p[i].innerHTML=v;});}
-    const contact=q("#contact");
-    if(contact){contact.querySelector(".eyebrow").textContent=t.contactEyebrow;contact.querySelector("h2").innerHTML=t.contactTitle;const contactDescription=q(".contact-description");if(contactDescription)contactDescription.textContent=t.contactDescription;qa(".contact-form label>span").forEach((e,i)=>{if(t.labels[i])e.textContent=t.labels[i];});const send=q("#contactForm .submit-button span:first-child");if(send)send.textContent=t.send;}
-    qa(".footer-legal a").forEach((e,i)=>{e.textContent=i===0?t.privacy:t.terms;});
-    const footerText=q(".footer-brand p");if(footerText)footerText.textContent=t.footer;
-  }
-
-  function closeLanguageMenu(){
-    if(!langMenu||langMenu.hidden)return;
-    langMenu.hidden=true;
-    if(langBtn)langBtn.setAttribute("aria-expanded","false");
-  }
+  // English-only site: no language state, routing, or translation runtime.
+  document.documentElement.lang="en";
 
   if(menuBtn&&menu){
     menuBtn.addEventListener("click",()=>{
@@ -52,28 +12,14 @@ document.addEventListener("DOMContentLoaded",()=>{
       menuBtn.setAttribute("aria-expanded",String(!open));
       menuBtn.setAttribute("aria-label",!open?"Close menu":"Open menu");
       menu.hidden=open;
-      if(!open)closeLanguageMenu();
     });
   }
 
-  if(langBtn&&langMenu){
-    langBtn.addEventListener("click",e=>{
-      e.stopPropagation();
-      langMenu.hidden=!langMenu.hidden;
-      langBtn.setAttribute("aria-expanded",String(!langMenu.hidden));
-      if(!langMenu.hidden&&menuBtn&&menu){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");}
-    });
-  }
-
-  document.addEventListener("click",e=>{
-    if(langMenu&&!langMenu.hidden&&!e.target.closest(".language-menu,.language-button"))closeLanguageMenu();
-  });
-
-  qa(".mobile-nav a,.desktop-nav a,.footer-nav a").forEach(a=>a.addEventListener("click",()=>{
-    if(menu&&menuBtn){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");}
+  document.querySelectorAll(".mobile-nav a,.desktop-nav a,.footer-nav a").forEach(a=>a.addEventListener("click",()=>{
+    if(menu&&menuBtn){
+      menu.hidden=true;
+      menuBtn.setAttribute("aria-expanded","false");
+      menuBtn.setAttribute("aria-label","Open menu");
+    }
   }));
-
-  const path=window.location.pathname.replace(/\/+$/,'/');
-  const pageLang=path==='/tr/'?'tr':path==='/ru/'?'ru':'en';
-  setLanguage(pageLang);
 });
