@@ -1,87 +1,126 @@
-/* BURION STUDIO — Selected Work carousel correction + Trivia device refinement */
+/*
+  BURION STUDIO — SELECTED WORK
+  Reference-matched mobile/desktop carousel.
+  The previous implementation tried to draw the second device with pseudo-elements.
+  This version uses real DOM elements, fluid sizing and one responsive coordinate system.
+*/
+
+.projects-section{position:relative;scroll-margin-top:90px}
 .projects-carousel{position:relative;width:100%;min-width:0;overflow:hidden;isolation:isolate}
-.projects-track{display:flex!important;flex-direction:row;flex-wrap:nowrap;width:100%;gap:14px;transform:translate3d(0,0,0);transition:transform .55s var(--ease);will-change:transform}
+.projects-track{display:flex!important;flex-direction:row;flex-wrap:nowrap;width:100%;gap:14px;transform:translate3d(0,0,0);transition:transform .58s cubic-bezier(.22,.61,.36,1);will-change:transform}
 .projects-track>.project-card{flex:0 0 calc((100% - 14px)/2);width:calc((100% - 14px)/2);min-width:0;margin:0}
+
 .projects-pagination{display:flex!important;align-items:center;gap:11px;margin-top:18px!important;color:var(--muted-dark);font-size:10px;line-height:1;letter-spacing:.08em}
 .projects-pagination>span:not(.projects-pagination-current){display:none!important}
 .projects-pagination-current{display:inline-block!important;min-width:18px;color:var(--text);font-variant-numeric:tabular-nums}
 .projects-pagination::after{content:"/ 03";display:inline-block;color:var(--muted-dark);font-variant-numeric:tabular-nums}
 .projects-pagination-line{display:none!important}
-.projects-arrow{width:42px!important;height:42px!important;display:inline-flex!important;align-items:center;justify-content:center;padding:0!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:50%!important;background:rgba(255,255,255,.015)!important;color:var(--text)!important;font-size:20px!important;line-height:1!important;transition:transform .25s var(--ease),border-color .25s ease,color .25s ease,opacity .25s ease!important}
+
+.projects-arrow{width:42px!important;height:42px!important;display:inline-flex!important;align-items:center;justify-content:center;padding:0!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:50%!important;background:rgba(255,255,255,.012)!important;color:var(--text)!important;font-size:20px!important;font-weight:400!important;line-height:1!important;transition:transform .25s var(--ease),border-color .25s ease,color .25s ease,opacity .25s ease!important}
 .projects-arrow:hover:not(:disabled){transform:translateY(-2px);border-color:rgba(215,169,87,.45)!important;color:var(--gold-light)!important}
 .projects-arrow:disabled{opacity:.28;cursor:not-allowed}
 .projects-controls{display:flex;align-items:center;gap:9px}
+
+/* Card proportions from the supplied reference. */
+.project-featured .project-image-trivia{min-height:385px!important;position:relative;overflow:hidden;isolation:isolate;background:
+  radial-gradient(circle at 73% 26%,rgba(215,169,87,.105),transparent 24%),
+  radial-gradient(circle at 28% 76%,rgba(104,77,34,.09),transparent 31%),
+  linear-gradient(135deg,#121313 0%,#0b0c0d 62%,#080909 100%)}
+.project-featured .project-image-trivia::after{z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.24),transparent 55%,rgba(0,0,0,.13))}
+.project-featured .project-image-content{position:absolute!important;z-index:2;left:0;top:50%;transform:translateY(-50%);width:50%;max-width:none!important;display:flex;align-items:flex-start!important;text-align:left!important;padding:0 0 0 36px!important}
+.project-featured .project-image-content span{margin:0 0 29px;font-size:9px!important;letter-spacing:.22em}
+.project-featured .project-image-content strong{font-family:"Playfair Display",Georgia,serif;font-size:clamp(55px,7vw,82px)!important;font-weight:600!important;line-height:.86!important;letter-spacing:-.055em}
+.project-featured .project-image-content small{margin-top:28px;font-size:7px!important;line-height:2.2;text-align:left;letter-spacing:.19em}
+
+/* Real devices — no generated text, no pseudo-element leaderboard. */
+.trivia-device{position:absolute;z-index:5;overflow:hidden;padding:6px;border:1px solid rgba(255,255,255,.24);background:linear-gradient(145deg,#414346 0%,#17191b 12%,#08090a 46%,#242628 100%);box-shadow:-18px 28px 52px rgba(0,0,0,.58),inset 1px 0 0 rgba(255,255,255,.22),inset -2px -2px 0 rgba(0,0,0,.5);will-change:transform;transition:transform .55s var(--ease),box-shadow .55s ease}
+.trivia-device::before{content:"";position:absolute;z-index:10;top:5px;left:50%;width:48px;height:11px;transform:translateX(-50%);border-radius:0 0 8px 8px;background:#020304;box-shadow:inset 0 -1px 1px rgba(255,255,255,.08)}
+.trivia-screen{position:relative;width:100%;height:100%;overflow:hidden;border:1px solid rgba(255,255,255,.06);border-radius:inherit;background:linear-gradient(160deg,#17120d 0%,#0b0d0f 55%,#101214 100%);color:var(--text);font-family:"DM Sans",system-ui,sans-serif}
+.trivia-status{position:absolute;z-index:3;top:8px;left:10px;right:10px;display:flex;justify-content:space-between;color:rgba(244,241,234,.82);font-size:5px;line-height:1;font-weight:600;letter-spacing:.02em}
+
+.trivia-device-question{right:20%;top:7%;width:168px;height:315px;border-radius:27px;transform:rotate(7deg)}
+.trivia-device-question .trivia-screen{padding:0 12px}
+.trivia-title{display:flex;align-items:center;gap:18px;margin-top:35px;color:var(--gold-light)}
+.trivia-title span{font-family:system-ui;font-size:14px;color:#e9e6df;font-weight:300}
+.trivia-title strong{font-family:"Playfair Display",Georgia,serif;font-size:13px;font-weight:600;letter-spacing:.05em}
+.question-kicker{margin-top:17px;color:var(--gold-light);font-size:5px;font-weight:700;letter-spacing:.16em}
+.question-text{margin-top:8px;color:#f2eee7;font-size:12px;line-height:1.34;font-weight:500;letter-spacing:-.015em}
+.answer{height:32px;display:flex;align-items:center;gap:8px;margin-top:7px;padding:0 9px;border:1px solid rgba(255,255,255,.09);border-radius:7px;background:rgba(255,255,255,.025);color:#f0ece4;font-size:7px}
+.answer>span{color:#c7c3bb}
+.answer>b{margin-left:auto;color:var(--gold-light);font-size:9px}
+.answer.active{border-color:rgba(215,169,87,.72);background:rgba(215,169,87,.075);box-shadow:inset 0 0 0 1px rgba(215,169,87,.07)}
+.trivia-tools{position:absolute;left:12px;right:12px;bottom:20px;display:flex;justify-content:space-around;text-align:center;color:rgba(236,232,224,.72);font-size:14px}
+.trivia-tools span{display:flex;flex-direction:column;align-items:center;gap:2px}
+.trivia-tools small{font-size:5px;color:#d5d0c7}
+.home-indicator{position:absolute;left:50%;bottom:7px;width:48px;height:3px;transform:translateX(-50%);border-radius:4px;background:#eeeae2}
+
+.trivia-device-leaderboard{right:-1%;top:15%;width:145px;height:270px;border-radius:24px;transform:rotate(4deg);z-index:4;background:linear-gradient(145deg,#36383a,#0c0d0f 48%,#1c1e20)}
+.trivia-device-leaderboard .trivia-screen{padding:0 10px;background:linear-gradient(165deg,#15100b,#0b0d0e 60%,#121416)}
+.leaderboard-head{display:flex;align-items:center;gap:10px;margin-top:35px;padding:0 3px}
+.trophy{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:rgba(215,169,87,.1);border:1px solid rgba(215,169,87,.18);color:var(--gold);font-size:15px}
+.leaderboard-head div{display:flex;flex-direction:column}
+.leaderboard-head small{color:#a7a39b;font-size:4px;letter-spacing:.13em}
+.leaderboard-head strong{margin-top:2px;color:#eeeae2;font-size:17px;font-weight:500;line-height:1}
+.leaderboard-head em{margin-top:4px;color:#7f817f;font-size:4px;font-style:normal;letter-spacing:.1em}
+.leader-row{height:38px;display:flex;align-items:center;gap:6px;margin-top:6px;padding:0 7px;border:1px solid rgba(255,255,255,.055);border-radius:7px;background:rgba(255,255,255,.018)}
+.avatar{width:16px;height:16px;display:grid;place-items:center;flex:0 0 16px;border-radius:50%;background:linear-gradient(145deg,#78736b,#25272a);color:#eeeae2;font-size:5px;font-weight:700}
+.leader-row b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#c9c5bc;font-size:6px;font-weight:500}
+.leader-row strong{margin-left:auto;color:var(--gold-light);font-size:6px;font-weight:500}
+.leaderboard-button{height:29px;display:flex;align-items:center;justify-content:space-between;margin-top:7px;padding:0 8px;border:1px solid rgba(215,169,87,.35);border-radius:7px;color:#d7d2c9;font-size:5px}
+.leaderboard-button span{color:var(--gold-light);font-size:10px}
+
+.project-featured:hover .trivia-device-question{transform:rotate(4deg) translateY(-3px)}
+.project-featured:hover .trivia-device-leaderboard{transform:rotate(2deg) translateY(-2px)}
+
+/* Information panel */
+.project-featured .redesign-project-info{min-height:118px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:22px 24px 23px!important;background:#0b0d0e}
+.project-featured .redesign-project-info h3{margin:7px 0 6px;font-family:"Playfair Display",Georgia,serif;font-size:22px;line-height:1.1;font-weight:600}
+.project-featured .redesign-project-info p{max-width:600px;font-size:12px;line-height:1.65}
+.project-featured .redesign-project-info .project-status{margin-top:74px;padding:7px 13px;border:1px solid rgba(215,169,87,.38);border-radius:999px;color:var(--gold-light);font-size:7px;line-height:1;letter-spacing:.15em;white-space:nowrap}
+
 @media (max-width:800px){
-  .projects-carousel{margin-top:2px}
+  .projects-section{scroll-margin-top:74px}
   .projects-track{gap:0;transition-duration:.48s;touch-action:pan-y}
-  .projects-track>.project-card{flex:0 0 100%;width:100%;border-radius:16px}
-  .projects-pagination{margin-top:16px!important}
-  .projects-arrow{width:46px!important;height:46px!important;font-size:21px!important}
-}
-@media (max-width:430px){
-  .projects-heading h2{max-width:100%;font-size:clamp(39px,11.6vw,52px)!important;line-height:.98}
-  .projects-heading-side{display:flex;flex-direction:column;align-items:flex-end;gap:17px}
+  .projects-track>.project-card{flex:0 0 100%;width:100%;border-radius:17px}
+
+  .redesign-projects{padding-top:58px!important;padding-bottom:68px!important}
+  .redesign-projects .projects-heading{position:relative;display:block;min-height:154px;margin-bottom:23px!important}
+  .redesign-projects .projects-heading .eyebrow{margin-bottom:20px;font-size:9px}
+  .redesign-projects .projects-heading h2{max-width:310px;font-size:clamp(39px,11.6vw,52px)!important;line-height:.97!important;letter-spacing:-.055em}
+  .redesign-projects .projects-heading-side{position:absolute;right:0;bottom:0;display:flex!important;align-items:flex-end!important;gap:0!important}
+  .redesign-projects .section-description{display:none}
   .projects-controls{gap:8px}
-  .projects-arrow{width:44px!important;height:44px!important}
+  .projects-arrow{width:45px!important;height:45px!important;font-size:21px!important}
+
+  .project-featured .project-image-trivia{min-height:306px!important;border-radius:17px 17px 0 0}
+  .project-featured .project-image-content{left:0;top:50%;width:49%;padding:0 0 0 14px!important;transform:translateY(-50%)}
+  .project-featured .project-image-content span{margin-bottom:27px;font-size:7px!important;letter-spacing:.18em}
+  .project-featured .project-image-content strong{font-size:clamp(44px,13vw,58px)!important;line-height:.86!important}
+  .project-featured .project-image-content small{margin-top:27px;font-size:5px!important;line-height:2.25;letter-spacing:.17em}
+
+  .trivia-device-question{right:22%;top:7%;width:166px;height:313px;border-radius:27px;transform:rotate(7deg)}
+  .trivia-device-leaderboard{right:-5%;top:16%;width:139px;height:259px;border-radius:23px;transform:rotate(4deg)}
+  .trivia-title{margin-top:34px}
+  .question-text{font-size:11.5px}
+  .answer{height:31px}
+
+  .project-featured .redesign-project-info{min-height:143px!important;padding:20px 23px 19px!important;border-radius:0 0 17px 17px}
+  .project-featured .redesign-project-info .project-category{font-size:7px;letter-spacing:.14em}
+  .project-featured .redesign-project-info h3{margin:8px 0 7px;font-size:21px}
+  .project-featured .redesign-project-info p{max-width:330px;font-size:12px;line-height:1.55}
+  .project-featured .redesign-project-info .project-status{margin-top:12px;padding:7px 12px;font-size:6.5px}
+
+  .projects-pagination{margin-top:16px!important}
 }
 
-/* TRIVIA — realistic device composition. Card dimensions intentionally unchanged. */
-.project-featured .project-image-trivia .project-device{
-  right:8%;bottom:5%;z-index:5;width:150px;height:282px;border:1px solid rgba(255,255,255,.24);border-radius:25px;
-  background:linear-gradient(145deg,#3b3d40 0%,#151719 13%,#08090a 42%,#1a1c1e 100%);
-  box-shadow:-20px 30px 50px rgba(0,0,0,.55),8px 4px 30px rgba(215,169,87,.06),inset 1px 0 0 rgba(255,255,255,.18),inset -2px -2px 0 rgba(0,0,0,.45);
-  transform:rotate(5.5deg);transition:transform .55s var(--ease),box-shadow .55s ease;
-}
-.project-featured .project-image-trivia .project-device::after{
-  content:"LEADERBOARD\\A\\A  1   1,210\\A  2     980\\A  3     870\\A  4     760";
-  white-space:pre;position:absolute;z-index:-1;right:102%;top:13%;width:112px;height:216px;padding:27px 11px 10px;border:1px solid rgba(255,255,255,.12);border-radius:21px;
-  background:linear-gradient(180deg,rgba(14,15,16,.98),rgba(8,9,10,.98));box-shadow:-12px 20px 32px rgba(0,0,0,.38),inset 1px 0 0 rgba(255,255,255,.08);
-  color:rgba(231,226,215,.62);font-family:"DM Sans",sans-serif;font-size:5px;line-height:2.5;letter-spacing:.08em;transform:rotate(-9deg);text-align:left;opacity:.86;
-}
-.project-featured .project-image-trivia .project-device::before{
-  content:"";position:absolute;top:6px;left:50%;z-index:6;width:52px;height:12px;transform:translateX(-50%);border-radius:0 0 9px 9px;background:#020304;box-shadow:inset 0 -1px 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.65);
-}
-.project-featured .project-image-trivia .project-device-screen{
-  position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(180deg,#08090a 0%,#0c0e10 52%,#111315 100%);
-  border:1px solid rgba(255,255,255,.055);box-shadow:inset 0 0 0 1px rgba(0,0,0,.6),inset 0 18px 28px rgba(255,255,255,.012);padding:24px 9px 10px;
-}
-.project-featured .project-image-trivia .project-device-screen::before{
-  content:"‹   TRIVIA                                      12:48";position:absolute;top:12px;left:9px;right:9px;color:rgba(242,237,226,.72);font-family:"DM Sans",sans-serif;font-size:5px;letter-spacing:.03em;white-space:pre;
-}
-.project-featured .project-image-trivia .project-device-screen::after{
-  content:"◉  50:50          ◇  SKIP          ♧  HINT";position:absolute;left:9px;right:9px;bottom:9px;padding-top:7px;border-top:1px solid rgba(255,255,255,.045);color:rgba(213,209,201,.46);font-family:"DM Sans",sans-serif;font-size:4.5px;letter-spacing:.04em;text-align:center;white-space:pre;
-}
-.project-featured .project-image-trivia .project-device-top{display:none}
-.project-featured .project-image-trivia .project-device-question{
-  color:#f1eee7;font-size:8.5px;line-height:1.42;margin-top:31px;margin-bottom:7px;letter-spacing:-.01em;
-}
-.project-featured .project-image-trivia .project-device-question::before{
-  content:"QUESTION 1/10\\A";display:block;margin-bottom:5px;color:var(--gold-light);font-size:4.5px;font-weight:700;letter-spacing:.16em;white-space:pre;
-}
-.project-featured .project-image-trivia .project-device-option{
-  min-height:24px;display:flex;align-items:center;border:1px solid rgba(255,255,255,.075);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border-radius:8px;color:rgba(239,235,227,.8);padding:6px 7px;margin-top:5px;font-size:6.2px;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);transition:border-color .2s ease,background .2s ease,transform .2s ease;
-}
-.project-featured .project-image-trivia .project-device-option::first-letter{font-weight:700}
-.project-featured .project-image-trivia .project-device-option.active{border-color:rgba(215,169,87,.65);background:linear-gradient(180deg,rgba(215,169,87,.12),rgba(215,169,87,.045));color:#f5eee0;box-shadow:inset 0 0 0 1px rgba(215,169,87,.08),0 4px 14px rgba(0,0,0,.22)}
-.project-featured .project-image-trivia .project-device-option.active::after{content:"✓";margin-left:auto;color:var(--gold-light);font-weight:700}
-.project-featured:hover .project-image-trivia .project-device{transform:rotate(2.5deg) translateY(-3px);box-shadow:-24px 35px 56px rgba(0,0,0,.58),8px 4px 36px rgba(215,169,87,.075),inset 1px 0 0 rgba(255,255,255,.2),inset -2px -2px 0 rgba(0,0,0,.5)}
-
-@media (max-width:800px){
-  .project-featured .project-image-trivia .project-device{right:3%;bottom:4%;width:113px;height:214px;border-radius:20px;transform:rotate(5deg)}
-  .project-featured .project-image-trivia .project-device::before{width:40px;height:9px;border-radius:0 0 7px 7px}
-  .project-featured .project-image-trivia .project-device::after{right:92%;top:15%;width:82px;height:165px;padding:22px 8px 8px;border-radius:17px;font-size:4px;line-height:2.3}
-  .project-featured .project-image-trivia .project-device-screen{border-radius:14px;padding:20px 7px 8px}
-  .project-featured .project-image-trivia .project-device-screen::before{top:9px;font-size:4px}
-  .project-featured .project-image-trivia .project-device-screen::after{bottom:7px;font-size:3.3px;padding-top:5px}
-  .project-featured .project-image-trivia .project-device-question{font-size:6.4px;margin-top:25px;margin-bottom:5px}
-  .project-featured .project-image-trivia .project-device-question::before{font-size:3.5px;margin-bottom:4px}
-  .project-featured .project-image-trivia .project-device-option{min-height:19px;padding:4px 5px;margin-top:4px;border-radius:6px;font-size:4.8px}
-}
 @media (max-width:430px){
-  .project-featured .project-image-trivia .project-device{right:2%;bottom:3%;width:101px;height:191px;border-radius:18px}
-  .project-featured .project-image-trivia .project-device::after{right:91%;width:74px;height:148px;padding:19px 7px 7px;font-size:3.6px}
-  .project-featured .project-image-trivia .project-device-screen{border-radius:12px;padding:18px 6px 6px}
-  .project-featured .project-image-trivia .project-device-question{font-size:5.8px;margin-top:23px}
-  .project-featured .project-image-trivia .project-device-option{min-height:17px;padding:3.5px 4px;font-size:4.4px}
+  .redesign-projects{padding-top:58px!important}
+  .redesign-projects .projects-heading{min-height:154px}
+  .redesign-projects .projects-heading h2{font-size:clamp(39px,11.6vw,50px)!important}
+  .project-featured .project-image-trivia{min-height:306px!important}
+  .trivia-device-question{right:21%;width:164px;height:309px}
+  .trivia-device-leaderboard{right:-6%;width:136px;height:254px}
+  .project-featured .redesign-project-info{min-height:143px!important}
 }
-@media (prefers-reduced-motion:reduce){.projects-track,.projects-arrow,.project-featured .project-image-trivia .project-device,.project-featured .project-image-trivia .project-device-option{transition:none!important}}
+
+@media (prefers-reduced-motion:reduce){.projects-track,.projects-arrow,.trivia-device{transition:none!important}}
