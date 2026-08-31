@@ -3,12 +3,6 @@
    improve mobile density, and preserve the existing brand language.
 */
 
-:root{
-  --studio-section: 82px;
-  --studio-section-tight: 68px;
-  --studio-card-gap: 14px;
-}
-
 /* Global rhythm */
 .site-shell{max-width:1180px;padding-left:28px;padding-right:28px}
 .site-header{height:78px}
@@ -76,7 +70,6 @@
 }
 
 @media (max-width:800px){
-  :root{--studio-section:64px}
   .site-shell{padding-left:22px;padding-right:22px}
   .site-header{height:74px}
   .site-logo{width:160px}
@@ -142,6 +135,4 @@
   .project-device-question{font-size:6.8px}
 }
 
-@media (prefers-reduced-motion:reduce){
-  .project-device{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.project-device{transition:none}}
