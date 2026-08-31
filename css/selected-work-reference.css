@@ -1,0 +1,160 @@
+/* BURION STUDIO — SELECTED WORK / REFERENCE MOBILE COMPOSITION
+   Targeted override based on the supplied mobile reference image.
+   Keeps existing desktop carousel behavior and focuses on the reference geometry. */
+
+@media (max-width: 800px){
+  .redesign-projects .projects-heading{
+    min-height: 188px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .redesign-projects .projects-heading h2{
+    max-width: 345px !important;
+    font-size: clamp(42px, 12.4vw, 56px) !important;
+    line-height: .94 !important;
+    letter-spacing: -.055em !important;
+  }
+
+  .redesign-projects .projects-heading-side{
+    right: 0 !important;
+    bottom: 2px !important;
+  }
+
+  .projects-controls{gap: 10px !important;}
+  .projects-arrow{
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 22px !important;
+    background: transparent !important;
+  }
+
+  .project-featured .project-image-trivia{
+    height: 350px !important;
+    min-height: 350px !important;
+    overflow: hidden !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+
+  .project-featured .project-image-content{
+    top: 49% !important;
+    width: 48% !important;
+    padding-left: 20px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .project-featured .project-image-content span{
+    margin-bottom: 30px !important;
+    font-size: 7.2px !important;
+    letter-spacing: .2em !important;
+    white-space: nowrap !important;
+  }
+
+  .project-featured .project-image-content strong{
+    font-size: clamp(47px, 13.8vw, 61px) !important;
+    line-height: .84 !important;
+  }
+
+  .project-featured .project-image-content small{
+    margin-top: 29px !important;
+    font-size: 5.2px !important;
+    line-height: 2.25 !important;
+  }
+
+  .trivia-device-question{
+    right: 18% !important;
+    top: 10% !important;
+    width: 128px !important;
+    height: 242px !important;
+    border-radius: 24px !important;
+    transform: rotate(7deg) !important;
+  }
+
+  .trivia-device-leaderboard{
+    right: -2% !important;
+    top: 22% !important;
+    width: 108px !important;
+    height: 205px !important;
+    border-radius: 21px !important;
+    transform: rotate(4deg) !important;
+  }
+
+  .trivia-device{padding: 5px !important;}
+  .trivia-device::before{width: 39px !important;height: 9px !important;}
+
+  .trivia-device-question .trivia-screen{padding: 0 9px !important;}
+  .trivia-status{font-size: 4px !important;}
+  .trivia-title{gap: 12px !important;margin-top: 25px !important;}
+  .trivia-title span{font-size: 11px !important;}
+  .trivia-title strong{font-size: 10px !important;}
+  .question-kicker{margin-top: 13px !important;font-size: 4px !important;}
+  .question-text{font-size: 8px !important;}
+  .answer{height: 23px !important;font-size: 5px !important;margin-top: 5px !important;}
+  .trivia-tools{bottom: 14px !important;font-size: 10px !important;}
+  .trivia-tools small{font-size: 3.8px !important;}
+
+  .trivia-device-leaderboard .trivia-screen{padding: 0 7px !important;}
+  .leaderboard-head{gap: 7px !important;margin-top: 25px !important;}
+  .trophy{width: 23px !important;height: 23px !important;font-size: 10px !important;}
+  .leaderboard-head strong{font-size: 11px !important;}
+  .leader-row{height: 27px !important;margin-top: 5px !important;}
+  .leaderboard-button{height: 21px !important;}
+
+  .project-featured .redesign-project-info{
+    min-height: 162px !important;
+    padding: 25px 28px 26px !important;
+    border-radius: 0 0 18px 18px !important;
+  }
+
+  .project-featured .redesign-project-info .project-category{
+    font-size: 7.2px !important;
+    letter-spacing: .18em !important;
+  }
+
+  .project-featured .redesign-project-info h3{
+    margin: 9px 0 9px !important;
+    font-size: 24px !important;
+  }
+
+  .project-featured .redesign-project-info p{
+    max-width: 350px !important;
+    font-size: 12px !important;
+    line-height: 1.52 !important;
+  }
+
+  .project-featured .redesign-project-info .project-status{
+    margin-top: 15px !important;
+    padding: 8px 14px !important;
+    font-size: 6.8px !important;
+  }
+
+  .projects-pagination{
+    margin-top: 18px !important;
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 430px){
+  .redesign-projects .projects-heading{min-height: 182px !important;}
+  .redesign-projects .projects-heading h2{font-size: clamp(40px, 12.9vw, 54px) !important;}
+
+  .project-featured .project-image-trivia{
+    height: 346px !important;
+    min-height: 346px !important;
+  }
+
+  .project-featured .project-image-content{padding-left: 20px !important;}
+
+  .trivia-device-question{
+    right: 17% !important;
+    top: 9% !important;
+    width: 122px !important;
+    height: 232px !important;
+  }
+
+  .trivia-device-leaderboard{
+    right: -3% !important;
+    top: 22% !important;
+    width: 104px !important;
+    height: 198px !important;
+  }
+}
