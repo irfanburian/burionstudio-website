@@ -1,3 +1,5 @@
+(()=>{const link=document.createElement("link");link.rel="stylesheet";link.href="css/selected-work-carousel-fix.css?v=20260831-1";document.head.appendChild(link)})();
+
 document.addEventListener("DOMContentLoaded",()=>{
   const q=s=>document.querySelector(s), menu=q("#mobileMenu"), menuBtn=q(".menu-button"), header=q(".site-header");
   document.documentElement.lang="en";
