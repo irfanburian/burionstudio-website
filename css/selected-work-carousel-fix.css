@@ -1,4 +1,4 @@
-/* BURION STUDIO — Selected Work carousel correction */
+/* BURION STUDIO — Selected Work carousel correction + Trivia device refinement */
 .projects-carousel{position:relative;width:100%;min-width:0;overflow:hidden;isolation:isolate}
 .projects-track{display:flex!important;flex-direction:row;flex-wrap:nowrap;width:100%;gap:14px;transform:translate3d(0,0,0);transition:transform .55s var(--ease);will-change:transform}
 .projects-track>.project-card{flex:0 0 calc((100% - 14px)/2);width:calc((100% - 14px)/2);min-width:0;margin:0}
@@ -24,4 +24,64 @@
   .projects-controls{gap:8px}
   .projects-arrow{width:44px!important;height:44px!important}
 }
-@media (prefers-reduced-motion:reduce){.projects-track{transition:none}.projects-arrow{transition:none}}
+
+/* TRIVIA — realistic device composition. Card dimensions intentionally unchanged. */
+.project-featured .project-image-trivia .project-device{
+  right:8%;bottom:5%;z-index:5;width:150px;height:282px;border:1px solid rgba(255,255,255,.24);border-radius:25px;
+  background:linear-gradient(145deg,#3b3d40 0%,#151719 13%,#08090a 42%,#1a1c1e 100%);
+  box-shadow:-20px 30px 50px rgba(0,0,0,.55),8px 4px 30px rgba(215,169,87,.06),inset 1px 0 0 rgba(255,255,255,.18),inset -2px -2px 0 rgba(0,0,0,.45);
+  transform:rotate(5.5deg);transition:transform .55s var(--ease),box-shadow .55s ease;
+}
+.project-featured .project-image-trivia .project-device::after{
+  content:"LEADERBOARD\\A\\A  1   1,210\\A  2     980\\A  3     870\\A  4     760";
+  white-space:pre;position:absolute;z-index:-1;right:102%;top:13%;width:112px;height:216px;padding:27px 11px 10px;border:1px solid rgba(255,255,255,.12);border-radius:21px;
+  background:linear-gradient(180deg,rgba(14,15,16,.98),rgba(8,9,10,.98));box-shadow:-12px 20px 32px rgba(0,0,0,.38),inset 1px 0 0 rgba(255,255,255,.08);
+  color:rgba(231,226,215,.62);font-family:"DM Sans",sans-serif;font-size:5px;line-height:2.5;letter-spacing:.08em;transform:rotate(-9deg);text-align:left;opacity:.86;
+}
+.project-featured .project-image-trivia .project-device::before{
+  content:"";position:absolute;top:6px;left:50%;z-index:6;width:52px;height:12px;transform:translateX(-50%);border-radius:0 0 9px 9px;background:#020304;box-shadow:inset 0 -1px 1px rgba(255,255,255,.08),0 1px 2px rgba(0,0,0,.65);
+}
+.project-featured .project-image-trivia .project-device-screen{
+  position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(180deg,#08090a 0%,#0c0e10 52%,#111315 100%);
+  border:1px solid rgba(255,255,255,.055);box-shadow:inset 0 0 0 1px rgba(0,0,0,.6),inset 0 18px 28px rgba(255,255,255,.012);padding:24px 9px 10px;
+}
+.project-featured .project-image-trivia .project-device-screen::before{
+  content:"‹   TRIVIA                                      12:48";position:absolute;top:12px;left:9px;right:9px;color:rgba(242,237,226,.72);font-family:"DM Sans",sans-serif;font-size:5px;letter-spacing:.03em;white-space:pre;
+}
+.project-featured .project-image-trivia .project-device-screen::after{
+  content:"◉  50:50          ◇  SKIP          ♧  HINT";position:absolute;left:9px;right:9px;bottom:9px;padding-top:7px;border-top:1px solid rgba(255,255,255,.045);color:rgba(213,209,201,.46);font-family:"DM Sans",sans-serif;font-size:4.5px;letter-spacing:.04em;text-align:center;white-space:pre;
+}
+.project-featured .project-image-trivia .project-device-top{display:none}
+.project-featured .project-image-trivia .project-device-question{
+  color:#f1eee7;font-size:8.5px;line-height:1.42;margin-top:31px;margin-bottom:7px;letter-spacing:-.01em;
+}
+.project-featured .project-image-trivia .project-device-question::before{
+  content:"QUESTION 1/10\\A";display:block;margin-bottom:5px;color:var(--gold-light);font-size:4.5px;font-weight:700;letter-spacing:.16em;white-space:pre;
+}
+.project-featured .project-image-trivia .project-device-option{
+  min-height:24px;display:flex;align-items:center;border:1px solid rgba(255,255,255,.075);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border-radius:8px;color:rgba(239,235,227,.8);padding:6px 7px;margin-top:5px;font-size:6.2px;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);transition:border-color .2s ease,background .2s ease,transform .2s ease;
+}
+.project-featured .project-image-trivia .project-device-option::first-letter{font-weight:700}
+.project-featured .project-image-trivia .project-device-option.active{border-color:rgba(215,169,87,.65);background:linear-gradient(180deg,rgba(215,169,87,.12),rgba(215,169,87,.045));color:#f5eee0;box-shadow:inset 0 0 0 1px rgba(215,169,87,.08),0 4px 14px rgba(0,0,0,.22)}
+.project-featured .project-image-trivia .project-device-option.active::after{content:"✓";margin-left:auto;color:var(--gold-light);font-weight:700}
+.project-featured:hover .project-image-trivia .project-device{transform:rotate(2.5deg) translateY(-3px);box-shadow:-24px 35px 56px rgba(0,0,0,.58),8px 4px 36px rgba(215,169,87,.075),inset 1px 0 0 rgba(255,255,255,.2),inset -2px -2px 0 rgba(0,0,0,.5)}
+
+@media (max-width:800px){
+  .project-featured .project-image-trivia .project-device{right:3%;bottom:4%;width:113px;height:214px;border-radius:20px;transform:rotate(5deg)}
+  .project-featured .project-image-trivia .project-device::before{width:40px;height:9px;border-radius:0 0 7px 7px}
+  .project-featured .project-image-trivia .project-device::after{right:92%;top:15%;width:82px;height:165px;padding:22px 8px 8px;border-radius:17px;font-size:4px;line-height:2.3}
+  .project-featured .project-image-trivia .project-device-screen{border-radius:14px;padding:20px 7px 8px}
+  .project-featured .project-image-trivia .project-device-screen::before{top:9px;font-size:4px}
+  .project-featured .project-image-trivia .project-device-screen::after{bottom:7px;font-size:3.3px;padding-top:5px}
+  .project-featured .project-image-trivia .project-device-question{font-size:6.4px;margin-top:25px;margin-bottom:5px}
+  .project-featured .project-image-trivia .project-device-question::before{font-size:3.5px;margin-bottom:4px}
+  .project-featured .project-image-trivia .project-device-option{min-height:19px;padding:4px 5px;margin-top:4px;border-radius:6px;font-size:4.8px}
+}
+@media (max-width:430px){
+  .project-featured .project-image-trivia .project-device{right:2%;bottom:3%;width:101px;height:191px;border-radius:18px}
+  .project-featured .project-image-trivia .project-device::after{right:91%;width:74px;height:148px;padding:19px 7px 7px;font-size:3.6px}
+  .project-featured .project-image-trivia .project-device-screen{border-radius:12px;padding:18px 6px 6px}
+  .project-featured .project-image-trivia .project-device-question{font-size:5.8px;margin-top:23px}
+  .project-featured .project-image-trivia .project-device-option{min-height:17px;padding:3.5px 4px;font-size:4.4px}
+}
+@media (prefers-reduced-motion:reduce){.projects-track,.projects-arrow,.project-featured .project-image-trivia .project-device,.project-featured .project-image-trivia .project-device-option{transition:none!important}}
