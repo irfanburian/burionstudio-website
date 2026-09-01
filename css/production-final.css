@@ -1,0 +1,10 @@
+/* BURION STUDIO — PRODUCTION FINAL GUARDRAILS */
+html{overflow-x:clip}
+body{overflow-x:clip}
+.site-shell,main,.site-footer{min-width:0}
+.project-card,.build-slide,.about-content,.contact-heading,.footer-main{min-width:0}
+img{height:auto}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:0}
+@media(max-width:800px){.site-shell{width:100%;max-width:100%}.project-image-content strong,.build-slide h3,.about-content h2,.contact-heading h2{overflow-wrap:normal;word-break:normal}.footer-nav{max-width:100%;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.project-card,.build-slide,.build-arrow,.projects-arrow,.footer-social,.contact-email span,.contact-email::after{transition:none!important}}
