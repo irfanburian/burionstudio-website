@@ -1,5 +1,6 @@
-/* BURION STUDIO — SELECTED WORK / TRIVIA PRODUCT SHOT V2
-   Real supplied product-shot asset. No CSS-drawn phone mockups.
+/* BURION STUDIO — SELECTED WORK / TRIVIA PRODUCT SHOT V3
+   Supplied two-device product shot rendered as a CSS asset layer.
+   Legacy CSS-drawn phone mockups are disabled.
 */
 
 .project-featured .project-image-trivia{
@@ -60,27 +61,28 @@
   letter-spacing:.16em !important;
 }
 
-/* Kill every legacy phone composition/pseudo-image. */
-.project-featured .project-image-trivia .trivia-device{display:none !important;}
-.project-featured .project-image-trivia::after{display:none !important;content:none !important;}
+/* Disable every legacy CSS-drawn phone. */
+.project-featured .project-image-trivia .trivia-device{
+  display:none !important;
+}
 
-/* Real product shot */
-.project-featured .project-image-trivia .trivia-product-shot{
+/* Supplied transparent product-shot asset. */
+.project-featured .project-image-trivia::after{
+  content:"" !important;
   position:absolute !important;
   z-index:5 !important;
   pointer-events:none !important;
   user-select:none !important;
   display:block !important;
   width:67% !important;
-  height:auto !important;
-  max-width:none !important;
+  height:112% !important;
   right:-1.5% !important;
   top:-7% !important;
-  object-fit:contain !important;
-  object-position:center !important;
+  background-image:url("../assets/projects/trivia-devices.webp") !important;
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
+  background-size:contain !important;
   filter:drop-shadow(-18px 26px 30px rgba(0,0,0,.36)) !important;
-  transform:rotate(0deg) translateZ(0) !important;
-  transform-origin:center center !important;
 }
 
 .project-featured .project-image-trivia::before{
@@ -93,23 +95,69 @@
 }
 
 .project-featured .project-image-trivia .project-image-content,
-.project-featured .project-info{isolation:isolate !important;}
-.project-featured .project-info{position:relative !important;z-index:10 !important;}
+.project-featured .project-info{
+  isolation:isolate !important;
+}
+
+.project-featured .project-info{
+  position:relative !important;
+  z-index:10 !important;
+}
 
 @media(max-width:800px){
-  .project-featured .project-image-trivia{height:258px !important;min-height:258px !important;}
-  .project-featured .project-image-trivia .project-image-content{left:18px !important;width:43% !important;max-width:43% !important;}
-  .project-featured .project-image-trivia .project-image-content span{margin-bottom:16px !important;font-size:6px !important;letter-spacing:.17em !important;}
-  .project-featured .project-image-trivia .project-image-content strong{font-size:clamp(40px,11.4vw,51px) !important;line-height:.86 !important;}
-  .project-featured .project-image-trivia .project-image-content strong::after{width:44px !important;margin-top:13px !important;}
-  .project-featured .project-image-trivia .project-image-content small{margin-top:13px !important;font-size:4.2px !important;line-height:1.75 !important;}
-  .project-featured .project-image-trivia .trivia-product-shot{width:72% !important;right:-4% !important;top:-8% !important;}
+  .project-featured .project-image-trivia{
+    height:258px !important;
+    min-height:258px !important;
+  }
+
+  .project-featured .project-image-trivia .project-image-content{
+    left:18px !important;
+    width:43% !important;
+    max-width:43% !important;
+  }
+
+  .project-featured .project-image-trivia .project-image-content span{
+    margin-bottom:16px !important;
+    font-size:6px !important;
+    letter-spacing:.17em !important;
+  }
+
+  .project-featured .project-image-trivia .project-image-content strong{
+    font-size:clamp(40px,11.4vw,51px) !important;
+    line-height:.86 !important;
+  }
+
+  .project-featured .project-image-trivia .project-image-content strong::after{
+    width:44px !important;
+    margin-top:13px !important;
+  }
+
+  .project-featured .project-image-trivia .project-image-content small{
+    margin-top:13px !important;
+    font-size:4.2px !important;
+    line-height:1.75 !important;
+  }
+
+  .project-featured .project-image-trivia::after{
+    width:76% !important;
+    height:118% !important;
+    right:-7% !important;
+    top:-8% !important;
+    background-position:center center !important;
+  }
 }
 
 @media(max-width:430px){
-  .project-featured .project-image-trivia .trivia-product-shot{width:76% !important;right:-7% !important;top:-7% !important;}
+  .project-featured .project-image-trivia::after{
+    width:80% !important;
+    height:122% !important;
+    right:-9% !important;
+    top:-9% !important;
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
-  .project-featured .project-image-trivia .trivia-product-shot{transform:none !important;}
+  .project-featured .project-image-trivia::after{
+    filter:none !important;
+  }
 }
