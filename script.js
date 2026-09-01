@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll(".mobile-nav a,.desktop-nav a,.footer-nav a").forEach(a=>a.addEventListener("click",()=>{if(menu&&menuBtn){menu.hidden=true;menuBtn.setAttribute("aria-expanded","false");menuBtn.setAttribute("aria-label","Open menu");menuBtn.classList.remove("is-open");}}));
   const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(header&&!reduceMotion){const sync=()=>header.classList.toggle("is-scrolled",window.scrollY>18);sync();window.addEventListener("scroll",sync,{passive:true});}
+
+  /* Premium Trivia product shot: decode the optimized WebP payload once, then reuse it. */
+  const triviaStage=q(".project-image-trivia");
+  if(triviaStage){
+    fetch("assets/projects/trivia-devices.webp",{cache:"force-cache"})
+      .then(r=>r.text())
+      .then(payload=>{
+        const trimmed=payload.trim();
+        if(!trimmed.startsWith("UklGR")) throw new Error("Trivia asset payload invalid");
+        const img=document.createElement("img");
+        img.className="trivia-product-shot";
+        img.alt="Trivia mobile quiz and leaderboard interface";
+        img.decoding="async";
+        img.loading="eager";
+        img.draggable=false;
+        img.src="data:image/webp;base64,"+trimmed;
+        triviaStage.appendChild(img);
+      })
+      .catch(()=>{});
+  }
+
   const carousel=q("[data-projects-carousel]");
   if(carousel){
     const track=carousel.querySelector(".projects-track"), cards=[...carousel.querySelectorAll(".project-card")], prev=q(".projects-prev"), next=q(".projects-next"), current=q(".projects-pagination-current");
