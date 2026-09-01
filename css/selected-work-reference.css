@@ -1,6 +1,6 @@
-/* BURION STUDIO — SELECTED WORK / TRIVIA PRODUCT SHOT V3
-   Supplied two-device product shot rendered as a CSS asset layer.
-   Legacy CSS-drawn phone mockups are disabled.
+/* BURION STUDIO — SELECTED WORK / TRIVIA — CLEAN VISUAL FALLBACK
+   The external product-shot asset is intentionally removed.
+   Keep the Trivia card typographic and stable until a verified asset is available.
 */
 
 .project-featured .project-image-trivia{
@@ -12,6 +12,17 @@
     linear-gradient(135deg,#080909 0%,#0a0b0c 58%,#070808 100%) !important;
 }
 
+/* Remove every image/pseudo-image layer from the Trivia visual. */
+.project-featured .project-image-trivia .trivia-device,
+.project-featured .project-image-trivia img,
+.project-featured .project-image-trivia::before,
+.project-featured .project-image-trivia::after{
+  display:none !important;
+  content:none !important;
+  background-image:none !important;
+}
+
+/* Keep only the intentional typography. */
 .project-featured .project-image-trivia .project-image-content{
   position:absolute !important;
   left:6% !important;
@@ -19,8 +30,9 @@
   width:43% !important;
   max-width:43% !important;
   padding:0 !important;
+  margin:0 !important;
   transform:translateY(-50%) !important;
-  z-index:8 !important;
+  z-index:2 !important;
 }
 
 .project-featured .project-image-trivia .project-image-content span{
@@ -61,44 +73,6 @@
   letter-spacing:.16em !important;
 }
 
-/* Disable every legacy CSS-drawn phone. */
-.project-featured .project-image-trivia .trivia-device{
-  display:none !important;
-}
-
-/* Supplied transparent product-shot asset. */
-.project-featured .project-image-trivia::after{
-  content:"" !important;
-  position:absolute !important;
-  z-index:5 !important;
-  pointer-events:none !important;
-  user-select:none !important;
-  display:block !important;
-  width:67% !important;
-  height:112% !important;
-  right:-1.5% !important;
-  top:-7% !important;
-  background-image:url("../assets/projects/trivia-devices.webp") !important;
-  background-repeat:no-repeat !important;
-  background-position:center center !important;
-  background-size:contain !important;
-  filter:drop-shadow(-18px 26px 30px rgba(0,0,0,.36)) !important;
-}
-
-.project-featured .project-image-trivia::before{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 !important;
-  z-index:6 !important;
-  pointer-events:none !important;
-  background:radial-gradient(45% 78% at 74% 50%,rgba(255,255,255,.018),transparent 70%) !important;
-}
-
-.project-featured .project-image-trivia .project-image-content,
-.project-featured .project-info{
-  isolation:isolate !important;
-}
-
 .project-featured .project-info{
   position:relative !important;
   z-index:10 !important;
@@ -112,8 +86,8 @@
 
   .project-featured .project-image-trivia .project-image-content{
     left:18px !important;
-    width:43% !important;
-    max-width:43% !important;
+    width:70% !important;
+    max-width:70% !important;
   }
 
   .project-featured .project-image-trivia .project-image-content span{
@@ -136,28 +110,5 @@
     margin-top:13px !important;
     font-size:4.2px !important;
     line-height:1.75 !important;
-  }
-
-  .project-featured .project-image-trivia::after{
-    width:76% !important;
-    height:118% !important;
-    right:-7% !important;
-    top:-8% !important;
-    background-position:center center !important;
-  }
-}
-
-@media(max-width:430px){
-  .project-featured .project-image-trivia::after{
-    width:80% !important;
-    height:122% !important;
-    right:-9% !important;
-    top:-9% !important;
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-  .project-featured .project-image-trivia::after{
-    filter:none !important;
   }
 }
