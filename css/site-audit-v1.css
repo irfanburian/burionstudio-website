@@ -1,35 +1,8 @@
-/* BURION STUDIO — SITE AUDIT / V1
-   One normalization layer for the final visual system.
-   Keeps existing content and components intact while removing cascade drift.
-*/
-:root{--section-space-desktop:76px;--section-space-mobile:56px;--content-gap:32px;--hairline:rgba(255,255,255,.065)}
-/* One page rhythm */
-.redesign-projects,.redesign-build,.redesign-about,.redesign-contact{box-sizing:border-box}
-.redesign-projects{padding-top:var(--section-space-desktop)!important;padding-bottom:52px!important}
-.redesign-build{padding-top:54px!important;padding-bottom:54px!important}
-.redesign-about{padding-top:72px!important;padding-bottom:78px!important}
-.redesign-contact{padding-top:70px!important;padding-bottom:68px!important}
-/* One heading system */
-.section-heading .eyebrow,.contact-heading .eyebrow{font-size:9px;line-height:1;letter-spacing:.26em}
-.section-heading h2,.projects-heading h2{line-height:1.02;letter-spacing:-.052em}
-/* Avoid legacy component rules affecting the new build carousel */
-.redesign-build .build-grid,.redesign-build .build-card{display:none!important}
-/* Calm surfaces: no accidental double borders or shadows */
-.project-card,.build-slide{box-shadow:none}
-/* Consistent interactive motion */
-.project-card,.build-slide,.build-arrow,.projects-arrow,.button,.footer-social,.contact-email span{transition-duration:.28s}
-@media(max-width:800px){
-  :root{--section-space-mobile:54px}
-  .redesign-projects{padding-top:var(--section-space-mobile)!important;padding-bottom:45px!important}
-  .redesign-build{padding-top:47px!important;padding-bottom:48px!important}
-  .redesign-about{padding-top:55px!important;padding-bottom:59px!important}
-  .redesign-contact{padding-top:55px!important;padding-bottom:54px!important}
-  .section-heading .eyebrow,.contact-heading .eyebrow{font-size:8px;letter-spacing:.25em}
-}
-@media(max-width:430px){
-  .redesign-projects{padding-top:51px!important;padding-bottom:42px!important}
-  .redesign-build{padding-top:43px!important;padding-bottom:44px!important}
-  .redesign-about{padding-top:52px!important;padding-bottom:55px!important}
-  .redesign-contact{padding-top:51px!important;padding-bottom:50px!important}
-}
+/* BURION STUDIO — SITE AUDIT / V1 */
+:root{--section-space-desktop:76px;--section-space-mobile:54px}
+.redesign-projects{padding-top:var(--section-space-desktop)!important;padding-bottom:52px!important}.redesign-build{padding-top:54px!important;padding-bottom:54px!important}.redesign-about{padding-top:72px!important;padding-bottom:78px!important}.redesign-contact{padding-top:70px!important;padding-bottom:68px!important}
+.section-heading .eyebrow,.contact-heading .eyebrow{font-size:9px;line-height:1;letter-spacing:.26em}.section-heading h2,.projects-heading h2{line-height:1.02;letter-spacing:-.052em}
+.redesign-build .build-grid,.redesign-build .build-card{display:none!important}.project-card,.build-slide{box-shadow:none}.project-card,.build-slide,.build-arrow,.projects-arrow,.button,.footer-social,.contact-email span{transition-duration:.28s}
+@media(max-width:800px){.redesign-projects{padding-top:var(--section-space-mobile)!important;padding-bottom:45px!important}.redesign-build{padding-top:47px!important;padding-bottom:48px!important}.redesign-about{padding-top:55px!important;padding-bottom:59px!important}.redesign-contact{padding-top:55px!important;padding-bottom:54px!important}.section-heading .eyebrow,.contact-heading .eyebrow{font-size:8px;letter-spacing:.25em}}
+@media(max-width:430px){.redesign-projects{padding-top:51px!important;padding-bottom:42px!important}.redesign-build{padding-top:43px!important;padding-bottom:44px!important}.redesign-about{padding-top:52px!important;padding-bottom:55px!important}.redesign-contact{padding-top:51px!important;padding-bottom:50px!important}}
 @media(prefers-reduced-motion:reduce){.project-card,.build-slide,.build-arrow,.projects-arrow,.button,.footer-social,.contact-email span{transition:none!important}}
