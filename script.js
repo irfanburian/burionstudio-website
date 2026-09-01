@@ -5,24 +5,19 @@ document.addEventListener("DOMContentLoaded",()=>{
   const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(header&&!reduceMotion){const sync=()=>header.classList.toggle("is-scrolled",window.scrollY>18);sync();window.addEventListener("scroll",sync,{passive:true});}
 
-  /* Premium Trivia product shot: decode the optimized WebP payload once, then reuse it. */
+  /* Trivia product shot: load the real WebP directly.
+     The previous implementation fetched binary WebP as text and attempted to
+     interpret it as base64, so the image could never render reliably. */
   const triviaStage=q(".project-image-trivia");
   if(triviaStage){
-    fetch("assets/projects/trivia-devices.webp",{cache:"force-cache"})
-      .then(r=>r.text())
-      .then(payload=>{
-        const trimmed=payload.trim();
-        if(!trimmed.startsWith("UklGR")) throw new Error("Trivia asset payload invalid");
-        const img=document.createElement("img");
-        img.className="trivia-product-shot";
-        img.alt="Trivia mobile quiz and leaderboard interface";
-        img.decoding="async";
-        img.loading="eager";
-        img.draggable=false;
-        img.src="data:image/webp;base64,"+trimmed;
-        triviaStage.appendChild(img);
-      })
-      .catch(()=>{});
+    const img=document.createElement("img");
+    img.className="trivia-product-shot";
+    img.alt="Trivia mobile quiz and leaderboard interface";
+    img.decoding="async";
+    img.loading="eager";
+    img.draggable=false;
+    img.src="assets/projects/trivia-devices.webp";
+    triviaStage.appendChild(img);
   }
 
   const carousel=q("[data-projects-carousel]");
