@@ -1,0 +1,1 @@
+optimized asset is stored in GitHub blob for binary replacement
