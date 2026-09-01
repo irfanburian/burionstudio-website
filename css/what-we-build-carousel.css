@@ -1,0 +1,46 @@
+/* BURION STUDIO — WHAT WE BUILD / COMPACT CAROUSEL
+   Keeps the section short while matching Selected Work interaction.
+*/
+.redesign-build{display:block!important;padding:78px 0 78px!important}
+.redesign-build .section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:56px;align-items:end;margin-bottom:28px}
+.redesign-build .section-heading .eyebrow{margin-bottom:16px}
+.redesign-build .section-heading h2{max-width:520px}
+.build-carousel{position:relative;overflow:hidden;width:100%;min-width:0;isolation:isolate}
+.build-track{display:flex;gap:14px;width:100%;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.build-slide{flex:0 0 100%;width:100%;min-width:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:26px;min-height:248px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));overflow:hidden;position:relative}
+.build-slide::after{content:"";position:absolute;width:260px;height:260px;right:-100px;bottom:-120px;border-radius:50%;background:radial-gradient(circle,rgba(215,169,87,.11),transparent 70%);pointer-events:none}
+.build-slide-main{display:flex;flex-direction:column;min-width:0;position:relative;z-index:1}
+.build-slide-top{display:flex;align-items:center;justify-content:space-between}
+.build-slide-index{color:var(--muted-dark);font-size:10px;letter-spacing:.12em}
+.build-slide-symbol{color:var(--gold);font-size:23px}
+.build-slide h3{margin:34px 0 8px;font-family:"Playfair Display",Georgia,serif;font-size:28px;line-height:1.05;font-weight:600}
+.build-slide-arrow{margin-top:auto;color:var(--gold);font-size:20px}
+.build-slide-copy{align-self:end;max-width:470px;padding-bottom:5px;position:relative;z-index:1}
+.build-slide-copy p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+.build-slide-copy span{display:block;margin-bottom:10px;color:var(--gold);font-size:8px;font-weight:700;letter-spacing:.16em}
+.build-carousel-controls{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.build-pagination{display:flex;align-items:center;gap:10px;color:var(--muted-dark);font-size:9px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.build-pagination-current{color:var(--text);min-width:18px}
+.build-pagination::after{content:"/ 03";color:var(--muted-dark)}
+.build-arrows{display:flex;gap:8px}
+.build-arrow{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.012);color:var(--text);font-size:19px;line-height:1;transition:transform .25s var(--ease),border-color .25s ease,color .25s ease,opacity .25s ease}
+.build-arrow:hover:not(:disabled){transform:translateY(-2px);border-color:rgba(215,169,87,.45);color:var(--gold-light)}
+.build-arrow:disabled{opacity:.28;cursor:not-allowed}
+@media(max-width:800px){
+  .redesign-build{padding:60px 0 62px!important}
+  .redesign-build .section-heading{display:block;margin-bottom:19px}
+  .redesign-build .section-heading h2{font-size:clamp(37px,11.3vw,49px);line-height:.96;max-width:330px}
+  .build-slide{grid-template-columns:1fr;gap:18px;min-height:232px;padding:22px}
+  .build-slide h3{margin-top:22px;font-size:25px}
+  .build-slide-copy{align-self:start;max-width:100%;padding-bottom:0}
+  .build-slide-copy span{font-size:7px;margin-bottom:8px}
+  .build-slide-copy p{font-size:11.5px;line-height:1.6;max-width:330px}
+  .build-slide-arrow{font-size:18px}
+  .build-carousel-controls{margin-top:13px}
+  .build-arrow{width:43px;height:43px}
+}
+@media(max-width:430px){
+  .redesign-build{padding-top:55px!important;padding-bottom:56px!important}
+  .build-slide{min-height:222px;padding:19px}
+}
+@media(prefers-reduced-motion:reduce){.build-track{transition:none}}
