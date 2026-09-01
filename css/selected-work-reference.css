@@ -1,6 +1,6 @@
-/* BURION STUDIO — SELECTED WORK / TRIVIA — CLEAN VISUAL FALLBACK
-   The external product-shot asset is intentionally removed.
-   Keep the Trivia card typographic and stable until a verified asset is available.
+/* BURION STUDIO — SELECTED WORK / TRIVIA — CLEAN FALLBACK
+   One source of truth for the Trivia visual.
+   No image, pseudo-image, generated device, or external asset is used here.
 */
 
 .project-featured .project-image-trivia{
@@ -12,17 +12,23 @@
     linear-gradient(135deg,#080909 0%,#0a0b0c 58%,#070808 100%) !important;
 }
 
-/* Remove every image/pseudo-image layer from the Trivia visual. */
-.project-featured .project-image-trivia .trivia-device,
-.project-featured .project-image-trivia img,
+/* Hard-stop every legacy visual layer. */
 .project-featured .project-image-trivia::before,
-.project-featured .project-image-trivia::after{
+.project-featured .project-image-trivia::after,
+.project-featured .project-image-trivia img,
+.project-featured .project-image-trivia .trivia-device,
+.project-featured .project-image-trivia .project-device,
+.project-featured .project-image-trivia > :not(.project-image-content){
   display:none !important;
+  visibility:hidden !important;
   content:none !important;
+  background:none !important;
   background-image:none !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
-/* Keep only the intentional typography. */
+/* Keep only the editorial Trivia typography. */
 .project-featured .project-image-trivia .project-image-content{
   position:absolute !important;
   left:6% !important;
