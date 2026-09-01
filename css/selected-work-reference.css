@@ -1,29 +1,17 @@
-/* =========================================================
-   BURION STUDIO — TRIVIA SHOWCASE / V2
-   Rebuilt as a restrained product presentation.
-   The outer card geometry remains untouched; this file owns
-   the Trivia stage, device composition and mobile adaptation.
-   ========================================================= */
+/* BURION STUDIO — SELECTED WORK / TRIVIA PRODUCT SHOT
+   Uses the supplied transparent product-shot asset.
+   Keeps the existing card geometry and editorial layout intact.
+*/
 
 .project-featured .project-image-trivia{
   position:relative !important;
   overflow:hidden !important;
   isolation:isolate !important;
   background:
-    radial-gradient(55% 100% at 82% 48%,rgba(204,160,76,.07),transparent 65%),
-    linear-gradient(120deg,#090a0b 0%,#0b0d0e 62%,#080909 100%) !important;
+    radial-gradient(58% 92% at 78% 42%,rgba(201,164,95,.055),transparent 68%),
+    linear-gradient(135deg,#080909 0%,#0a0b0c 58%,#070808 100%) !important;
 }
 
-.project-featured .project-image-trivia::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  background:radial-gradient(40% 80% at 42% 50%,rgba(255,255,255,.025),transparent 72%);
-}
-
-/* Editorial lockup */
 .project-featured .project-image-trivia .project-image-content{
   position:absolute !important;
   left:6% !important;
@@ -32,7 +20,7 @@
   max-width:43% !important;
   padding:0 !important;
   transform:translateY(-50%) !important;
-  z-index:8 !important;
+  z-index:5 !important;
 }
 
 .project-featured .project-image-trivia .project-image-content span{
@@ -73,300 +61,43 @@
   letter-spacing:.16em !important;
 }
 
-/* =========================================================
-   DEVICE COMPOSITION
-   ========================================================= */
-
-.project-featured .trivia-device{
-  position:absolute !important;
-  box-sizing:border-box !important;
-  overflow:hidden !important;
-  padding:5px !important;
-  background:linear-gradient(145deg,#45484b 0%,#1b1d1f 13%,#08090a 48%,#303337 100%) !important;
-  border:1px solid rgba(255,255,255,.2) !important;
-  box-shadow:
-    -22px 28px 50px rgba(0,0,0,.56),
-    inset 1px 1px 0 rgba(255,255,255,.18),
-    inset -2px -2px 0 rgba(0,0,0,.55) !important;
-  transform-origin:center center !important;
+/* Remove the old CSS-built device mockups completely. */
+.project-featured .project-image-trivia .trivia-device{
+  display:none !important;
 }
 
-.project-featured .trivia-device::after{
+/* The supplied high-resolution transparent product-shot. */
+.project-featured .project-image-trivia::after{
   content:"" !important;
   position:absolute !important;
-  inset:1px !important;
-  z-index:30 !important;
-  pointer-events:none !important;
-  border-radius:inherit !important;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035) !important;
-}
-
-/* front */
-.project-featured .trivia-device-question{
-  width:238px !important;
-  height:444px !important;
-  right:12% !important;
-  top:6% !important;
-  z-index:8 !important;
-  border-radius:35px !important;
-  transform:rotate(7deg) !important;
-}
-
-/* rear */
-.project-featured .trivia-device-leaderboard{
-  width:198px !important;
-  height:369px !important;
-  right:-1% !important;
-  top:17% !important;
-  z-index:7 !important;
-  border-radius:31px !important;
-  transform:rotate(4deg) !important;
-  opacity:.84 !important;
-}
-
-.project-featured .trivia-screen{
-  position:relative !important;
-  width:100% !important;
-  height:100% !important;
-  box-sizing:border-box !important;
-  overflow:hidden !important;
-  border-radius:29px !important;
-  background:
-    radial-gradient(110% 60% at 55% 0%,rgba(209,163,77,.07),transparent 48%),
-    linear-gradient(180deg,#111315 0%,#08090a 100%) !important;
-  border:1px solid rgba(255,255,255,.065) !important;
-  box-shadow:inset 0 0 30px rgba(0,0,0,.35) !important;
-}
-
-/* hardware cutout */
-.project-featured .trivia-device::before{
-  content:"" !important;
-  position:absolute !important;
-  left:50% !important;
-  top:6px !important;
-  width:74px !important;
-  height:17px !important;
-  transform:translateX(-50%) !important;
-  z-index:40 !important;
-  border-radius:0 0 12px 12px !important;
-  background:#020202 !important;
-  box-shadow:inset 0 -1px 2px rgba(255,255,255,.035) !important;
-}
-
-/* tiny physical buttons */
-.project-featured .trivia-device .trivia-screen > *:first-child::before{
-  content:"";
-  position:absolute;
-  left:-8px;
-  top:29%;
-  width:3px;
-  height:42px;
-  border-radius:2px 0 0 2px;
-  background:#55585a;
-  box-shadow:0 53px 0 #45484a;
-  opacity:.65;
-}
-
-.project-featured .trivia-status{
-  position:absolute !important;
-  top:17px !important;
-  left:18px !important;
-  right:18px !important;
-  z-index:41 !important;
-  display:flex !important;
-  justify-content:space-between !important;
-  color:rgba(255,255,255,.72) !important;
-  font-size:7px !important;
-}
-
-/* front application */
-.project-featured .trivia-device-question .trivia-title{
-  position:relative !important;
   z-index:3 !important;
-  display:flex !important;
-  align-items:center !important;
-  gap:28px !important;
-  margin:53px 22px 0 !important;
+  pointer-events:none !important;
+  left:42% !important;
+  top:-5% !important;
+  width:66% !important;
+  height:112% !important;
+  background-image:url("../assets/projects/trivia-devices.webp") !important;
+  background-repeat:no-repeat !important;
+  background-position:center right !important;
+  background-size:contain !important;
+  filter:drop-shadow(-18px 26px 30px rgba(0,0,0,.34)) !important;
+  transform:translate3d(0,0,0) !important;
 }
 
-.project-featured .trivia-device-question .trivia-title span{
-  color:#f0ede7 !important;
-  font-size:21px !important;
-}
-
-.project-featured .trivia-device-question .trivia-title strong{
-  color:#d6b16a !important;
-  font-family:"Playfair Display",Georgia,serif !important;
-  font-size:20px !important;
-  font-weight:600 !important;
-}
-
-.project-featured .trivia-device-question .question-kicker{
-  margin:35px 22px 0 !important;
-  color:#cda75e !important;
-  font-size:6px !important;
-  font-weight:700 !important;
-  letter-spacing:.16em !important;
-}
-
-.project-featured .trivia-device-question .question-text{
-  margin:9px 22px 13px !important;
-  color:#f1eee8 !important;
-  font-size:16px !important;
-  line-height:1.27 !important;
-  letter-spacing:-.025em !important;
-}
-
-.project-featured .trivia-device-question .answer{
-  display:flex !important;
-  align-items:center !important;
-  gap:12px !important;
-  height:41px !important;
-  margin:7px 18px 0 !important;
-  padding:0 12px !important;
-  box-sizing:border-box !important;
-  border:1px solid rgba(255,255,255,.085) !important;
-  border-radius:11px !important;
-  background:rgba(255,255,255,.032) !important;
-  color:#ddd9d2 !important;
-  font-size:10px !important;
-}
-
-.project-featured .trivia-device-question .answer span{flex:1 !important}
-
-.project-featured .trivia-device-question .answer.active{
-  border-color:rgba(205,161,74,.75) !important;
-  background:rgba(201,157,72,.085) !important;
-}
-
-.project-featured .trivia-device-question .answer>b{color:#d6b16a !important}
-
-.project-featured .trivia-device-question .trivia-tools{
+.project-featured .project-image-trivia::before{
+  content:"" !important;
   position:absolute !important;
-  left:18px !important;
-  right:18px !important;
-  bottom:27px !important;
-  z-index:4 !important;
-  display:flex !important;
-  justify-content:space-around !important;
+  inset:0 !important;
+  z-index:2 !important;
+  pointer-events:none !important;
+  background:radial-gradient(45% 78% at 74% 50%,rgba(255,255,255,.018),transparent 70%) !important;
 }
 
-.project-featured .trivia-device-question .trivia-tools span{
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  gap:3px !important;
+.project-featured .redesign-project-info,
+.project-featured .project-info{
+  position:relative !important;
+  z-index:10 !important;
 }
-
-.project-featured .trivia-device-question .trivia-tools small{
-  color:rgba(255,255,255,.5) !important;
-  font-size:6px !important;
-}
-
-.project-featured .trivia-device-question .home-indicator{
-  position:absolute !important;
-  left:50% !important;
-  bottom:9px !important;
-  width:53px !important;
-  height:3px !important;
-  transform:translateX(-50%) !important;
-  border-radius:999px !important;
-  background:#eee !important;
-  opacity:.9 !important;
-}
-
-/* rear leaderboard */
-.project-featured .trivia-device-leaderboard .leaderboard-head{
-  display:flex !important;
-  align-items:center !important;
-  gap:12px !important;
-  margin:58px 16px 0 !important;
-}
-
-.project-featured .trivia-device-leaderboard .trophy{
-  display:grid !important;
-  place-items:center !important;
-  width:40px !important;
-  height:40px !important;
-  border-radius:50% !important;
-  color:#d6b16a !important;
-  background:rgba(203,159,74,.075) !important;
-  border:1px solid rgba(203,159,74,.2) !important;
-}
-
-.project-featured .trivia-device-leaderboard .leaderboard-head small,
-.project-featured .trivia-device-leaderboard .leaderboard-head em{
-  display:block !important;
-  color:rgba(255,255,255,.42) !important;
-  font-size:5px !important;
-  letter-spacing:.13em !important;
-  font-style:normal !important;
-}
-
-.project-featured .trivia-device-leaderboard .leaderboard-head strong{
-  display:block !important;
-  margin:3px 0 !important;
-  color:#eeeae2 !important;
-  font-size:19px !important;
-  font-weight:500 !important;
-}
-
-.project-featured .trivia-device-leaderboard .leader-row{
-  display:flex !important;
-  align-items:center !important;
-  gap:7px !important;
-  height:37px !important;
-  margin:7px 12px 0 !important;
-  padding:0 9px !important;
-  box-sizing:border-box !important;
-  border:1px solid rgba(255,255,255,.055) !important;
-  border-radius:8px !important;
-  background:rgba(255,255,255,.02) !important;
-}
-
-.project-featured .trivia-device-leaderboard .avatar{
-  display:grid !important;
-  place-items:center !important;
-  width:19px !important;
-  height:19px !important;
-  flex:0 0 19px !important;
-  border-radius:50% !important;
-  background:#303235 !important;
-  color:#eeeae2 !important;
-  font-size:6px !important;
-}
-
-.project-featured .trivia-device-leaderboard .leader-row b{
-  flex:1 !important;
-  color:#ddd9d2 !important;
-  font-size:7px !important;
-  font-weight:500 !important;
-}
-
-.project-featured .trivia-device-leaderboard .leader-row strong{
-  color:#cda65e !important;
-  font-size:7px !important;
-  font-weight:500 !important;
-}
-
-.project-featured .trivia-device-leaderboard .leaderboard-button{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  height:32px !important;
-  margin:9px 12px 0 !important;
-  padding:0 9px !important;
-  border:1px solid rgba(203,159,74,.24) !important;
-  border-radius:8px !important;
-  color:rgba(255,255,255,.65) !important;
-  font-size:6px !important;
-}
-
-.project-featured .trivia-device-leaderboard .leaderboard-button span{color:#d3ad64 !important}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media(max-width:800px){
   .project-featured .project-image-trivia{
@@ -376,17 +107,19 @@
 
   .project-featured .project-image-trivia .project-image-content{
     left:18px !important;
-    width:46% !important;
-    max-width:46% !important;
+    width:43% !important;
+    max-width:43% !important;
   }
 
   .project-featured .project-image-trivia .project-image-content span{
-    margin-bottom:17px !important;
+    margin-bottom:16px !important;
     font-size:6px !important;
+    letter-spacing:.17em !important;
   }
 
   .project-featured .project-image-trivia .project-image-content strong{
-    font-size:clamp(40px,11.6vw,50px) !important;
+    font-size:clamp(40px,11.4vw,51px) !important;
+    line-height:.86 !important;
   }
 
   .project-featured .project-image-trivia .project-image-content strong::after{
@@ -395,176 +128,32 @@
   }
 
   .project-featured .project-image-trivia .project-image-content small{
-    margin-top:14px !important;
-    font-size:4.3px !important;
+    margin-top:13px !important;
+    font-size:4.2px !important;
+    line-height:1.75 !important;
   }
 
-  .project-featured .trivia-device-question{
-    width:119px !important;
-    height:222px !important;
-    right:11% !important;
-    top:3% !important;
-    padding:4px !important;
-    border-radius:25px !important;
-    transform:rotate(7deg) !important;
-  }
-
-  .project-featured .trivia-device-leaderboard{
-    width:101px !important;
-    height:189px !important;
-    right:-2% !important;
-    top:16% !important;
-    padding:4px !important;
-    border-radius:22px !important;
-    transform:rotate(4deg) !important;
-  }
-
-  .project-featured .trivia-screen{border-radius:21px !important}
-
-  .project-featured .trivia-device::before{
-    width:38px !important;
-    height:9px !important;
-    top:4px !important;
-    border-radius:0 0 7px 7px !important;
-  }
-
-  .project-featured .trivia-status{
-    top:8px !important;
-    left:8px !important;
-    right:8px !important;
-    font-size:3.5px !important;
-  }
-
-  .project-featured .trivia-device-question .trivia-title{
-    gap:13px !important;
-    margin:28px 10px 0 !important;
-  }
-
-  .project-featured .trivia-device-question .trivia-title span{font-size:11px !important}
-  .project-featured .trivia-device-question .trivia-title strong{font-size:10px !important}
-
-  .project-featured .trivia-device-question .question-kicker{
-    margin:17px 10px 0 !important;
-    font-size:3.3px !important;
-  }
-
-  .project-featured .trivia-device-question .question-text{
-    margin:6px 10px 7px !important;
-    font-size:7.8px !important;
-    line-height:1.27 !important;
-  }
-
-  .project-featured .trivia-device-question .answer{
-    height:21px !important;
-    margin:4px 8px 0 !important;
-    padding:0 6px !important;
-    gap:6px !important;
-    border-radius:6px !important;
-    font-size:4.7px !important;
-  }
-
-  .project-featured .trivia-device-question .answer>b{font-size:5px !important}
-
-  .project-featured .trivia-device-question .trivia-tools{
-    left:8px !important;
-    right:8px !important;
-    bottom:12px !important;
-    font-size:8px !important;
-  }
-
-  .project-featured .trivia-device-question .trivia-tools small{font-size:3px !important}
-
-  .project-featured .trivia-device-question .home-indicator{
-    bottom:5px !important;
-    width:31px !important;
-    height:2px !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .leaderboard-head{
-    gap:5px !important;
-    margin:28px 8px 0 !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .trophy{
-    width:22px !important;
-    height:22px !important;
-    font-size:8px !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .leaderboard-head small,
-  .project-featured .trivia-device-leaderboard .leaderboard-head em{font-size:2.5px !important}
-  .project-featured .trivia-device-leaderboard .leaderboard-head strong{font-size:10px !important}
-
-  .project-featured .trivia-device-leaderboard .leader-row{
-    height:22px !important;
-    margin:4px 7px 0 !important;
-    padding:0 5px !important;
-    gap:4px !important;
-    border-radius:5px !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .avatar{
-    width:10px !important;
-    height:10px !important;
-    flex-basis:10px !important;
-    font-size:3px !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .leader-row b,
-  .project-featured .trivia-device-leaderboard .leader-row strong{font-size:3px !important}
-
-  .project-featured .trivia-device-leaderboard .leaderboard-button{
-    height:19px !important;
-    margin:4px 7px 0 !important;
-    padding:0 5px !important;
-    border-radius:5px !important;
-    font-size:3px !important;
-  }
-
-  .project-featured .trivia-device-leaderboard .leaderboard-button span{font-size:5px !important}
-
-  .project-featured .redesign-project-info{
-    min-height:124px !important;
-    padding:17px 20px 16px !important;
+  .project-featured .project-image-trivia::after{
+    left:42% !important;
+    top:-4% !important;
+    width:70% !important;
+    height:110% !important;
+    background-position:center right !important;
+    background-size:contain !important;
   }
 }
 
 @media(max-width:430px){
-  .project-featured .project-image-trivia{
-    height:244px !important;
-    min-height:244px !important;
-  }
-
-  .project-featured .project-image-trivia .project-image-content{
-    left:16px !important;
-    width:44% !important;
-    max-width:44% !important;
-  }
-
-  .project-featured .project-image-trivia .project-image-content strong{
-    font-size:clamp(37px,11.3vw,46px) !important;
-  }
-
-  .project-featured .trivia-device-question{
-    width:108px !important;
-    height:201px !important;
-    right:10% !important;
-    top:3% !important;
-  }
-
-  .project-featured .trivia-device-leaderboard{
-    width:91px !important;
-    height:170px !important;
-    right:-3% !important;
-    top:17% !important;
-  }
-
-  .project-featured .redesign-project-info{
-    min-height:122px !important;
-    padding:16px 18px !important;
+  .project-featured .project-image-trivia::after{
+    left:39% !important;
+    top:-2% !important;
+    width:73% !important;
+    height:106% !important;
   }
 }
 
 @media(prefers-reduced-motion:reduce){
-  .project-featured .trivia-device{transition:none !important}
+  .project-featured .project-image-trivia::after{
+    transform:none !important;
+  }
 }
