@@ -1,1 +1,0 @@
-Footer redesign direction: Dream Games-inspired structure adapted to Burion's black/gold premium identity. Do not merge into production until existing footer source is inspected and integrated without replacing unrelated page content.
